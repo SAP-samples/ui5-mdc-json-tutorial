@@ -1,0 +1,30 @@
+<mvc:View
+	height="100%"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+	xmlns:core="sap.ui.core"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:mdct="sap.ui.mdc.table"
+	xmlns:vm="sap.ui.fl.variants">
+
+	<f:DynamicPage id="page">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<Title text="Mountains"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="true">
+				<!-- MDC Filter Bar snippet belongs here -->
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<!-- MDC Table snippet belongs here here -->
+		</f:content>
+	</f:DynamicPage>
+
+</mvc:View>

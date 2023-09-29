@@ -1,4 +1,4 @@
-# SAP-samples/repository-template
+<!-- # SAP-samples/repository-template
 This default template for SAP Samples repositories includes files for README, LICENSE, and .reuse/dep5. All repositories on github.com/SAP-samples will be created based on this template.
 
 # Containing Files
@@ -10,30 +10,49 @@ In most cases, the license for SAP sample projects is `Apache 2.0`.
 The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the .reuse/dep5 in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
 
 3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
+Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below. -->
 
-# [Title]
+# SAPUI5 MDC Tutorial 
 <!-- Please include descriptive title -->
 
 <!--- Register repository https://api.reuse.software/register, then add REUSE badge:
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
 -->
-
 ## Description
-<!-- Please include SEO-friendly description -->
-
+In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, Table, Filter Bar, Value Help, TypeMap, and variant management. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, you should be able to leverage the full potential of the MDC concepts in your own projects.
+### Metadata-Driven Controls
+Metadata-Driven Controls or MDCs are a powerful tool that allows you to create user interfaces dynamically at runtime. The controls are driven by metadata, which gives a description of the data and its characteristics. This way, you don't have to explicitly define every control in your UI, but you can configure and modify them based on the provided metadata. Find more details in the UI5 [Documentation](https://sdk.openui5.org/topic/1dd2aa91115d43409452a271d11be95b) and [API Reference](https://sdk.openui5.org/api/sap.ui.mdc).
+### Delegates
+Control Delegates are used to implement service or application-specific behavior in your MDCs. They allow developers to customize the default behavior of controls depending on the specific needs of their service or application. This can include things like custom control creation, metadata provision, or data binding.
+### PropertyInfo
+PropertyInfo is used to define the necessary metadata that should be provided to the controls. This can include information like the control visibility, the data type, or other control-specific settings. PropertyInfo is essential in letting your MDCs know how they should behave.
+### Used Controls
+These are some specific types of MDCs that you can use in your applications:
+- **Table**: This control lets you display data in a tabular format. You can define columns and rows based on the provided metadata.
+- **Filter Bar**: This control provides a user interface for creating complex filter conditions. It can be used in conjunction with a Table control to filter the displayed data.
+- **Value Help**: This control is used to assist the user in inputting data. It can provide suggestions or a list of possible values to choose from based on the provided metadata.
+### Custom Types
+The TypeMap is used for defining custom types in your MDCs. If the standard types provided are not sufficient for your needs, you can add your own using the TypeMap. This gives you even more flexibility in customizing your controls.
+### Variant Management and Personalization
+Variant Management is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a filter bar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
+## Exercises
+0. [Setup](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex0/webapp)*)
+1. [Table](ex1/) (*[browse sources](ex1/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex1/webapp)*)
+1. [Filter Bar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex2/webapp)*)
+1. [Value Help](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex3/webapp)*)
+1. [Type Map](ex4/) (*[browse sources](ex4/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex4/webapp)*)
+1. [Variant Management](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex5/webapp)*)
 ## Requirements
-
-## Download and Installation
-
+### Technical Requirements
+* A current version of [Node.js](https://nodejs.org/) (preferably 18.x)
+* A code editor supporting JavaScript development
+### Required Knowledge
+* Javascript knowledge to avoid blind copy&paste without knowing what's going on.
+* UI5 knowledge, as this tutorial focuses on the MDC concepts.
 ## Known Issues
-<!-- You may simply state "No known issues. -->
-
+No known issues.
 ## How to obtain support
-[Create an issue](https://github.com/SAP-samples/<repository-name>/issues) in this repository if you find a bug or have questions about the content.
- 
-For additional support, [ask a question in SAP Community](https://answers.sap.com/questions/ask.html).
-
+This repository is provided as-is, without any support guarantees. However, you are welcome to report issues via the [Issues](../../issues) tab and we'll see what we can do to fix them.
 ## Contributing
 If you wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 

@@ -1,0 +1,14 @@
+{
+  "name": "mdc-json-tutorial",
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "Sample: Table with FilterBar and JSON model",
+  "scripts": {
+    "start": "ui5 serve",
+    "build": "ui5 build"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^3",
+    "ui5-middleware-livereload": "^3.0.0"
+  }
+}
