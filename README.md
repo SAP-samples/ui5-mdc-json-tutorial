@@ -1,5 +1,5 @@
 # SAPUI5 MDC Tutorial 
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-mdc-json-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-mdc-json-tutorial)
 ## Description
 In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, Table, Filter Bar, Value Help, TypeMap, and variant management. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, you should be able to leverage the full potential of the MDC concepts in your own projects.
 ### Metadata-Driven Controls
