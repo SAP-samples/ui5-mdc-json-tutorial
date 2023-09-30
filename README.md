@@ -1,23 +1,5 @@
-<!-- # SAP-samples/repository-template
-This default template for SAP Samples repositories includes files for README, LICENSE, and .reuse/dep5. All repositories on github.com/SAP-samples will be created based on this template.
-
-# Containing Files
-
-1. The LICENSE file:
-In most cases, the license for SAP sample projects is `Apache 2.0`.
-
-2. The .reuse/dep5 file: 
-The [Reuse Tool](https://reuse.software/) must be used for your samples project. You can find the .reuse/dep5 in the project initial. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository.
-
-3. The README.md file (this file):
-Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below. -->
-
-# UI5 MDC Tutorial 
-<!-- Please include descriptive title -->
-
-<!--- Register repository https://api.reuse.software/register, then add REUSE badge:
+# SAPUI5 MDC Tutorial 
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/REPO-NAME)](https://api.reuse.software/info/github.com/SAP-samples/REPO-NAME)
--->
 ## Description
 In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, Table, Filter Bar, Value Help, TypeMap, and variant management. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, you should be able to leverage the full potential of the MDC concepts in your own projects.
 ### Metadata-Driven Controls
@@ -36,12 +18,12 @@ The TypeMap is used for defining custom types in your MDCs. If the standard type
 ### Variant Management and Personalization
 Variant Management is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a filter bar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
 ## Exercises
-0. [Setup](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex0/webapp)*)
-1. [Table](ex1/) (*[browse sources](ex1/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex1/webapp)*)
-1. [Filter Bar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex2/webapp)*)
-1. [Value Help](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex3/webapp)*)
-1. [Type Map](ex4/) (*[browse sources](ex4/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex4/webapp)*)
-1. [Variant Management](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/mdc-json-tutorial/ex5/webapp)*)
+0. [Setup](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/webapp)*)
+1. [Table](ex1/) (*[browse sources](ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/webapp)*)
+1. [Filter Bar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/webapp)*)
+1. [Value Help](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/webapp)*)
+1. [Type Map](ex4/) (*[browse sources](ex4/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex4/webapp)*)
+1. [Variant Management](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/webapp)*)
 ## Requirements
 ### Technical Requirements
 * A current version of [Node.js](https://nodejs.org/) (preferably 18.x)

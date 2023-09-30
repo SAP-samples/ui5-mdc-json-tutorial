@@ -1,6 +1,6 @@
 specVersion: '3.0'
 metadata:
-  name: mdc-json-tutorial
+  name: ui5-mdc-json-tutorial
 type: application
 framework:
   name: OpenUI5
