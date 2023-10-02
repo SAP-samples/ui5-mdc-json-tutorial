@@ -1,4 +1,5 @@
-# Exercise 4
+[![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
+# Exercise 4: How to Add Custom Types
 You may have noticed that the application can display the height of the mountains. However, it lacks the corresponding unit, "meters", which would provide a more accurate description. This exercise will illustrate how to add specific types and integrate them with the sap.ui.mdc controls.
 
 ## Step 1: Add a New Type

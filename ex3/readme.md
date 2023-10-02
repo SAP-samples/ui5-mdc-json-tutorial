@@ -1,4 +1,5 @@
-# Exercise 3
+[![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
+# Exercise 3: How to Build Advanced Value Helps
 In this exercise, we will build advanced value helps and integrate them into the filter fields. This enhancement will improve the user's filtering experience and expedite the search for desired results.
 
 ## Step 1: Build Value Helps as Fragments

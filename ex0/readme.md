@@ -1,4 +1,5 @@
-# Setup
+[![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
+# Exercise 0: Setup the Project on Your Machine
 
 This exercise will guide you through the process of setting up a development environment on your computer. You will install Node.js, download and extract a zip file for a project, install project dependencies using npm, and serve the project using the UI5 tooling.
 

@@ -1,4 +1,5 @@
-# Exercise 2
+[![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
+# Exercise 2: How to Use the MDC Filter Bar
 In this exercise, we will create a FilterBarDelegate, add a FilterBar to the xml view, use the filter association of the table and implement the search feature as a combination of filters.
 ## Step 1: Create an FilterBarDelegate
 This delegate is responsible for managing the filtering logic for an application. This includes creating and managing filter fields, as well as providing the correpsonding PropertyInfo for filter fields.
