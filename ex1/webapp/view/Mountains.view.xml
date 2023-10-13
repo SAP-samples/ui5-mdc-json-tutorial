@@ -19,7 +19,7 @@
 		</f:title>
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				<!-- MDC Filter Bar snippet belongs here -->
+				
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
@@ -29,6 +29,7 @@
 				p13nMode="Sort,Column"
 				type="ResponsiveTable"
 				threshold="100"
+				filter="filterbar"
 				showRowCount="false"
 				delegate="{
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',

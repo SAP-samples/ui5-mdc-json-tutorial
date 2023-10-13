@@ -1,10 +1,10 @@
 specVersion: '3.0'
 metadata:
-  name: ui5-mdc-json-tutorial
+  name: mdc-json-tutorial
 type: application
 framework:
   name: OpenUI5
-  version: '1.119.0'
+  version: '1.120.0'
   libraries:
     - name: themelib_sap_horizon
     - name: sap.ui.core
@@ -17,7 +17,8 @@ builder:
     - name: ui5-tooling-transpile-task
       afterTask: replaceVersion
 server:
-    - name: ui5-middleware-livereload
-      afterMiddleware: compression
+  customMiddleware:
     - name: ui5-tooling-transpile-middleware
+      afterMiddleware: compression
+    - name: ui5-middleware-livereload
       afterMiddleware: compression

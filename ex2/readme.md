@@ -10,48 +10,37 @@ sap.ui.define([
 	"mdc/tutorial/model/metadata/JSONPropertyInfo",
 	"sap/ui/mdc/FilterField",
 	"sap/ui/core/Core"
-	"sap/ui/core/Fragment"
-], function (FilterBarDelegate, JSONPropertyInfo, FilterField, Core, Fragment) {
+], function (FilterBarDelegate, JSONPropertyInfo, FilterField, Core) {
 	"use strict";
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = function () {
-		return Promise.resolve(JSONPropertyInfo);
+	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
+
+	const _createFilterField = (sId, oProperty, oFilterBar) => {
+		const sPropertyName = oProperty.name;
+		const oFilterField = new FilterField(sId, {
+			dataType: oProperty.dataType,
+			conditions: "{$filters>/conditions/" + sPropertyName + '}',
+			propertyKey: sPropertyName,
+			required: oProperty.required,
+			label: oProperty.label,
+			maxConditions: oProperty.maxConditions,
+			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
+		});
+		return oFilterField;
 	};
 
-	JSONFilterBarDelegate.addItem = function(oFilterBar, sPropertyName) {
-		const oProperty = JSONPropertyInfo.find((oPropertyInfo) => oPropertyInfo.name === sPropertyName);
-		return _addFilterField(oProperty, oFilterBar);
+	JSONFilterBarDelegate.addItem = (oFilterBar, sPropertyName) => {
+		const oProperty = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName);
+		const sId = oFilterBar.getId() + "--filter--" + sPropertyName;
+		return Core.byId(sId) ?? _createFilterField(sId, oProperty, oFilterBar);
 	};
 
-	JSONFilterBarDelegate.removeItem = function(oFilterBar, oFilterField) {
+	JSONFilterBarDelegate.removeItem = async (oFilterBar, oFilterField) => {
 		oFilterField.destroy();
-		return Promise.resolve(true);
+		return true; // allow default handling
 	};
-
-	function _addFilterField(oProperty, oFilterBar) {
-		const sName = oProperty.name;
-		const sFilterFieldId = oFilterBar.getId() + "--filter--" + sName;
-		let oFilterField = Core.byId(sFilterFieldId);
-		let pFilterField;
-
-		if (oFilterField) {
-			pFilterField = Promise.resolve(oFilterField);
-		} else {
-			oFilterField = new FilterField(sFilterFieldId, {
-				dataType: oProperty.dataType,
-				conditions: "{$filters>/conditions/" + sName + '}',
-				propertyKey: sName,
-				required: oProperty.required,
-				label: oProperty.label,
-				maxConditions: oProperty.maxConditions,
-				delegate: { name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {} }
-			});
-			pFilterField = Promise.resolve(oFilterField);
-		}
-		return pFilterField;
-	}
 
 	return JSONFilterBarDelegate;
 }, /* bExport= */false);
@@ -79,12 +68,12 @@ To add a FilterBar to the XML view, we can use the [`sap.ui.mdc.FilterBar`](http
 							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"/>
 					</mdc:filterItems>
 					<mdc:dependents>
-					
+
 					</mdc:dependents>
 				</mdc:FilterBar>
 ```
 
-Use the filter association of the table to connect it to the filter bar.
+Use the filter association of the table to connect it to the filter bar and add the fields you would like to search in the payload.
 ###### view/Mountains.view.xml
 ```xml
 			<mdc:Table
@@ -98,7 +87,8 @@ Use the filter association of the table to connect it to the filter bar.
 				delegate="{
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',
 					payload: {
-						bindingPath: 'mountains>/mountains'
+						bindingPath: 'mountains>/mountains',
+						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
 					}
 				}">
 ```
@@ -107,25 +97,23 @@ Use the filter association of the table to connect it to the filter bar.
 To implement the search feature, we need to extend the `JSONTableDelegate` and override the `getFilters` method. We implement a simple search feature by combining several filters and appending them to the regular filter set, which is prepared by the `TableDelegate`.
 ###### delegate/JSONTableDelegate.js
 ```javascript
-	JSONTableDelegate.getFilters = function(oTable) {
-		const aSearchFilters = _createSearchFilters(Core.byId(oTable.getFilter()).getSearch());
-		return TableDelegate.getFilters(oTable).concat(aSearchFilters);
-	};
-
-	function _createSearchFilters(sSearch) {
-		let aFilters = [];
-		if (sSearch) {
-			const aPaths = ["name", "range", "parent_mountain", "countries"];
-			aFilters = aPaths.map(function (sPath) {
-				return new Filter({
-					path: sPath,
-					operator: FilterOperator.Contains,
-					value1: sSearch
-				});
-			});
-			aFilters = [new Filter(aFilters, false)];
+	JSONTableDelegate.getFilters = (oTable) => {
+		const sSearch = Core.byId(oTable.getFilter()).getSearch();
+		const aKeys = oTable.getPayload().searchKeys;
+		let aFilters = TableDelegate.getFilters(oTable)
+		if (sSearch && aKeys) {
+			aFilters = aFilters.concat(_createSearchFilters(sSearch, aKeys));
 		}
 		return aFilters;
+	};
+
+	const _createSearchFilters = (sSearch, aKeys) => {
+		const aFilters = aKeys.map(aKey => new Filter({
+			path: aKey,
+			operator: FilterOperator.Contains,
+			value1: sSearch
+		}));
+		return [new Filter(aFilters, false)];
 	}
 ```
 Go and try out the filter and search functionality in your application. The table should display only the filtered items! 🙌

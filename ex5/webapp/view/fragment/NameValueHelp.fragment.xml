@@ -2,7 +2,6 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
 	xmlns:mdc="sap.ui.mdc"
-	xmlns:mdct="sap.ui.mdc.table"
 	xmlns:vh="sap.ui.mdc.valuehelp"
 	xmlns:vhc="sap.ui.mdc.valuehelp.content"
 	xmlns:vhfb="sap.ui.mdc.filterbar.vh">
@@ -56,11 +55,11 @@
 						}"
 						filter="name-vhd-fb">
 						<mdc:columns>
-							<mdct:Column
+							<mdc:table.Column
 								header="Name"
-								propertyKey="name">
+								dataProperty="name">
 								<Text text="{mountains>name}"/>
-							</mdct:Column>
+							</mdc:table.Column>
 						</mdc:columns>
 					</mdc:Table>
 				</vhc:MDCTable>

@@ -5,7 +5,7 @@ In this exercise, we will build advanced value helps and integrate them into the
 ## Step 1: Build Value Helps as Fragments
 Let's begin by creating a subfolder in the `view` folder of our web application, and name it `fragment`. Here, we will build two value helps of varying complexity. These value helps are defined in conjunction with the table wrappers, [`MTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MTable) and [`MDCTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MDCTable), which manage the orchestration of the associated table and the communication with the Value Help Dialog.
 
-Firstly, create `RangeValueHelp.fragment.xml` and insert the following value help template. It includes a simple suggestion (typeahead) for the specific mountain range. 
+Firstly, create `RangeValueHelp.fragment.xml` and insert the following value help template. It includes a simple suggestion (typeahead) for the specific mountain range.
 ###### view/fragment/RangeValueHelp.fragment.xml
 ```xml
 <core:FragmentDefinition
@@ -100,7 +100,8 @@ Next, construct `NameValueHelp.fragment.xml` with the template provided below. T
 						delegate="{
 							name: 'mdc/tutorial/delegate/JSONTableDelegate',
 							payload: {
-								bindingPath: 'mountains>/mountains'
+								bindingPath: 'mountains>/mountains',
+								searchKeys: ['name']
 							}
 						}"
 						filter="name-vhd-fb">
@@ -129,7 +130,7 @@ To utilize the advanced value help in our view, we need to attach it as a depend
 						<core:Fragment fragmentName="mdc.tutorial.view.fragment.NameValueHelp" type="XML"/>
 					</mdc:dependents>
 ```
-Subsequently, it is crucial to connect the Value Help to the corresponding Filter Field by setting the `valueHelp` association. 
+Subsequently, it is crucial to connect the Value Help to the corresponding Filter Field by setting the `valueHelp` association.
 ```xml
 						<mdc:FilterField
 							label="Name"
@@ -155,57 +156,38 @@ To determine in our delegate which properties should be associated with a value 
                     p13nMode = "Item,Value">
 ```
 ## Step 4: Add Value Help Creation in Delegate
-Accessing the payload allows us to identify if a specific filter field requires a value help when created by the delegate. Using this information, we can tie the filter field with the value help and attach it as a dependent to the filter bar, but this time within the appropriate JavaScript callback. Replace the old implmentation of `_addFilterField` as follows:
+Accessing the payload allows us to identify if a specific filter field requires a value help when created by the delegate. Using this information, we can tie the filter field with the value help and attach it as a dependent to the filter bar, but this time within the appropriate JavaScript callback. Replace the old implmentation of `_createFilterField` as follows:
 ###### delegate/JSONTableDelegate.js
 ```javascript
-	function _addFilterField(oProperty, oFilterBar) {
-		const sName = oProperty.name;
-		const sFilterFieldId = oFilterBar.getId() + "--filter--" + sName;
-		let oFilterField = Core.byId(sFilterFieldId);
-		let pFilterField;
+	const _createValueHelp = (oFilterBar, sPropertyName) => {
+		const aKey = "mdc.tutorial.view.fragment.";
+		return Fragment.load({
+			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]
+		}).then((oValueHelp) => {
+			oFilterBar.addDependent(oValueHelp);
+			return oValueHelp;
+		});
+	};
 
-		if (oFilterField) {
-			pFilterField = Promise.resolve(oFilterField);
-		} else {
-			oFilterField = new FilterField(sFilterFieldId, {
-				dataType: oProperty.dataType,
-				conditions: "{$filters>/conditions/" + sName + '}',
-				propertyKey: sName,
-				required: oProperty.required,
-				label: oProperty.label,
-				maxConditions: oProperty.maxConditions,
-				delegate: { name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {} }
-			});
-
-			if (oFilterBar.getPayload().valueHelp[sName]) {
-				pFilterField = _addValueHelp(oFilterBar, oFilterField, sName);
-			} else {
-				pFilterField = Promise.resolve(oFilterField);
-			}
-		}
-		return pFilterField;
-	}
-
-	function _addValueHelp(oFilterBar, oFilterField, sName) {
-		const oValueHelp = oFilterBar.getDependents().find((oD) => oD.getId().includes(sName));
-		let pFieldWithVH;
-
-		if (oValueHelp) {
+	const _createFilterField = async (sId, oProperty, oFilterBar) => {
+		const sPropertyName = oProperty.name;
+		const oFilterField = new FilterField(sId, {
+			dataType: oProperty.dataType,
+			conditions: "{$filters>/conditions/" + sPropertyName + '}',
+			propertyKey: sPropertyName,
+			required: oProperty.required,
+			label: oProperty.label,
+			maxConditions: oProperty.maxConditions,
+			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
+		});
+		if (oFilterBar.getPayload().valueHelp[sPropertyName]) {
+			const aDependents = oFilterBar.getDependents();
+			let oValueHelp = aDependents.find((oD) => oD.getId().includes(sPropertyName));
+			oValueHelp ??= await _createValueHelp(oFilterBar, sPropertyName);
 			oFilterField.setValueHelp(oValueHelp);
-			pFieldWithVH = Promise.resolve(oFilterField);
-		} else {
-			const sPath = "mdc.tutorial.view.fragment.";
-			pFieldWithVH = Fragment.load({
-				name: sPath + oFilterBar.getPayload().valueHelp[sName]
-			}).then(function(oValueHelp) {
-				oFilterBar.addDependent(oValueHelp);
-				oFilterField.setValueHelp(oValueHelp);
-				return oFilterField;
-			});
 		}
-
-		return pFieldWithVH;
-	}
+		return oFilterField;
+	};
 ```
 Check that your value helps work by using the suggestion and the value help dialog of the corresponding fields! 🤓
 

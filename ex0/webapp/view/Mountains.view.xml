@@ -19,11 +19,11 @@
 		</f:title>
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				<!-- MDC Filter Bar snippet belongs here -->
+				
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
-			<!-- MDC Table snippet belongs here here -->
+			
 		</f:content>
 	</f:DynamicPage>
 

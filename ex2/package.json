@@ -15,6 +15,6 @@
     "typescript": "^5.2.2",
     "ui5-middleware-livereload": "^0.8.4",
     "ui5-tooling-transpile": "^0.7.20",
-    "@openui5/types": "^1.118.0"
+    "@openui5/types": "latest"
   }
 }

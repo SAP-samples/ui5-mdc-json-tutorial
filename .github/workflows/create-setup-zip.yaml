@@ -1,0 +1,15 @@
+on: [push]
+jobs:
+  create-setup-zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip setup files
+        run: zip -r mdc.tutorial.zip ex0/ -x 'ex0/readme.md'
+      - name: Commit setup zip
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Update mdc.tutorial.zip"
+          git push

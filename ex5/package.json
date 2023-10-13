@@ -5,16 +5,9 @@
   "description": "Sample: Table with FilterBar and JSON model",
   "scripts": {
     "start": "ui5 serve",
-    "build": "ui5 build",
-    "ts-typecheck": "tsc --noEmit"
+    "build": "ui5 build"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "@ui5/cli": "^3",
-    "typescript": "^5.2.2",
-    "ui5-middleware-livereload": "^0.8.4",
-    "ui5-tooling-transpile": "^0.7.20",
-    "@openui5/types": "^1.118.0"
+    "@ui5/cli": "^3"
   }
 }

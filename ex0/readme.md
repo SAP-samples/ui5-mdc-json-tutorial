@@ -17,10 +17,10 @@ This command should display the installed version of Node.js.
 
 ## Step 2: Download and Extract Project Files
 
-Next, we will download the project files contained in a .zip file. 
+Next, we will download the project files contained in a .zip file.
 
-- Download the project files from [mdc.tutorial.zip](../../../raw/main/ex0/mdc.tutorial.zip).
-- Once the download is complete, navigate to the download location and extract the .zip file. 
+- Download the project files from [mdc.tutorial.zip](../../../raw/typescript/mdc.tutorial.zip).
+- Once the download is complete, navigate to the download location and extract the .zip file.
 
 ## Step 3: Open the Project Folder
 
@@ -29,7 +29,7 @@ Now, we will open the project folder in your code editor.
 - Navigate to the extracted project folder.
 - Open the folder in your preferred code editor.
 
-The structure should look like this: 
+The structure should look like this:
 
 ![Alt text](ex0_folder.png)
 
@@ -37,7 +37,7 @@ The structure should look like this:
 
 Once the project is open in your code editor, we will install the project dependencies using npm, the Node Package Manager, which was installed alongside Node.js.
 
-- Open a terminal or command prompt in your project's root directory. 
+- Open a terminal or command prompt in your project's root directory.
 - Run the following command:
 
 ```bash
