@@ -9,67 +9,44 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = function () {
-		return Promise.resolve(JSONPropertyInfo);
+	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
+
+	JSONFilterBarDelegate.addItem = async (oFilterBar, sPropertyName) => {
+		const oProperty = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
+		const sId = oFilterBar.getId() + "--filter--" + sPropertyName;
+		return Core.byId(sId) ?? _createFilterField(sId, oProperty, oFilterBar);
 	};
 
-	JSONFilterBarDelegate.addItem = function(oFilterBar, sPropertyName) {
-		const oProperty = JSONPropertyInfo.find((oPropertyInfo) => oPropertyInfo.name === sPropertyName);
-		return _addFilterField(oProperty, oFilterBar);
-	};
-
-	JSONFilterBarDelegate.removeItem = function(oFilterBar, oFilterField) {
+	JSONFilterBarDelegate.removeItem = async (oFilterBar, oFilterField) => {
 		oFilterField.destroy();
-		return Promise.resolve(true);
+		return true; // allow default handling
 	};
 
-	function _addFilterField(oProperty, oFilterBar) {
+	const _createFilterField = async (sId, oProperty, oFilterBar) => {
 		const sName = oProperty.name;
-		const sFilterFieldId = oFilterBar.getId() + "--filter--" + sName;
-		let oFilterField = Core.byId(sFilterFieldId);
-		let pFilterField;
-
-		if (oFilterField) {
-			pFilterField = Promise.resolve(oFilterField);
-		} else {
-			oFilterField = new FilterField(sFilterFieldId, {
-				dataType: oProperty.dataType,
-				conditions: "{$filters>/conditions/" + sName + '}',
-				propertyKey: sName,
-				required: oProperty.required,
-				label: oProperty.label,
-				maxConditions: oProperty.maxConditions,
-				delegate: { name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {} }
-			});
-
-			if (oFilterBar.getPayload().valueHelp[sName]) {
-				pFilterField = _addValueHelp(oFilterBar, oFilterField, sName);
-			} else {
-				pFilterField = Promise.resolve(oFilterField);
-			}
+		const oFilterField = new FilterField(sId, {
+			dataType: oProperty.dataType,
+			conditions: "{$filters>/conditions/" + sName + '}',
+			propertyKey: sName,
+			required: oProperty.required,
+			label: oProperty.label,
+			maxConditions: oProperty.maxConditions,
+			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}},
+		});
+		if (oFilterBar.getPayload().valueHelp[sName]) {
+			oFilterField.setValueHelp(await _createValueHelp(oFilterBar, sName));
 		}
-		return pFilterField;
+		return oFilterField;
 	}
 
-	function _addValueHelp(oFilterBar, oFilterField, sName) {
-		const oValueHelp = oFilterBar.getDependents().find((oD) => oD.getId().includes(sName));
-		let pFieldWithVH;
-
-		if (oValueHelp) {
-			oFilterField.setValueHelp(oValueHelp);
-			pFieldWithVH = Promise.resolve(oFilterField);
-		} else {
-			const sPath = "mdc.tutorial.view.fragment.";
-			pFieldWithVH = Fragment.load({
-				name: sPath + oFilterBar.getPayload().valueHelp[sName]
-			}).then(function(oValueHelp) {
-				oFilterBar.addDependent(oValueHelp);
-				oFilterField.setValueHelp(oValueHelp);
-				return oFilterField;
-			});
-		}
-
-		return pFieldWithVH;
+	const _createValueHelp = async (oFilterBar, sName) => {
+		const aKey = "mdc.tutorial.view.fragment.";
+		return Fragment.load({
+			name: aKey + oFilterBar.getPayload().valueHelp[sName]
+		}).then(oValueHelp => {
+			oFilterBar.addDependent(oValueHelp);
+			return oValueHelp;
+		});
 	}
 
 	return JSONFilterBarDelegate;

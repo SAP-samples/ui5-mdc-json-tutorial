@@ -22,7 +22,7 @@ sap.ui.define([
 
 	JSONFilterBarDelegate.addItem = function(oFilterBar, sPropertyName) {
 		const oProperty = JSONPropertyInfo.find((oPropertyInfo) => oPropertyInfo.name === sPropertyName);
-		return _addFilterField(oProperty, oFilterBar);
+		return _createFilterField(oProperty, oFilterBar);
 	};
 
 	JSONFilterBarDelegate.removeItem = function(oFilterBar, oFilterField) {
@@ -30,7 +30,7 @@ sap.ui.define([
 		return Promise.resolve(true);
 	};
 
-	function _addFilterField(oProperty, oFilterBar) {
+	function _createFilterField(oProperty, oFilterBar) {
 		const sName = oProperty.name;
 		const sFilterFieldId = oFilterBar.getId() + "--filter--" + sName;
 		let oFilterField = Core.byId(sFilterFieldId);
@@ -99,7 +99,8 @@ Use the filter association of the table to connect it to the filter bar.
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',
 					payload: {
 						bindingPath: 'mountains>/mountains'
-					}
+					},
+						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
 				}">
 ```
 
@@ -115,10 +116,10 @@ To implement the search feature, we need to extend the `JSONTableDelegate` and o
 	function _createSearchFilters(sSearch) {
 		let aFilters = [];
 		if (sSearch) {
-			const aPaths = ["name", "range", "parent_mountain", "countries"];
-			aFilters = aPaths.map(function (sPath) {
+			const aKeys = ["name", "range", "parent_mountain", "countries"];
+			aFilters = aKeys.map(function (aKey) {
 				return new Filter({
-					path: sPath,
+					path: aKey,
 					operator: FilterOperator.Contains,
 					value1: sSearch
 				});

@@ -9,41 +9,30 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = function () {
-		return Promise.resolve(JSONPropertyInfo);
+	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
+
+	JSONFilterBarDelegate.addItem = async (oFilterBar, sPropertyName) => {
+		const oProperty = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
+		const sId = oFilterBar.getId() + "--filter--" + sPropertyName;
+		return Core.byId(sId) ?? _createFilterField(sId, oProperty, oFilterBar);
 	};
 
-	JSONFilterBarDelegate.addItem = function(oFilterBar, sPropertyName) {
-		const oProperty = JSONPropertyInfo.find((oPropertyInfo) => oPropertyInfo.name === sPropertyName);
-		return _addFilterField(oProperty, oFilterBar);
-	};
-
-	JSONFilterBarDelegate.removeItem = function(oFilterBar, oFilterField) {
+	JSONFilterBarDelegate.removeItem = async (oFilterBar, oFilterField) => {
 		oFilterField.destroy();
-		return Promise.resolve(true);
+		return true; // allow default handling
 	};
 
-	function _addFilterField(oProperty, oFilterBar) {
+	const _createFilterField = async (sId, oProperty, oFilterBar) => {
 		const sName = oProperty.name;
-		const sFilterFieldId = oFilterBar.getId() + "--filter--" + sName;
-		let oFilterField = Core.byId(sFilterFieldId);
-		let pFilterField;
-
-		if (oFilterField) {
-			pFilterField = Promise.resolve(oFilterField);
-		} else {
-			oFilterField = new FilterField(sFilterFieldId, {
-				dataType: oProperty.dataType,
-				conditions: "{$filters>/conditions/" + sName + '}',
-				propertyKey: sName,
-				required: oProperty.required,
-				label: oProperty.label,
-				maxConditions: oProperty.maxConditions,
-				delegate: { name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {} }
-			});
-			pFilterField = Promise.resolve(oFilterField);
-		}
-		return pFilterField;
+		return new FilterField(sId, {
+			dataType: oProperty.dataType,
+			conditions: "{$filters>/conditions/" + sName + '}',
+			propertyKey: sName,
+			required: oProperty.required,
+			label: oProperty.label,
+			maxConditions: oProperty.maxConditions,
+			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}},
+		});
 	}
 
 	return JSONFilterBarDelegate;

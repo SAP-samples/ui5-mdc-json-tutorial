@@ -33,10 +33,10 @@ sap.ui.define([
 
 	JSONTableDelegate.addItem = function (oTable, sPropertyName) {
 		const oPropertyInfo = JSONPropertyInfo.find((oPropertyInfo) => oPropertyInfo.name === sPropertyName);
-		return Promise.resolve(_addColumn(oPropertyInfo, oTable));
+		return Promise.resolve(_createColumn(oPropertyInfo, oTable));
 	};
 
-	function _addColumn(oPropertyInfo, oTable) {
+	function _createColumn(oPropertyInfo, oTable) {
 		const sName = oPropertyInfo.name;
 		const sId = oTable.getId() + "---col-" + sName;
 		let oColumn = Core.byId(sId);
@@ -107,7 +107,8 @@ Below is the code you can add to content aggregation of the DynamicPage in the X
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',
 					payload: {
 						bindingPath: 'mountains>/mountains'
-					}
+					},
+						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
 				}">
 				<mdct:Column
 					propertyKey="name"

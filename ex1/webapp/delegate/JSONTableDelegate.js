@@ -3,51 +3,43 @@ sap.ui.define([
 	"sap/ui/mdc/table/Column",
 	"sap/m/Text",
 	"sap/ui/core/Core",
-	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator",
 	"mdc/tutorial/model/metadata/JSONPropertyInfo"
 ], function (
-	TableDelegate, Column, Text,
-	Core, Filter, FilterOperator, JSONPropertyInfo) {
+	TableDelegate, Column, Text, Core, JSONPropertyInfo) {
 	"use strict";
 
 	const JSONTableDelegate = Object.assign({}, TableDelegate);
 
-	JSONTableDelegate.fetchProperties = function () {
-		return Promise.resolve(JSONPropertyInfo.filter((oPropertyInfo) => oPropertyInfo.name !== "$search"));
-	};
+	JSONTableDelegate.fetchProperties = async () =>
+		JSONPropertyInfo.filter((oPI) => oPI.name !== "$search");
 
-	JSONTableDelegate.addItem = function (oTable, sPropertyName) {
-		const oPropertyInfo = JSONPropertyInfo.find((oPropertyInfo) => oPropertyInfo.name === sPropertyName);
-		return Promise.resolve(_addColumn(oPropertyInfo, oTable));
-	};
-
-	function _addColumn(oPropertyInfo, oTable) {
-		const sName = oPropertyInfo.name;
+	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
+		const oPropertyInfo = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
 		const sId = oTable.getId() + "---col-" + sName;
-		let oColumn = Core.byId(sId);
-		if (!oColumn) {
-			oColumn = new Column(sId, {
-				propertyKey: sName,
-				header: oPropertyInfo.label,
-				template: new Text({
-					text: {
-						path: "mountains>" + sName,
-						type: oPropertyInfo.dataType
-					}
-				})
-			});
-		}
-		return oColumn;
+		return Core.byId(sId) ??_createColumn(oPropertyInfo);
+	};
+
+	const _createColumn = async oPropertyInfo => {
+		const sName = oPropertyInfo.name;
+		return new Column(sId, {
+			propertyKey: sName,
+			header: oPropertyInfo.label,
+			template: new Text({
+				text: {
+					path: "mountains>" + sName,
+					type: oPropertyInfo.dataType
+				}
+			})
+		});
 	}
 
-	JSONTableDelegate.removeItem = function(oTable, oColumn) {
+	JSONTableDelegate.removeItem = async (oTable, oColumn) => {
 		oColumn.destroy();
-		return Promise.resolve(true);
+		return true; // allow default handling
 	};
 
-	JSONTableDelegate.updateBindingInfo = function(oTable, oBindingInfo) {
-		TableDelegate.updateBindingInfo.apply(this, arguments);
+	JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
+		TableDelegate.updateBindingInfo(oTable, oBindingInfo);
 		oBindingInfo.path = oTable.getPayload().bindingPath;
 	};
 
