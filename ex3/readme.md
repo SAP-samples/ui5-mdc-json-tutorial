@@ -155,10 +155,10 @@ To determine in our delegate which properties should be associated with a value 
                     p13nMode = "Item,Value">
 ```
 ## Step 4: Add Value Help Creation in Delegate
-Accessing the payload allows us to identify if a specific filter field requires a value help when created by the delegate. Using this information, we can tie the filter field with the value help and attach it as a dependent to the filter bar, but this time within the appropriate JavaScript callback. Replace the old implmentation of `_addFilterField` as follows:
+Accessing the payload allows us to identify if a specific filter field requires a value help when created by the delegate. Using this information, we can tie the filter field with the value help and attach it as a dependent to the filter bar, but this time within the appropriate JavaScript callback. Replace the old implmentation of `_createFilterField` as follows:
 ###### delegate/JSONTableDelegate.js
 ```javascript
-	function _addFilterField(oProperty, oFilterBar) {
+	function _createFilterField(oProperty, oFilterBar) {
 		const sName = oProperty.name;
 		const sFilterFieldId = oFilterBar.getId() + "--filter--" + sName;
 		let oFilterField = Core.byId(sFilterFieldId);
@@ -178,7 +178,7 @@ Accessing the payload allows us to identify if a specific filter field requires 
 			});
 
 			if (oFilterBar.getPayload().valueHelp[sName]) {
-				pFilterField = _addValueHelp(oFilterBar, oFilterField, sName);
+				pFilterField = _createValueHelp(oFilterBar, oFilterField, sName);
 			} else {
 				pFilterField = Promise.resolve(oFilterField);
 			}
@@ -186,7 +186,7 @@ Accessing the payload allows us to identify if a specific filter field requires 
 		return pFilterField;
 	}
 
-	function _addValueHelp(oFilterBar, oFilterField, sName) {
+	function _createValueHelp(oFilterBar, oFilterField, sName) {
 		const oValueHelp = oFilterBar.getDependents().find((oD) => oD.getId().includes(sName));
 		let pFieldWithVH;
 
@@ -194,9 +194,9 @@ Accessing the payload allows us to identify if a specific filter field requires 
 			oFilterField.setValueHelp(oValueHelp);
 			pFieldWithVH = Promise.resolve(oFilterField);
 		} else {
-			const sPath = "mdc.tutorial.view.fragment.";
+			const aKey = "mdc.tutorial.view.fragment.";
 			pFieldWithVH = Fragment.load({
-				name: sPath + oFilterBar.getPayload().valueHelp[sName]
+				name: aKey + oFilterBar.getPayload().valueHelp[sName]
 			}).then(function(oValueHelp) {
 				oFilterBar.addDependent(oValueHelp);
 				oFilterField.setValueHelp(oValueHelp);
