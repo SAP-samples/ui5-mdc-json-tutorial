@@ -17,58 +17,50 @@ sap.ui.define([
 	"sap/ui/mdc/table/Column",
 	"sap/m/Text",
 	"sap/ui/core/Core",
-	"sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator",
 	"mdc/tutorial/model/metadata/JSONPropertyInfo"
 ], function (
-	TableDelegate, Column, Text,
-	Core, Filter, FilterOperator, JSONPropertyInfo) {
+	TableDelegate, Column, Text, Core, JSONPropertyInfo) {
 	"use strict";
 
 	const JSONTableDelegate = Object.assign({}, TableDelegate);
 
-	JSONTableDelegate.fetchProperties = function () {
-		return Promise.resolve(JSONPropertyInfo.filter((oPropertyInfo) => oPropertyInfo.name !== "$search"));
-	};
+	JSONTableDelegate.fetchProperties = async () =>
+		JSONPropertyInfo.filter((oPI) => oPI.name !== "$search");
 
-	JSONTableDelegate.addItem = function (oTable, sPropertyName) {
-		const oPropertyInfo = JSONPropertyInfo.find((oPropertyInfo) => oPropertyInfo.name === sPropertyName);
-		return Promise.resolve(_createColumn(oPropertyInfo, oTable));
-	};
-
-	function _createColumn(oPropertyInfo, oTable) {
-		const sName = oPropertyInfo.name;
+	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
+		const oPropertyInfo = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
 		const sId = oTable.getId() + "---col-" + sName;
-		let oColumn = Core.byId(sId);
-		if (!oColumn) {
-			oColumn = new Column(sId, {
-				propertyKey: sName,
-				header: oPropertyInfo.label,
-				template: new Text({
-					text: {
-						path: "mountains>" + sName,
-						type: oPropertyInfo.dataType
-					}
-				})
-			});
-		}
-		return oColumn;
+		return Core.byId(sId) ??_createColumn(oPropertyInfo);
+	};
+
+	const _createColumn = async oPropertyInfo => {
+		const sName = oPropertyInfo.name;
+		return new Column(sId, {
+			propertyKey: sName,
+			header: oPropertyInfo.label,
+			template: new Text({
+				text: {
+					path: "mountains>" + sName,
+					type: oPropertyInfo.dataType
+				}
+			})
+		});
 	}
 
-	JSONTableDelegate.removeItem = function(oTable, oColumn) {
+	JSONTableDelegate.removeItem = async (oTable, oColumn) => {
 		oColumn.destroy();
-		return Promise.resolve(true);
+		return true; // allow default handling
 	};
 
-	JSONTableDelegate.updateBindingInfo = function(oTable, oBindingInfo) {
-		TableDelegate.updateBindingInfo.apply(this, arguments);
+	JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
+		TableDelegate.updateBindingInfo(oTable, oBindingInfo);
 		oBindingInfo.path = oTable.getPayload().bindingPath;
 	};
 
 	return JSONTableDelegate;
 }, /* bExport= */false);
 ```
-The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.js` file to understand how the two properties `name` and `height` are defined. 
+The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.js` file to understand how the two properties `name` and `height` are defined.
 ###### model/metadata/JSONPropertInfo.js
 ```javascript
 	{
@@ -106,9 +98,9 @@ Below is the code you can add to content aggregation of the DynamicPage in the X
 				delegate="{
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',
 					payload: {
-						bindingPath: 'mountains>/mountains'
-					},
+						bindingPath: 'mountains>/mountains',
 						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
+					}
 				}">
 				<mdct:Column
 					propertyKey="name"
@@ -142,7 +134,7 @@ Below is the code you can add to content aggregation of the DynamicPage in the X
 				</mdct:Column>
 			</mdc:Table>
 ```
-> ℹ️ Pay attention to how the controls are specified. All the MDCs included in the XML view will initially appear on the screen without any additional personalization. While this may seem superfluous when also providing the Control creation method in the delegate, it allows you to establish a default without any hassle. Alternatively, you could opt to not provide any controls here and add them later through personalization. 
+> ℹ️ Pay attention to how the controls are specified. All the MDCs included in the XML view will initially appear on the screen without any additional personalization. While this may seem superfluous when also providing the Control creation method in the delegate, it allows you to establish a default without any hassle. Alternatively, you could opt to not provide any controls here and add them later through personalization.
 
 Run the application and see how with just the few lines of code you added, you get a personalizable table that shows properties of your JSON data! 😱
 

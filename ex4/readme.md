@@ -51,11 +51,8 @@ sap.ui.define([
 ], function (TypeMap) {
 	"use strict";
 
-	return {
-        getTypeMap: function() {
-            return TypeMap;
-        }
-    };
+	return { getTypeMap: () => TypeMap };
+
 }, /* bExport= */false);
 ```
 In both `JSONTableDelegate` and `JSONFilterBarDelegate` files, require and add the new `JSONBaseDelegate` to the assign call as a third argument.
@@ -63,8 +60,8 @@ In both `JSONTableDelegate` and `JSONFilterBarDelegate` files, require and add t
 ```javascript
 	"mdc/tutorial/delegate/JSONBaseDelegate"
 ], function (
-	TableDelegate, Column, Text,
-	Core, Filter, FilterOperator, JSONPropertyInfo, JSONBaseDelegate) {
+	TableDelegate, Column, Text, Core, Filter, FilterOperator, JSONPropertyInfo,
+	JSONBaseDelegate) {
 	"use strict";
 
 	const JSONTableDelegate = Object.assign({}, TableDelegate, JSONBaseDelegate);
@@ -72,7 +69,8 @@ In both `JSONTableDelegate` and `JSONFilterBarDelegate` files, require and add t
 ###### delegate/JSONFilterBarDelegate.js
 ```javascript
 	"mdc/tutorial/delegate/JSONBaseDelegate"
-], function (FilterBarDelegate, JSONPropertyInfo, FilterField, Core, Fragment, JSONBaseDelegate) {
+], function (FilterBarDelegate, JSONPropertyInfo, FilterField, Core, Fragment,
+	JSONBaseDelegate) {
 	"use strict";
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegate);
