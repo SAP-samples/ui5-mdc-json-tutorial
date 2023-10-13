@@ -5,8 +5,8 @@ sap.ui.define([
 	"sap/ui/core/Core",
 	"sap/ui/core/Fragment",
 	"mdc/tutorial/delegate/JSONBaseDelegate"
-], function (FilterBarDelegate, JSONPropertyInfo, FilterField, Core,
-	Fragment, JSONBaseDelegate) {
+], function (FilterBarDelegate, JSONPropertyInfo, FilterField, Core, Fragment,
+	JSONBaseDelegate) {
 	"use strict";
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegate);
