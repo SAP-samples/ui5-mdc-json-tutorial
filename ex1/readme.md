@@ -53,7 +53,7 @@ sap.ui.define([
 	};
 
 	JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
-		TableDelegate.updateBindingInfo(oTable, oBindingInfo);
+		TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo);
 		oBindingInfo.path = oTable.getPayload().bindingPath;
 	};
 

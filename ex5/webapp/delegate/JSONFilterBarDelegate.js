@@ -25,26 +25,29 @@ sap.ui.define([
 	};
 
 	const _createFilterField = async (sId, oProperty, oFilterBar) => {
-		const sName = oProperty.name;
+		const sPropertyName = oProperty.name;
 		const oFilterField = new FilterField(sId, {
 			dataType: oProperty.dataType,
-			conditions: "{$filters>/conditions/" + sName + '}',
-			propertyKey: sName,
+			conditions: "{$filters>/conditions/" + sPropertyName + '}',
+			propertyKey: sPropertyName,
 			required: oProperty.required,
 			label: oProperty.label,
 			maxConditions: oProperty.maxConditions,
 			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}},
 		});
-		if (oFilterBar.getPayload().valueHelp[sName]) {
-			oFilterField.setValueHelp(await _createValueHelp(oFilterBar, sName));
+		if (oFilterBar.getPayload().valueHelp[sPropertyName]) {
+			const aDependents = oFilterBar.getDependents()
+			let oValueHelp = aDependents.find(oD => oD.getId().includes(sPropertyName));
+			oValueHelp ??= await _createValueHelp(oFilterBar, sPropertyName)
+			oFilterField.setValueHelp(oValueHelp);
 		}
 		return oFilterField;
 	}
 
-	const _createValueHelp = async (oFilterBar, sName) => {
+	const _createValueHelp = async (oFilterBar, sPropertyName) => {
 		const aKey = "mdc.tutorial.view.fragment.";
 		return Fragment.load({
-			name: aKey + oFilterBar.getPayload().valueHelp[sName]
+			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]
 		}).then(oValueHelp => {
 			oFilterBar.addDependent(oValueHelp);
 			return oValueHelp;
