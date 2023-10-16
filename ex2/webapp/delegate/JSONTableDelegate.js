@@ -12,7 +12,7 @@ sap.ui.define([
 
 	const JSONTableDelegate = Object.assign({}, TableDelegate);
 
-	JSONTableDelegate.fetchProperties = () =>
+	JSONTableDelegate.fetchProperties = async () =>
 		JSONPropertyInfo.filter((oPI) => oPI.name !== "$search");
 
 	const _createColumn = (sId, oPropertyInfo) => {
@@ -35,7 +35,7 @@ sap.ui.define([
 		return Core.byId(sId) ?? await _createColumn(sId, oPropertyInfo);
 	};
 
-	JSONTableDelegate.removeItem = (oTable, oColumn) => {
+	JSONTableDelegate.removeItem = async (oTable, oColumn) => {
 		oColumn.destroy();
 		return true; // allow default handling
 	};

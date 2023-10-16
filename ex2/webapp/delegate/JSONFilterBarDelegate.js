@@ -8,9 +8,9 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = async () => await JSONPropertyInfo;
+	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
 
-	const _createFilterField = async (sId, oProperty, oFilterBar) => {
+	const _createFilterField = (sId, oProperty, oFilterBar) => {
 		const sPropertyName = oProperty.name;
 		const oFilterField = new FilterField(sId, {
 			dataType: oProperty.dataType,
@@ -30,7 +30,7 @@ sap.ui.define([
 		return Core.byId(sId) ?? await _createFilterField(sId, oProperty, oFilterBar);
 	};
 
-	JSONFilterBarDelegate.removeItem = (oFilterBar, oFilterField) => {
+	JSONFilterBarDelegate.removeItem = async (oFilterBar, oFilterField) => {
 		oFilterField.destroy();
 		return true; // allow default handling
 	};

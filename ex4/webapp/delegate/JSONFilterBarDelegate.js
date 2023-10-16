@@ -11,7 +11,7 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = async () => await JSONPropertyInfo;
+	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
 
 	const _createValueHelp = (oFilterBar, sPropertyName) => {
 		const aKey = "mdc.tutorial.view.fragment.";
@@ -49,7 +49,7 @@ sap.ui.define([
 		return Core.byId(sId) ?? await _createFilterField(sId, oProperty, oFilterBar);
 	};
 
-	JSONFilterBarDelegate.removeItem = (oFilterBar, oFilterField) => {
+	JSONFilterBarDelegate.removeItem = async (oFilterBar, oFilterField) => {
 		oFilterField.destroy();
 		return true; // allow default handling
 	};
