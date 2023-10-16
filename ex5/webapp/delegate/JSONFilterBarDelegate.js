@@ -1,10 +1,10 @@
 sap.ui.define([
 	"sap/ui/mdc/FilterBarDelegate",
-	"mdc/sample/model/metadata/JSONPropertyInfo",
+	"mdc/tutorial/model/metadata/JSONPropertyInfo",
 	"sap/ui/mdc/FilterField",
 	"sap/ui/core/Core",
 	"sap/ui/core/Fragment",
-	"mdc/sample/delegate/JSONBaseDelegate"
+	"mdc/tutorial/delegate/JSONBaseDelegate"
 ], function (FilterBarDelegate, JSONPropertyInfo, FilterField, Core, Fragment,
 	JSONBaseDelegate) {
 	"use strict";
@@ -14,7 +14,7 @@ sap.ui.define([
 	JSONFilterBarDelegate.fetchProperties = async () => await JSONPropertyInfo;
 
 	const _createValueHelp = (oFilterBar, sPropertyName) => {
-		const aKey = "mdc.sample.view.fragment.";
+		const aKey = "mdc.tutorial.view.fragment.";
 		return Fragment.load({
 			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]
 		}).then((oValueHelp) => {

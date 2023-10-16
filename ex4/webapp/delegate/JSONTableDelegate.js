@@ -5,8 +5,8 @@ sap.ui.define([
 	"sap/ui/core/Core",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"mdc/sample/model/metadata/JSONPropertyInfo",
-	"mdc/sample/delegate/JSONBaseDelegate"
+	"mdc/tutorial/model/metadata/JSONPropertyInfo",
+	"mdc/tutorial/delegate/JSONBaseDelegate"
 ], function (
 	TableDelegate, Column, Text, Core, Filter, FilterOperator, JSONPropertyInfo,
 	JSONBaseDelegate) {

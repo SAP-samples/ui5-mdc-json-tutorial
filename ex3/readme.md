@@ -160,7 +160,7 @@ Accessing the payload allows us to identify if a specific filter field requires 
 ###### delegate/JSONTableDelegate.js
 ```javascript
 	const _createValueHelp = (oFilterBar, sPropertyName) => {
-		const aKey = "mdc.sample.view.fragment.";
+		const aKey = "mdc.tutorial.view.fragment.";
 		return Fragment.load({
 			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]
 		}).then((oValueHelp) => {

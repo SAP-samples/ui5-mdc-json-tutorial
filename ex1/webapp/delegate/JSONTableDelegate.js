@@ -3,9 +3,8 @@ sap.ui.define([
 	"sap/ui/mdc/table/Column",
 	"sap/m/Text",
 	"sap/ui/core/Core",
-	"mdc/sample/model/metadata/JSONPropertyInfo"
-], function (
-	TableDelegate, Column, Text, Core, JSONPropertyInfo) {
+	"mdc/tutorial/model/metadata/JSONPropertyInfo"
+], function (TableDelegate, Column, Text, Core, JSONPropertyInfo) {
 	"use strict";
 
 	const JSONTableDelegate = Object.assign({}, TableDelegate);
