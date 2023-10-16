@@ -40,6 +40,7 @@ sap.ui.define([
 	JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
 		TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo);
 		oBindingInfo.path = oTable.getPayload().bindingPath;
+		oBindingInfo.templateShareable = true;
 	};
 
 	return JSONTableDelegate;
