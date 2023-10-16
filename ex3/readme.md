@@ -100,7 +100,8 @@ Next, construct `NameValueHelp.fragment.xml` with the template provided below. T
 						delegate="{
 							name: 'mdc/tutorial/delegate/JSONTableDelegate',
 							payload: {
-								bindingPath: 'mountains>/mountains'
+								bindingPath: 'mountains>/mountains',
+								searchKeys: ['name']
 							}
 						}"
 						filter="name-vhd-fb">
@@ -169,8 +170,11 @@ Accessing the payload allows us to identify if a specific filter field requires 
 			maxConditions: oProperty.maxConditions,
 			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}},
 		});
-		if (oFilterBar.getPayload().valueHelp[sName]) {
-			oFilterField.setValueHelp(await _createValueHelp(oFilterBar, sName));
+		if (oFilterBar.getPayload().valueHelp[sPropertyName]) {
+			const aDependents = oFilterBar.getDependents()
+			let oValueHelp = aDependents.find(oD => oD.getId().includes(sPropertyName));
+			oValueHelp ??= await _createValueHelp(oFilterBar, sPropertyName)
+			oFilterField.setValueHelp(oValueHelp);
 		}
 		return oFilterField;
 	}

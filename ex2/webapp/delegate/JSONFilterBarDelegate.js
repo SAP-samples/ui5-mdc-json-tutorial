@@ -23,11 +23,11 @@ sap.ui.define([
 	};
 
 	const _createFilterField = async (sId, oProperty, oFilterBar) => {
-		const sName = oProperty.name;
+		const sPropertyName = oProperty.name;
 		return new FilterField(sId, {
 			dataType: oProperty.dataType,
-			conditions: "{$filters>/conditions/" + sName + '}',
-			propertyKey: sName,
+			conditions: "{$filters>/conditions/" + sPropertyName + '}',
+			propertyKey: sPropertyName,
 			required: oProperty.required,
 			label: oProperty.label,
 			maxConditions: oProperty.maxConditions,
