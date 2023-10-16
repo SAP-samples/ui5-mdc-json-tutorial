@@ -159,35 +159,35 @@ To determine in our delegate which properties should be associated with a value 
 Accessing the payload allows us to identify if a specific filter field requires a value help when created by the delegate. Using this information, we can tie the filter field with the value help and attach it as a dependent to the filter bar, but this time within the appropriate JavaScript callback. Replace the old implmentation of `_createFilterField` as follows:
 ###### delegate/JSONTableDelegate.js
 ```javascript
-	const _createFilterField = async (sId, oProperty, oFilterBar) => {
-		const sName = oProperty.name;
-		const oFilterField = new FilterField(sId, {
-			dataType: oProperty.dataType,
-			conditions: "{$filters>/conditions/" + sName + '}',
-			propertyKey: sName,
-			required: oProperty.required,
-			label: oProperty.label,
-			maxConditions: oProperty.maxConditions,
-			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}},
-		});
-		if (oFilterBar.getPayload().valueHelp[sPropertyName]) {
-			const aDependents = oFilterBar.getDependents()
-			let oValueHelp = aDependents.find(oD => oD.getId().includes(sPropertyName));
-			oValueHelp ??= await _createValueHelp(oFilterBar, sPropertyName)
-			oFilterField.setValueHelp(oValueHelp);
-		}
-		return oFilterField;
-	}
-
-	const _createValueHelp = async (oFilterBar, sName) => {
-		const aKey = "mdc.tutorial.view.fragment.";
+	const _createValueHelp = (oFilterBar, sPropertyName) => {
+		const aKey = "mdc.sample.view.fragment.";
 		return Fragment.load({
-			name: aKey + oFilterBar.getPayload().valueHelp[sName]
-		}).then(oValueHelp => {
+			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]
+		}).then((oValueHelp) => {
 			oFilterBar.addDependent(oValueHelp);
 			return oValueHelp;
 		});
-	}
+	};
+
+	const _createFilterField = async (sId, oProperty, oFilterBar) => {
+		const sPropertyName = oProperty.name;
+		const oFilterField = new FilterField(sId, {
+			dataType: oProperty.dataType,
+			conditions: "{$filters>/conditions/" + sPropertyName + '}',
+			propertyKey: sPropertyName,
+			required: oProperty.required,
+			label: oProperty.label,
+			maxConditions: oProperty.maxConditions,
+			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
+		});
+		if (oFilterBar.getPayload().valueHelp[sPropertyName]) {
+			const aDependents = oFilterBar.getDependents();
+			let oValueHelp = aDependents.find((oD) => oD.getId().includes(sPropertyName));
+			oValueHelp ??= await _createValueHelp(oFilterBar, sPropertyName);
+			oFilterField.setValueHelp(oValueHelp);
+		}
+		return oFilterField;
+	};
 ```
 Check that your value helps work by using the suggestion and the value help dialog of the corresponding fields! 🤓
 

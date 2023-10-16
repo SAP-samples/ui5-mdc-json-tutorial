@@ -3,23 +3,17 @@ sap.ui.define([
 	"sap/ui/mdc/table/Column",
 	"sap/m/Text",
 	"sap/ui/core/Core",
-	"mdc/tutorial/model/metadata/JSONPropertyInfo"
+	"mdc/sample/model/metadata/JSONPropertyInfo"
 ], function (
 	TableDelegate, Column, Text, Core, JSONPropertyInfo) {
 	"use strict";
 
 	const JSONTableDelegate = Object.assign({}, TableDelegate);
 
-	JSONTableDelegate.fetchProperties = async () =>
+	JSONTableDelegate.fetchProperties = () =>
 		JSONPropertyInfo.filter((oPI) => oPI.name !== "$search");
 
-	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
-		const oPropertyInfo = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
-		const sId = oTable.getId() + "---col-" + sPropertyName;
-		return Core.byId(sId) ??_createColumn(sId, oPropertyInfo);
-	};
-
-	const _createColumn = async (sId, oPropertyInfo) => {
+	const _createColumn = (sId, oPropertyInfo) => {
 		const sPropertyName = oPropertyInfo.name;
 		return new Column(sId, {
 			propertyKey: sPropertyName,
@@ -31,9 +25,15 @@ sap.ui.define([
 				}
 			})
 		});
-	}
+	};
 
-	JSONTableDelegate.removeItem = async (oTable, oColumn) => {
+	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
+		const oPropertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName);
+		const sId = oTable.getId() + "---col-" + sPropertyName;
+		return Core.byId(sId) ?? await _createColumn(sId, oPropertyInfo);
+	};
+
+	JSONTableDelegate.removeItem = (oTable, oColumn) => {
 		oColumn.destroy();
 		return true; // allow default handling
 	};

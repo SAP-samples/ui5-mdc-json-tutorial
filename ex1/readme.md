@@ -29,18 +29,18 @@ sap.ui.define([
 
 	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
 		const oPropertyInfo = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
-		const sId = oTable.getId() + "---col-" + sName;
-		return Core.byId(sId) ??_createColumn(oPropertyInfo);
+		const sId = oTable.getId() + "---col-" + sPropertyName;
+		return Core.byId(sId) ??_createColumn(sId, oPropertyInfo);
 	};
 
-	const _createColumn = async oPropertyInfo => {
-		const sName = oPropertyInfo.name;
+	const _createColumn = async (sId, oPropertyInfo) => {
+		const sPropertyName = oPropertyInfo.name;
 		return new Column(sId, {
-			propertyKey: sName,
+			propertyKey: sPropertyName,
 			header: oPropertyInfo.label,
 			template: new Text({
 				text: {
-					path: "mountains>" + sName,
+					path: "mountains>" + sPropertyName,
 					type: oPropertyInfo.dataType
 				}
 			})

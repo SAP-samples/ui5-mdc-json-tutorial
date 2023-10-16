@@ -1,6 +1,6 @@
 sap.ui.define([
 	"sap/ui/mdc/FilterBarDelegate",
-	"mdc/tutorial/model/metadata/JSONPropertyInfo",
+	"mdc/sample/model/metadata/JSONPropertyInfo",
 	"sap/ui/mdc/FilterField",
 	"sap/ui/core/Core",
 	"sap/ui/core/Fragment"
@@ -9,17 +9,16 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
+	JSONFilterBarDelegate.fetchProperties = async () => await JSONPropertyInfo;
 
-	JSONFilterBarDelegate.addItem = async (oFilterBar, sPropertyName) => {
-		const oProperty = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
-		const sId = oFilterBar.getId() + "--filter--" + sPropertyName;
-		return Core.byId(sId) ?? _createFilterField(sId, oProperty, oFilterBar);
-	};
-
-	JSONFilterBarDelegate.removeItem = async (oFilterBar, oFilterField) => {
-		oFilterField.destroy();
-		return true; // allow default handling
+	const _createValueHelp = (oFilterBar, sPropertyName) => {
+		const aKey = "mdc.sample.view.fragment.";
+		return Fragment.load({
+			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]
+		}).then((oValueHelp) => {
+			oFilterBar.addDependent(oValueHelp);
+			return oValueHelp;
+		});
 	};
 
 	const _createFilterField = async (sId, oProperty, oFilterBar) => {
@@ -31,26 +30,27 @@ sap.ui.define([
 			required: oProperty.required,
 			label: oProperty.label,
 			maxConditions: oProperty.maxConditions,
-			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}},
+			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
 		});
 		if (oFilterBar.getPayload().valueHelp[sPropertyName]) {
-			const aDependents = oFilterBar.getDependents()
-			let oValueHelp = aDependents.find(oD => oD.getId().includes(sPropertyName));
-			oValueHelp ??= await _createValueHelp(oFilterBar, sPropertyName)
+			const aDependents = oFilterBar.getDependents();
+			let oValueHelp = aDependents.find((oD) => oD.getId().includes(sPropertyName));
+			oValueHelp ??= await _createValueHelp(oFilterBar, sPropertyName);
 			oFilterField.setValueHelp(oValueHelp);
 		}
 		return oFilterField;
-	}
+	};
 
-	const _createValueHelp = async (oFilterBar, sPropertyName) => {
-		const aKey = "mdc.tutorial.view.fragment.";
-		return Fragment.load({
-			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]
-		}).then(oValueHelp => {
-			oFilterBar.addDependent(oValueHelp);
-			return oValueHelp;
-		});
-	}
+	JSONFilterBarDelegate.addItem = async (oFilterBar, sPropertyName) => {
+		const oProperty = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName);
+		const sId = oFilterBar.getId() + "--filter--" + sPropertyName;
+		return Core.byId(sId) ?? await _createFilterField(sId, oProperty, oFilterBar);
+	};
+
+	JSONFilterBarDelegate.removeItem = (oFilterBar, oFilterField) => {
+		oFilterField.destroy();
+		return true; // allow default handling
+	};
 
 	return JSONFilterBarDelegate;
 }, /* bExport= */false);

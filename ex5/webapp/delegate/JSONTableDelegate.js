@@ -5,8 +5,8 @@ sap.ui.define([
 	"sap/ui/core/Core",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"mdc/tutorial/model/metadata/JSONPropertyInfo",
-	"mdc/tutorial/delegate/JSONBaseDelegate"
+	"mdc/sample/model/metadata/JSONPropertyInfo",
+	"mdc/sample/delegate/JSONBaseDelegate"
 ], function (
 	TableDelegate, Column, Text, Core, Filter, FilterOperator, JSONPropertyInfo,
 	JSONBaseDelegate) {
@@ -14,16 +14,10 @@ sap.ui.define([
 
 	const JSONTableDelegate = Object.assign({}, TableDelegate, JSONBaseDelegate);
 
-	JSONTableDelegate.fetchProperties = async () =>
+	JSONTableDelegate.fetchProperties = () =>
 		JSONPropertyInfo.filter((oPI) => oPI.name !== "$search");
 
-	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
-		const oPropertyInfo = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
-		const sId = oTable.getId() + "---col-" + sPropertyName;
-		return Core.byId(sId) ??_createColumn(sId, oPropertyInfo);
-	};
-
-	const _createColumn = async (sId, oPropertyInfo) => {
+	const _createColumn = (sId, oPropertyInfo) => {
 		const sPropertyName = oPropertyInfo.name;
 		return new Column(sId, {
 			propertyKey: sPropertyName,
@@ -35,9 +29,15 @@ sap.ui.define([
 				}
 			})
 		});
-	}
+	};
 
-	JSONTableDelegate.removeItem = async (oTable, oColumn) => {
+	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
+		const oPropertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName);
+		const sId = oTable.getId() + "---col-" + sPropertyName;
+		return Core.byId(sId) ?? await _createColumn(sId, oPropertyInfo);
+	};
+
+	JSONTableDelegate.removeItem = (oTable, oColumn) => {
 		oColumn.destroy();
 		return true; // allow default handling
 	};
@@ -47,24 +47,24 @@ sap.ui.define([
 		oBindingInfo.path = oTable.getPayload().bindingPath;
 	};
 
-	JSONTableDelegate.getFilters = oTable => {
-		const sSearch = Core.byId(oTable.getFilter()).getSearch();
-		const aKeys = oTable.getPayload().searchKeys;
-		let aFilters = TableDelegate.getFilters(oTable)
-		if (sSearch && aKeys) {
-			aFilters = aFilters.concat(_createSearchFilters(sSearch, aKeys));
-		}
-		return aFilters;
-	};
-
 	const _createSearchFilters = (sSearch, aKeys) => {
-		const aFilters = aKeys.map(aKey => new Filter({
+		const aFilters = aKeys.map((aKey) => new Filter({
 			path: aKey,
 			operator: FilterOperator.Contains,
 			value1: sSearch
 		}));
 		return [new Filter(aFilters, false)];
-	}
+	};
+
+	JSONTableDelegate.getFilters = (oTable) => {
+		const sSearch = Core.byId(oTable.getFilter()).getSearch();
+		const aKeys = oTable.getPayload().searchKeys;
+		let aFilters = TableDelegate.getFilters(oTable);
+		if (sSearch && aKeys) {
+			aFilters = aFilters.concat(_createSearchFilters(sSearch, aKeys));
+		}
+		return aFilters;
+	};
 
 	return JSONTableDelegate;
 }, /* bExport= */false);
