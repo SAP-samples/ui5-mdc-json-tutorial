@@ -2,7 +2,7 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-mdc-json-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-mdc-json-tutorial)
 ## Description
 In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, Table, Filter Bar, Value Help, TypeMap, and variant management. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, you should be able to leverage the full potential of the MDC concepts in your own projects.
->⚠️ **Note**: The sap.ui.mdc library is still experimental API and we expect some (but not many) changes for the generally available version with UI5 2.0. 🧪
+>⚠️ **Note**: The sap.ui.mdc library is still experimental API and we expect some (but not many) changes for the generally available version with UI5 2. 🧪
 ### Metadata-Driven Controls
 Metadata-Driven Controls or MDCs are a powerful tool that allows you to create user interfaces dynamically at runtime. The controls are driven by metadata, which gives a description of the data and its characteristics. This way, you don't have to explicitly define every control in your UI, but you can configure and modify them based on the provided metadata. Find more details in the UI5 [Documentation](https://sdk.openui5.org/topic/1dd2aa91115d43409452a271d11be95b) and [API Reference](https://sdk.openui5.org/api/sap.ui.mdc).
 ### Delegates
