@@ -1,7 +1,0 @@
-on: [push]
-jobs:
-  create-setup-zip:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: zip -r mdc.tutorial.zip ex0 -x 'ex0/node_modules/*' 'ex0/readme.md'
