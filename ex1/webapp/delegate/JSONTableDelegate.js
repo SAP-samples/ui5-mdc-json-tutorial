@@ -9,7 +9,7 @@ sap.ui.define([
 
 	const JSONTableDelegate = Object.assign({}, TableDelegate);
 
-	JSONTableDelegate.fetchProperties = async () =>
+	JSONTableDelegate.fetchProperties = () =>
 		JSONPropertyInfo.filter((oPI) => oPI.name !== "$search");
 
 	const _createColumn = (sId, oPropertyInfo) => {
@@ -26,10 +26,10 @@ sap.ui.define([
 		});
 	};
 
-	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
+	JSONTableDelegate.addItem = (oTable, sPropertyName) => {
 		const oPropertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName);
 		const sId = oTable.getId() + "---col-" + sPropertyName;
-		return Core.byId(sId) ?? await _createColumn(sId, oPropertyInfo);
+		return Core.byId(sId) ?? _createColumn(sId, oPropertyInfo);
 	};
 
 	JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {

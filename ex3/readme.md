@@ -159,7 +159,7 @@ To determine in our delegate which properties should be associated with a value 
 Accessing the payload allows us to identify if a specific filter field requires a value help when created by the delegate. Using this information, we can tie the filter field with the value help and attach it as a dependent to the filter bar, but this time within the appropriate JavaScript callback. Replace the old implmentation of `_createFilterField` as follows:
 ###### delegate/JSONTableDelegate.js
 ```javascript
-	const _createValueHelp = (oFilterBar, sPropertyName) => {
+	const _createValueHelp = async (oFilterBar, sPropertyName) => {
 		const aKey = "mdc.tutorial.view.fragment.";
 		return Fragment.load({
 			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]

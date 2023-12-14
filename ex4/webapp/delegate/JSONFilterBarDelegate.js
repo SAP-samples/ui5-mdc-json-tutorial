@@ -11,9 +11,9 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
+	JSONFilterBarDelegate.fetchProperties = () => JSONPropertyInfo;
 
-	const _createValueHelp = (oFilterBar, sPropertyName) => {
+	const _createValueHelp = async (oFilterBar, sPropertyName) => {
 		const aKey = "mdc.tutorial.view.fragment.";
 		return Fragment.load({
 			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]

@@ -9,16 +9,15 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
+	JSONFilterBarDelegate.fetchProperties = () => JSONPropertyInfo;
 
-	const _createValueHelp = (oFilterBar, sPropertyName) => {
+	const _createValueHelp = async (oFilterBar, sPropertyName) => {
 		const aKey = "mdc.tutorial.view.fragment.";
-		return Fragment.load({
+		const oValueHelp = await Fragment.load({
 			name: aKey + oFilterBar.getPayload().valueHelp[sPropertyName]
-		}).then((oValueHelp) => {
-			oFilterBar.addDependent(oValueHelp);
-			return oValueHelp;
 		});
+		oFilterBar.addDependent(oValueHelp);
+		return oValueHelp;
 	};
 
 	const _createFilterField = async (sId, oProperty, oFilterBar) => {

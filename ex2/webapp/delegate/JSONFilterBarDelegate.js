@@ -8,7 +8,7 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
+	JSONFilterBarDelegate.fetchProperties = () => JSONPropertyInfo;
 
 	const _createFilterField = (sId, oProperty, oFilterBar) => {
 		const sPropertyName = oProperty.name;
