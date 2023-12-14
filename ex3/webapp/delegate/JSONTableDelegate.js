@@ -35,11 +35,6 @@ sap.ui.define([
 		return Core.byId(sId) ?? await _createColumn(sId, oPropertyInfo);
 	};
 
-	JSONTableDelegate.removeItem = async (oTable, oColumn) => {
-		oColumn.destroy();
-		return true; // allow default handling
-	};
-
 	JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
 		TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo);
 		oBindingInfo.path = oTable.getPayload().bindingPath;

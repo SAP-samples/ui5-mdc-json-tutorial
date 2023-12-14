@@ -47,11 +47,6 @@ sap.ui.define([
 		});
 	}
 
-	JSONTableDelegate.removeItem = async (oTable, oColumn) => {
-		oColumn.destroy();
-		return true; // allow default handling
-	};
-
 	JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
 		TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo);
 		oBindingInfo.path = oTable.getPayload().bindingPath;

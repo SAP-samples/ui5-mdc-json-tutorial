@@ -47,10 +47,5 @@ sap.ui.define([
 		return Core.byId(sId) ?? await _createFilterField(sId, oProperty, oFilterBar);
 	};
 
-	JSONFilterBarDelegate.removeItem = async (oFilterBar, oFilterField) => {
-		oFilterField.destroy();
-		return true; // allow default handling
-	};
-
 	return JSONFilterBarDelegate;
 }, /* bExport= */false);
