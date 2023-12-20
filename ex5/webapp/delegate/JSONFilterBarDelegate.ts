@@ -5,6 +5,7 @@ import Element from "sap/ui/core/Element"
 import {default as FilterBar, PropertyInfo as FilterBarPropertyInfo} from "sap/ui/mdc/FilterBar"
 import Fragment from "sap/ui/core/Fragment"
 import ValueHelp from "sap/ui/mdc/ValueHelp"
+import JSONBaseDelegate from "./JSONBaseDelegate"
 
 interface FilterBarPayload {
 	valueHelp: {
