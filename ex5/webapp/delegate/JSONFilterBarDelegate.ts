@@ -13,7 +13,7 @@ interface FilterBarPayload {
 	}
 }
 
-var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate)
+var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegate)
 
 JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo
 
