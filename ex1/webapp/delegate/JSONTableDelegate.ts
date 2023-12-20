@@ -1,4 +1,3 @@
-
 import TableDelegate from "sap/ui/mdc/TableDelegate"
 import Text from "sap/m/Text"
 import Element from "sap/ui/core/Element"
@@ -39,7 +38,7 @@ JSONTableDelegate.addItem = async (oTable:Table, sPropertyName:string) => {
 JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
 	TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo)
 	oBindingInfo.path = (oTable.getPayload() as TablePayload).bindingPath
-	oBindingInfo.templateShareable = true;
+	oBindingInfo.templateShareable = true
 }
 
 export default JSONTableDelegate

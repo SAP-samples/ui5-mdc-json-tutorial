@@ -1,4 +1,3 @@
-
 import FilterBarDelegate from "sap/ui/mdc/FilterBarDelegate"
 import JSONPropertyInfo from "mdc/tutorial/model/metadata/JSONPropertyInfo"
 import FilterField from "sap/ui/mdc/FilterField"

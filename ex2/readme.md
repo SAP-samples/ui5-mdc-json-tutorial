@@ -4,46 +4,38 @@ In this exercise, we will create a FilterBarDelegate, add a FilterBar to the XML
 ## Step 1: Create a FilterBarDelegate
 This delegate is responsible for managing the filtering logic for an application. This includes creating and managing filter fields, as well as providing the corresponding PropertyInfo for filter fields.
 ###### delegate/JSONFilterBarDelegate.js
-```javascript
-sap.ui.define([
-	"sap/ui/mdc/FilterBarDelegate",
-	"mdc/tutorial/model/metadata/JSONPropertyInfo",
-	"sap/ui/mdc/FilterField",
-	"sap/ui/core/Core"
-], function (FilterBarDelegate, JSONPropertyInfo, FilterField, Core) {
-	"use strict";
+```typescript
+import FilterBarDelegate from "sap/ui/mdc/FilterBarDelegate"
+import JSONPropertyInfo from "mdc/tutorial/model/metadata/JSONPropertyInfo"
+import FilterField from "sap/ui/mdc/FilterField"
+import Element from "sap/ui/core/Element"
+import {default as FilterBar, PropertyInfo as FilterBarPropertyInfo} from "sap/ui/mdc/FilterBar"
 
-	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
+var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate)
 
-	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
+JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo
 
-	const _createFilterField = (sId, oProperty, oFilterBar) => {
-		const sPropertyName = oProperty.name;
-		const oFilterField = new FilterField(sId, {
-			dataType: oProperty.dataType,
-			conditions: "{$filters>/conditions/" + sPropertyName + '}',
-			propertyKey: sPropertyName,
-			required: oProperty.required,
-			label: oProperty.label,
-			maxConditions: oProperty.maxConditions,
-			delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
-		});
-		return oFilterField;
-	};
+const _createFilterField = (sId:string, oProperty:FilterBarPropertyInfo, oFilterBar:FilterBar) => {
+	const sPropertyName = oProperty.name
+	const oFilterField = new FilterField(sId, {
+		dataType: oProperty.dataType,
+		conditions: `{$filters>/conditions/${sPropertyName}}`,
+		propertyKey: sPropertyName,
+		required: oProperty.required,
+		label: oProperty.label,
+		maxConditions: oProperty.maxConditions,
+		delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
+	})
+	return oFilterField
+}
 
-	JSONFilterBarDelegate.addItem = (oFilterBar, sPropertyName) => {
-		const oProperty = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName);
-		const sId = oFilterBar.getId() + "--filter--" + sPropertyName;
-		return Core.byId(sId) ?? _createFilterField(sId, oProperty, oFilterBar);
-	};
+JSONFilterBarDelegate.addItem = async (oFilterBar:FilterBar, sPropertyName:string) => {
+	const oProperty = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName) as FilterBarPropertyInfo
+	const sId = `${oFilterBar.getId()}--filter--${sPropertyName}`
+	return Element.getElementById(sId) ?? _createFilterField(sId, oProperty, oFilterBar)
+}
 
-	JSONFilterBarDelegate.removeItem = async (oFilterBar, oFilterField) => {
-		oFilterField.destroy();
-		return true; // allow default handling
-	};
-
-	return JSONFilterBarDelegate;
-}, /* bExport= */false);
+export default JSONFilterBarDelegate
 ```
 
 ## Step 2: Use the MDC Filter Bar
@@ -94,27 +86,35 @@ Use the filter association of the table to connect it to the filter bar and add 
 ```
 
 ## Step 3: Enable the Search in the JSONTableDelegate
-To implement the search feature, we need to extend the `JSONTableDelegate` and override the `getFilters` method. We implement a simple search feature by combining several filters and appending them to the regular filter set, which is prepared by the `TableDelegate`.
+To implement the search feature, we need to extend the `JSONTableDelegate` and override the `getFilters` method. We implement a simple search feature by combining several filters and appending them to the regular filter set, which is prepared by the `TableDelegate`. Furthermore, we will add an interface of the `TablePayload`, which defines the information that can be provided there.
 ###### delegate/JSONTableDelegate.js
-```javascript
-	JSONTableDelegate.getFilters = (oTable) => {
-		const sSearch = Core.byId(oTable.getFilter()).getSearch();
-		const aKeys = oTable.getPayload().searchKeys;
-		let aFilters = TableDelegate.getFilters(oTable)
-		if (sSearch && aKeys) {
-			aFilters = aFilters.concat(_createSearchFilters(sSearch, aKeys));
-		}
-		return aFilters;
-	};
 
-	const _createSearchFilters = (sSearch, aKeys) => {
-		const aFilters = aKeys.map(aKey => new Filter({
-			path: aKey,
-			operator: FilterOperator.Contains,
-			value1: sSearch
-		}));
-		return [new Filter(aFilters, false)];
+
+###### delegate/JSONTableDelegate.js
+```typescript
+interface TablePayload {
+	bindingPath: string
+	searchKeys: string[]
+}
+
+const _createSearchFilters = (sSearch:string, aKeys:string[]) => {
+	const aFilters = aKeys.map((aKey) => new Filter({
+		path: aKey,
+		operator: FilterOperator.Contains,
+		value1: sSearch
+	}))
+	return [new Filter(aFilters, false)]
+}
+
+JSONTableDelegate.getFilters = (oTable) => {
+	const sSearch = (Element.getElementById(oTable.getFilter()) as FilterBar).getSearch()
+	const aKeys = (oTable.getPayload() as TablePayload).searchKeys
+	let aFilters = TableDelegate.getFilters(oTable)
+	if (sSearch && aKeys) {
+		aFilters = aFilters.concat(_createSearchFilters(sSearch, aKeys))
 	}
+	return aFilters
+}
 ```
 Go and try out the filter and search functionality in our application. The table should display only the filtered items! 🙌
 

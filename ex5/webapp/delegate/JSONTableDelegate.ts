@@ -7,6 +7,7 @@ import Column from "sap/ui/mdc/table/Column"
 import Filter from "sap/ui/model/Filter"
 import FilterOperator from "sap/ui/model/FilterOperator"
 import FilterBar from "sap/ui/mdc/FilterBar"
+
 interface TablePayload {
 	bindingPath: string
 	searchKeys: string[]

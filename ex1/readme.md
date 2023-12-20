@@ -11,59 +11,55 @@ This file serves as a delegate for a UI5 table. Delegates offer a method to cust
 
 Below is the code for the delegate. It extends the [`sap/ui/mdc/TableDelegate`](https://sdk.openui5.org/api/module:sap/ui/mdc/TableDelegate) and includes functions to extract properties from the JSON metadata provided in `JSONPropertyInfo.js` in the model folder, add items to the table, delete items from the table, and revise the table's binding information. Take a look at the implementation of the methods!
 ###### delegate/JSONTableDelegate.js
-```javascript
-sap.ui.define([
-	"sap/ui/mdc/TableDelegate",
-	"sap/ui/mdc/table/Column",
-	"sap/m/Text",
-	"sap/ui/core/Core",
-	"mdc/tutorial/model/metadata/JSONPropertyInfo"
-], function (
-	TableDelegate, Column, Text, Core, JSONPropertyInfo) {
-	"use strict";
+```typescript
+import TableDelegate from "sap/ui/mdc/TableDelegate"
+import Text from "sap/m/Text"
+import Element from "sap/ui/core/Element"
+import JSONPropertyInfo from "mdc/tutorial/model/metadata/JSONPropertyInfo"
+import {default as Table, PropertyInfo as TablePropertyInfo} from "sap/ui/mdc/Table"
+import Column from "sap/ui/mdc/table/Column"
 
-	const JSONTableDelegate = Object.assign({}, TableDelegate);
+interface TablePayload {
+	bindingPath: string
+}
 
-	JSONTableDelegate.fetchProperties = async () =>
-		JSONPropertyInfo.filter((oPI) => oPI.name !== "$search");
+const JSONTableDelegate = Object.assign({}, TableDelegate)
 
-	JSONTableDelegate.addItem = async (oTable, sPropertyName) => {
-		const oPropertyInfo = JSONPropertyInfo.find(oPI => oPI.name === sPropertyName);
-		const sId = oTable.getId() + "---col-" + sPropertyName;
-		return Core.byId(sId) ?? await _createColumn(sId, oPropertyInfo);
-	};
+JSONTableDelegate.fetchProperties = async () => {
+	return JSONPropertyInfo.filter((oPI) => oPI.name !== "$search")
+}
 
-	const _createColumn = async (sId, oPropertyInfo) => {
-		const sPropertyName = oPropertyInfo.name;
-		return new Column(sId, {
-			propertyKey: sPropertyName,
-			header: oPropertyInfo.label,
-			template: new Text({
-				text: {
-					path: "mountains>" + sPropertyName,
-					type: oPropertyInfo.dataType
-				}
-			})
-		});
-	}
+const _createColumn = (oPropertyInfo:TablePropertyInfo, oTable:Table) => {
+	const sName = oPropertyInfo.name
+	const sId = oTable.getId() + "---col-" + sName
+	return Element.getElementById(sId) ?? new Column(sId, {
+		propertyKey: sName,
+		header: oPropertyInfo.label,
+		template: new Text({
+			text: {
+				path: "mountains>" + sName,
+				type: oPropertyInfo.dataType
+			}
+		})
+	})
+}
 
-	JSONTableDelegate.removeItem = async (oTable, oColumn) => {
-		oColumn.destroy();
-		return true; // allow default handling
-	};
+JSONTableDelegate.addItem = async (oTable:Table, sPropertyName:string) => {
+	const oPropertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName)
+	return _createColumn(oPropertyInfo, oTable)
+}
 
-	JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
-		TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo);
-		oBindingInfo.path = oTable.getPayload().bindingPath;
-		oBindingInfo.templateShareable = true;
-	};
+JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
+	TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo)
+	oBindingInfo.path = (oTable.getPayload() as TablePayload).bindingPath
+	oBindingInfo.templateShareable = true
+}
 
-	return JSONTableDelegate;
-}, /* bExport= */false);
+export default JSONTableDelegate
 ```
 The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.js` file to understand how the two properties `name` and `height` are defined.
 ###### model/metadata/JSONPropertInfo.js
-```javascript
+```json
 	{
 		name: "name",
 		label: "Name",

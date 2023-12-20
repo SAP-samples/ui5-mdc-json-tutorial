@@ -1,6 +1,6 @@
 import TypeMap from "mdc/tutorial/model/type/TypeMap"
 
-export default return {
+export default {
     getTypeMap: function() {
         return TypeMap;
     }
