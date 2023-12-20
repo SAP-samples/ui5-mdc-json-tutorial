@@ -1,8 +1,8 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
 # Exercise 2: How to Use the MDC Filter Bar
-In this exercise, we will create a FilterBarDelegate, add a FilterBar to the xml view, use the filter association of the table and implement the search feature as a combination of filters.
-## Step 1: Create an FilterBarDelegate
-This delegate is responsible for managing the filtering logic for an application. This includes creating and managing filter fields, as well as providing the correpsonding PropertyInfo for filter fields.
+In this exercise, we will create a FilterBarDelegate, add a FilterBar to the XML view, use the filter association of the table and implement the search feature as a combination of filters.
+## Step 1: Create a FilterBarDelegate
+This delegate is responsible for managing the filtering logic for an application. This includes creating and managing filter fields, as well as providing the corresponding PropertyInfo for filter fields.
 ###### delegate/JSONFilterBarDelegate.js
 ```javascript
 sap.ui.define([
@@ -73,7 +73,7 @@ To add a FilterBar to the XML view, we can use the [`sap.ui.mdc.FilterBar`](http
 				</mdc:FilterBar>
 ```
 
-Use the filter association of the table to connect it to the filter bar and add the fields you would like to search in the payload.
+Use the filter association of the table to connect it to the filter bar and add the fields we would like to search in the payload.
 ###### view/Mountains.view.xml
 ```xml
 			<mdc:Table
@@ -116,7 +116,7 @@ To implement the search feature, we need to extend the `JSONTableDelegate` and o
 		return [new Filter(aFilters, false)];
 	}
 ```
-Go and try out the filter and search functionality in your application. The table should display only the filtered items! 🙌
+Go and try out the filter and search functionality in our application. The table should display only the filtered items! 🙌
 
 ![Exercise 2 Result](ex2.png)
 

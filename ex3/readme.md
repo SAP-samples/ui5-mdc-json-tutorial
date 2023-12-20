@@ -3,9 +3,9 @@
 In this exercise, we will build advanced value helps and integrate them into the filter fields. This enhancement will improve the user's filtering experience and expedite the search for desired results.
 
 ## Step 1: Build Value Helps as Fragments
-Let's begin by creating a subfolder in the `view` folder of our web application, and name it `fragment`. Here, we will build two value helps of varying complexity. These value helps are defined in conjunction with the table wrappers, [`MTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MTable) and [`MDCTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MDCTable), which manage the orchestration of the associated table and the communication with the Value Help Dialog.
+Let's begin by creating a subfolder in the `view` folder of our web application, and name it `fragment`. Here, we will build two value helps of varying complexity. These value helps are defined in conjunction with the table wrappers, [`MTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MTable) and [`MDCTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MDCTable), which manage the orchestration of the associated table and the communication with the value help dialog.
 
-Firstly, create `RangeValueHelp.fragment.xml` and insert the following value help template. It includes a simple suggestion (typeahead) for the specific mountain range.
+Firstly, create `RangeValueHelp.fragment.xml` and insert the following value help template. It includes a simple suggestion (type-ahead) for the specific mountain range.
 ###### view/fragment/RangeValueHelp.fragment.xml
 ```xml
 <core:FragmentDefinition
@@ -121,16 +121,16 @@ Next, construct `NameValueHelp.fragment.xml` with the template provided below. T
 
 </core:FragmentDefinition>
 ```
->ℹ️ To simplify matters, we are using the same data set here as in our table. However, in a real scenario, you may want to consider using a value help from a different set of data to find the values, which is entirely possible.
+>ℹ️ To simplify matters, we are using the same data set here as in our table. However, in a real scenario, we may want to consider using a value help from a different set of data to find the values, which is entirely possible.
 ## Step 2: Link Value Helps with Filter Fields
-To utilize the advanced value help in our view, we need to attach it as a dependent of our Filter Bar. This ensures its lifecycle is tied to the Filter Bar and will be terminated along with it, for instance, when the application is closed or navigated away from.
+To utilize the advanced value help in our view, we need to attach it as a dependent of our filter bar. This ensures its lifecycle is tied to the filter bar and will be terminated along with it, for instance, when the application is closed or navigated away from.
 ###### view/Mountains.view.xml
 ```xml
 					<mdc:dependents>
 						<core:Fragment fragmentName="mdc.tutorial.view.fragment.NameValueHelp" type="XML"/>
 					</mdc:dependents>
 ```
-Subsequently, it is crucial to connect the Value Help to the corresponding Filter Field by setting the `valueHelp` association.
+Subsequently, it is crucial to connect the value help to the corresponding filter field by setting the `valueHelp` association.
 ```xml
 						<mdc:FilterField
 							label="Name"
@@ -156,7 +156,7 @@ To determine in our delegate which properties should be associated with a value 
                     p13nMode = "Item,Value">
 ```
 ## Step 4: Add Value Help Creation in Delegate
-Accessing the payload allows us to identify if a specific filter field requires a value help when created by the delegate. Using this information, we can tie the filter field with the value help and attach it as a dependent to the filter bar, but this time within the appropriate JavaScript callback. Replace the old implmentation of `_createFilterField` as follows:
+Accessing the payload allows us to identify if a specific filter field requires a value help if created by the delegate. Using this information, we can tie the filter field to the value help and attach it as a dependent to the filter bar, but this time within the appropriate JavaScript callback. Replace the old implementation of `_createFilterField` as follows:
 ###### delegate/JSONTableDelegate.js
 ```javascript
 	const _createValueHelp = (oFilterBar, sPropertyName) => {
@@ -189,10 +189,10 @@ Accessing the payload allows us to identify if a specific filter field requires 
 		return oFilterField;
 	};
 ```
-Check that your value helps work by using the suggestion and the value help dialog of the corresponding fields! 🤓
+Check that our value helps work by using the suggestion and the value help dialog of the corresponding fields! 🤓
 
 ![Exercise 3 Result](ex3.png)
 ## Summary
-In this exercise, you learned how to construct value helps as fragments and improve the user's filtering experience. These value helps were linked with filter fields and added as dependents to the Filter Bar. Additionally, a delegate specific payload was incorporated into the delegate to specify which properties should have a value help attached.
+In this exercise, we learned how to construct value helps as fragments and improve the user's filtering experience. These value helps were linked with filter fields and added as dependents to the filter bar. Additionally, a delegate specific payload was incorporated into the delegate to specify which properties should have a value help attached.
 
 Proceed to - [Exercise 4](../ex4/readme.md)
