@@ -11,7 +11,7 @@ jobs:
       - run: |
           for dir in ex*/;
             do
-              cd "$dir" && npm i && npm run build && git add dist);
+              (cd "$dir" && npm i && npm run build && git add dist);
             done
           git config user.name github-actions
           git config user.email github-actions@github.com
