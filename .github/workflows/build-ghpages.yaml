@@ -8,8 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
-        with:
-          cache: 'npm'
       - run: |
           for dir in ex*/; do (cd "$dir" && npm ci && ui5 build); done
           git config user.name github-actions
