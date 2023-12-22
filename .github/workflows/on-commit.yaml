@@ -13,8 +13,7 @@ jobs:
             git config user.email github-actions@github.com
             zip -r mdc.tutorial.zip ex0/ -x 'ex0/readme.md'
             git add mdc.tutorial.zip
-            git commit -m "Update mdc.tutorial.zip"
-            git push
+            git commit -m "update mdc.tutorial.zip"
             for dir in ex*/; do
                 (cd "$dir" && npm i && npm run build && git add dist);
             done
