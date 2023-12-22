@@ -3,15 +3,14 @@ on:
     branches:
       - typescript
 jobs:
-  find-paths:
+  build-ghpages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v3
       - run: |
-          for dir in ex*/; do (cd "$dir" && npm i && npm run build); done
+          for dir in ex*/; do (cd "$dir" && npm i && npm run build && git add dist); done
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
           git commit -m "update ghpages"
           git push origin ghpages
