@@ -11,7 +11,7 @@ jobs:
         with:
           cache: 'npm'
       - run: |
-          for dir in ex*/; do (cd "$dir" && npm i && ui5 build); done
+          for dir in ex*/; do (cd "$dir" && npm ci && ui5 build); done
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
