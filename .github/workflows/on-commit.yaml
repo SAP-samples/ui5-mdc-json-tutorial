@@ -19,4 +19,4 @@ jobs:
                 (cd "$dir" && npm i && npm run build && git add dist);
             done
             git commit -m "update ghpages"
-            git push origin typescript:ghpages
+            git push -f origin typescript:ghpages
