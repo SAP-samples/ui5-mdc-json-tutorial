@@ -1,19 +1,19 @@
 on:
   push:
     branches:
-      - main
       - typescript
 jobs:
-  create-setup-zip:
+  find-paths:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Zip setup files
-        run: zip -r mdc.tutorial.zip ex0/ -x 'ex0/readme.md'
-      - name: Commit setup zip
-        run: |
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'npm'
+      - run: |
+          for dir in ex*/; do (cd "$dir" && npm i && ui5 build); done
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add .
-          git commit -m "Update mdc.tutorial.zip"
-          git push
+          git commit -m "update ghpages"
+          git push origin ghpages
