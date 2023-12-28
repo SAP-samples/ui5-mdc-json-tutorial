@@ -16,7 +16,7 @@ sap.ui.define([
 
 	const JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate);
 
-	JSONFilterBarDelegate.fetchProperties = () => JSONPropertyInfo;
+	JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo;
 
 	const _createFilterField = (sId, oProperty, oFilterBar) => {
 		const sPropertyName = oProperty.name;
@@ -32,7 +32,7 @@ sap.ui.define([
 		return oFilterField;
 	};
 
-	JSONFilterBarDelegate.addItem = (oFilterBar, sPropertyName) => {
+	JSONFilterBarDelegate.addItem = async (oFilterBar, sPropertyName) => {
 		const oProperty = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName);
 		const sId = oFilterBar.getId() + "--filter--" + sPropertyName;
 		return Core.byId(sId) ?? _createFilterField(sId, oProperty, oFilterBar);
