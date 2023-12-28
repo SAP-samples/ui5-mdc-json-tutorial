@@ -70,7 +70,7 @@ The final step involves using the type for the `height` property in our `Mountai
 				</mdct:Column>
 ```
 ###### model/metadata/JSONPropertyInfo.js
-```json
+```js
 	},{
 		name: "height",
 		label: "Height",

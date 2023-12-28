@@ -60,7 +60,7 @@ export default JSONTableDelegate
 ```
 The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.js` file to understand how the two properties `name` and `height` are defined.
 ###### model/metadata/JSONPropertInfo.js
-```json
+```js
 	{
 		name: "name",
 		label: "Name",
