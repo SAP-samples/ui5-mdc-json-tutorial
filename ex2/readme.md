@@ -87,7 +87,7 @@ Use the filter association of the table to connect it to the filter bar and add 
 ```
 
 ## Step 3: Enable the Search in the JSONTableDelegate
-To implement the search feature, we need to extend the `JSONTableDelegate` and override the `getFilters` method. We implement a simple search feature by combining several filters and appending them to the regular filter set, which is prepared by the `TableDelegate`. Furthermore, we will add an interface of the `TablePayload`, which defines the information that can be provided there.
+To implement the search feature, we need to extend the `JSONTableDelegate` and override the `getFilters` method. We implement a simple search feature by combining several filters and appending them to the regular filter set, which is prepared by the `TableDelegate`. Furthermore, we will extend interface of the `TablePayload`, which then should also contain the information about the `searchKeys`.
 
 ###### delegate/JSONTableDelegate.js
 ```typescript
