@@ -1,4 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/dist)
 # Exercise 3: How to Build Advanced Value Helps
 In this exercise, we will build advanced value helps and integrate them into the filter fields. This enhancement will improve the user's filtering experience and expedite the search for desired results.
 

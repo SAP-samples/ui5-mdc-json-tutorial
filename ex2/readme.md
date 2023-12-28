@@ -1,4 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/dist)
 # Exercise 2: How to Use the MDC Filter Bar
 In this exercise, we will create a FilterBarDelegate, add a FilterBar to the xml view, use the filter association of the table and implement the search feature as a combination of filters.
 ## Step 1: Create an FilterBarDelegate

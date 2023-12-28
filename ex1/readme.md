@@ -1,4 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)
 # Exercise 1: How to Use the MDC Table
 
 This exercise will guide you through the process of creating a JSONTableDelegate and integrating it with an MDC Table in an XML view. These elements are crucial when building an MDC application that interfaces with JSON data.
