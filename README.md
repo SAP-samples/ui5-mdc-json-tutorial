@@ -22,12 +22,12 @@ The TypeMap is used for defining custom types in our MDCs. If the standard types
 ### Variant Management and Personalization
 Variant management is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a filter bar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
 ## Exercises
-0. [Setup the Project on Our Machine](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/webapp)*)
-1. [How to Use the MDC Table](ex1/) (*[browse sources](ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/webapp)*)
-1. [How to Use the MDC Filter Bar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/webapp)*)
-1. [How to Build Advanced Value Helps](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/webapp)*)
-1. [How to Add Custom Types](ex4/) (*[browse sources](ex4/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex4/webapp)*)
-1. [How to Enable Variant Management](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/webapp)*)
+0. [Setup the Project on Our Machine](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/dist)*)
+1. [How to Use the MDC Table](ex1/) (*[browse sources](ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)*)
+1. [How to Use the MDC Filter Bar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/dist)*)
+1. [How to Build Advanced Value Helps](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/dist)*)
+1. [How to Add Custom Types](ex4/) (*[browse sources](ex4/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex4/dist)*)
+1. [How to Enable Variant Management](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/dist)*)
 ## Requirements
 ### Technical Requirements
 * A current version of [Node.js](https://nodejs.org/) (preferably 18.x)

@@ -1,4 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/dist)
 # Exercise 0: Setup the Project on Your Machine
 
 This exercise will guide through the process of setting up a development environment. We will install Node.js, download and extract a zip file for a project, install project dependencies using npm, and serve the project using the UI5 tooling.
