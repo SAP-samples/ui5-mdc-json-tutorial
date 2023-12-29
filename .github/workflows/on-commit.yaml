@@ -7,15 +7,27 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v4
-        - uses: actions/setup-node@v3
+        - uses: actions/setup-node@v4
+          with:
+            cache: 'npm'
         - run: |
             git config user.name github-actions
             git config user.email github-actions@github.com
             zip -r mdc.tutorial.zip ex0/ -x 'ex0/readme.md' -x '*.png'
             git add mdc.tutorial.zip
             git commit -m "update mdc.tutorial.zip"
-            for dir in ex*/; do
-                (cd "$dir" && npm i && npm run build --clean-dest && git add dist);
+            mkdir tmp
+            cp ex0/package.json ex0/tsconfig.json ex0/ui5.yaml tmp
+            cd tmp
+            npm i
+            mkdir webapp
+            for dir in ../ex*/; do
+                cp -r '$dir'/webapp/* ./webapp
+                npm run build
+                mv dist '$dir'
+                rm -rf webapp/*
             done
+            cd ../
+            git add ex*
             git commit -m "update ghpages"
             git push -f origin typescript:ghpages
