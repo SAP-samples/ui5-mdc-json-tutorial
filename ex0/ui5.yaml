@@ -4,14 +4,6 @@ metadata:
 type: application
 framework:
   name: OpenUI5
-  version: '1.120.0'
-  libraries:
-    - name: themelib_sap_horizon
-    - name: sap.ui.core
-    - name: sap.m
-    - name: sap.f
-    - name: sap.ui.mdc
-    - name: sap.ui.fl
 builder:
   customTasks:
     - name: ui5-tooling-transpile-task
