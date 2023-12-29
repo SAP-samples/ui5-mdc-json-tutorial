@@ -33,12 +33,12 @@ Variant management is a feature that allows users to save their personalization 
 * A current version of [Node.js](https://nodejs.org/) (preferably 18.x)
 * A code editor supporting TypeScript development
 ### Required Knowledge
-* TypeScript knowledge to avoid blind copy&paste without knowing what's going on.
+* TypeScript knowledge to avoid blind copy and paste without knowing what's going on.
 * UI5 knowledge, as this tutorial focuses on the MDC concepts.
 ## Known Issues
 No known issues.
 ## How to obtain support
-This repository is provided as-is, without any support guarantees. However, we are welcome to report issues via the [Issues](../../issues) tab and we'll see what we can do to fix them.
+This repository is provided as-is, without any support guarantees. However, you are welcome to report issues via the [Issues](../../issues) tab and we'll see what we can do to fix them.
 ## Contributing
 If we wish to contribute code, offer fixes or improvements, please send a pull request. Due to legal reasons, contributors will be asked to accept a DCO when they create the first pull request to this project. This happens in an automated fashion during the submission process. SAP uses [the standard DCO text of the Linux Foundation](https://developercertificate.org/).
 ## License
