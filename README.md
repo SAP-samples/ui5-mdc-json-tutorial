@@ -9,7 +9,7 @@ In this tutorial, we will cover some key concepts involving metadata-driven cont
 ### Metadata-Driven Controls
 Metadata-Driven Controls or MDCs are a powerful tool that allows we to create user interfaces dynamically at runtime. The controls are driven by metadata, which gives a description of the data and its characteristics. This way, we don't have to explicitly define every control in our UI, but we can configure and modify them based on the provided metadata. Find more details in the UI5 [Documentation](https://sdk.openui5.org/topic/1dd2aa91115d43409452a271d11be95b) and [API Reference](https://sdk.openui5.org/api/sap.ui.mdc).
 ### Delegates
-Control Delegates are used to implement service or application-specific behavior in our MDCs. They allow developers to customize the default behavior of controls depending on the specific needs of their service or application. This can include things like custom control creation, metadata provision, or data binding.
+Control Delegates are used to implement service or application-specific behavior for our MDCs. They allow developers to customize the default behavior of controls depending on the specific needs of their service or application. This can include things like custom control creation, metadata provision, or data binding.
 ### PropertyInfo
 PropertyInfo is used to define the necessary metadata that should be provided to the controls. This can include information like the control visibility, the data type, or other control-specific settings. PropertyInfo is essential in letting our MDCs know how they should behave.
 ### Used Controls
