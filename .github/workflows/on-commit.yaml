@@ -22,9 +22,9 @@ jobs:
             npm i
             mkdir webapp
             for dir in ../ex*/; do
-                cp -r '$dir'/webapp/* ./webapp
+                cp -r "$dir"/webapp/* ./webapp
                 npm run build
-                mv dist '$dir'
+                mv dist "$dir"
                 rm -rf webapp/*
             done
             cd ../
