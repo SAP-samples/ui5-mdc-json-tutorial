@@ -17,7 +17,7 @@ jobs:
             git add mdc.tutorial.zip
             git commit -m "update mdc.tutorial.zip"
             mkdir tmp
-            cp ex0/package.json ex0/tsconfig.json ex0/ui5.yaml tmp
+            cp ex0/*.json ex0/ui5.yaml tmp
             cd tmp
             npm i
             mkdir webapp
