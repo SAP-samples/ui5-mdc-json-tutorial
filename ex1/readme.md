@@ -98,8 +98,7 @@ Below is the code we can add to content aggregation of the DynamicPage in the XM
 				delegate="{
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',
 					payload: {
-						bindingPath: 'mountains>/mountains',
-						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
+						bindingPath: 'mountains>/mountains'
 					}
 				}">
 				<mdct:Column
