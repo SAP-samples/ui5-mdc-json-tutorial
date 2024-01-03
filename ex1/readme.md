@@ -134,13 +134,13 @@ Below is the code we can add to content aggregation of the DynamicPage in the XM
 				</mdct:Column>
 			</mdc:Table>
 ```
-> ℹ️ Pay attention to how the controls are specified. All the MDCs included in the XML view will initially appear on the screen without any additional personalization. While this may seem superfluous when also providing the c‚ontrol creation method in the delegate, it allows us to establish a default without any hassle. Alternatively, we could opt to not provide any controls here and add them later through personalization.
+> ℹ️ Pay attention to how the controls are specified. All the MDCs included in the XML view will initially appear on the screen without any additional personalization. While this may seem superfluous when also providing the control creation method in the delegate, it allows us to establish a default without any hassle. Alternatively, we could opt to not provide any controls here and add them later through personalization.
 
 Run the application and see how with just the few lines of code we added, we get a personalizable table that shows properties of our JSON data! 😱
 
 ![Exercise 1 Result](ex1.png)
 ## Summary
 
-The main takeaway is that delegates offer a potent mechanism to adapt the behavior of sap.ui.mdc controls without altering the controls themselves. With a custom delegate, we can customize a control to handle a specific type of data, such as JSON data. Furthermore, XML views provide a declarative means to define the user interface for a screen in a UI5 application.
+The main takeaway is that delegates offer a potent mechanism to adapt the behavior of sap.ui.mdc controls without altering the controls themselves. With a custom delegate, we can customize a control to handle a specific type of data, such as JSON data. Furthermore, XML views provide declarative means to define the user interface for a screen in a UI5 application.
 
 Proceed to - [Exercise 2](../ex2/readme.md)
