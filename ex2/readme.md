@@ -115,7 +115,7 @@ JSONTableDelegate.getFilters = (oTable) => {
 	return aFilters
 }
 ```
-Go and try out the filter and search functionality in our application. The table should display only the filtered items! 🙌
+At this point you might need to add missing imports for `Filter`, `FilterOperator`, and `FilterBar`, which you can either do manually or use the "Quick Fix" feature of e.g. Visual Studio Code. Now go and try out the filter and search functionality in our application. The table should display only the filtered items! 🙌
 
 ![Exercise 2 Result](ex2.png)
 
