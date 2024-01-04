@@ -167,7 +167,7 @@ interface FilterBarPayload {
 }
 
 const _createValueHelp = async (oFilterBar:FilterBar, sPropertyName:string) => {
-	const sPath = "mdc.sample.view.fragment."
+	const sPath = "mdc.tutorial.view.fragment."
 	const oValueHelp = await Fragment.load({
 		name: sPath + (oFilterBar.getPayload() as FilterBarPayload).valueHelp[sPropertyName]
 	}) as unknown as ValueHelp
