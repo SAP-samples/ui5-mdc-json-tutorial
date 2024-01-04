@@ -131,7 +131,7 @@ To utilize the advanced value help in our view, we need to attach it as a depend
 						<core:Fragment fragmentName="mdc.tutorial.view.fragment.NameValueHelp" type="XML"/>
 					</mdc:dependents>
 ```
-Subsequently, it is crucial to connect the value help to the corresponding filter field by setting the `valueHelp` association.
+Subsequently, it is crucial to connect the value help to the corresponding filter field by setting the `valueHelp` association. For the other value help, we are going to use a delegate-based method in the next step.
 ```xml
 						<mdc:FilterField
 							label="Name"
