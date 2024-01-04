@@ -30,7 +30,7 @@ Variant management is a feature that allows users to save their personalization 
 1. [How to Enable Variant Management](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/dist)*)
 ## Requirements
 ### Technical Requirements
-* A current version of [Node.js](https://nodejs.org/) (preferably 18.x)
+* A current version of [Node.js](https://nodejs.org/) (preferably 18+)
 * A code editor supporting TypeScript development
 ### Required Knowledge
 * TypeScript knowledge to avoid blind copy and paste without knowing what's going on.
