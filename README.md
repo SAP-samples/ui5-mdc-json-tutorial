@@ -22,7 +22,7 @@ The TypeMap is used for defining custom types in our MDCs. If the standard types
 ### Variant Management and Personalization
 Variant management is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a filter bar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
 ## Exercises
-0. [Setup the Project on Our Machine](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/dist)*)
+0. [Setup the Project on Your Machine](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/dist)*)
 1. [How to Use the MDC Table](ex1/) (*[browse sources](ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)*)
 1. [How to Use the MDC Filter Bar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/dist)*)
 1. [How to Build Advanced Value Helps](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/dist)*)
