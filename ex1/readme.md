@@ -6,14 +6,14 @@ This exercise we will learn how to create a JSONTableDelegate for an MDC Table i
 
 ## Step 1: Create a JSONTableDelegate
 
-Firstly, let's create a new JavaScript file named `JSONTableDelegate.js` inside the `delegate` directory.
+Firstly, let's create a new JavaScript file named `JSONTableDelegate.ts` inside the `delegate` directory.
 
 This file serves as a delegate for a UI5 table. Delegates offer a method to customize the behavior of a control without modifying the control itself. In this exampole, it contains the logic of how the table interacts with the sample JSON data.
 
-Below is the code for the delegate. It extends the [`sap/ui/mdc/TableDelegate`](https://sdk.openui5.org/api/module:sap/ui/mdc/TableDelegate) and includes functions to extract properties from the JSON metadata provided in `JSONPropertyInfo.js` in the model folder, add items to the table, delete items from the table, and revise the table's binding information.
+Below is the code for the delegate. It extends the [`sap/ui/mdc/TableDelegate`](https://sdk.openui5.org/api/module:sap/ui/mdc/TableDelegate) and includes functions to extract properties from the JSON metadata provided in `JSONPropertyInfo.ts` in the model folder, add items to the table, delete items from the table, and revise the table's binding information.
 
 Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case the `bindingPath` is specified, so that the table knows from there to get its data. Take a look at the implementation!
-###### delegate/JSONTableDelegate.js
+###### delegate/JSONTableDelegate.ts
 ```typescript
 import TableDelegate from "sap/ui/mdc/TableDelegate"
 import Text from "sap/m/Text"
@@ -60,8 +60,8 @@ JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
 
 export default JSONTableDelegate
 ```
-The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.js` file to understand how the two properties `name` and `height` are defined.
-###### model/metadata/JSONPropertInfo.js
+The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.ts` file to understand how the two properties `name` and `height` are defined.
+###### model/metadata/JSONPropertInfo.ts
 ```js
 	{
 		name: "name",

@@ -4,7 +4,7 @@
 In this exercise, we will create a FilterBarDelegate, add a FilterBar to the XML view, use the filter association of the table and implement the search feature as a combination of filters.
 ## Step 1: Create a FilterBarDelegate
 This delegate is responsible for managing the filtering logic for an application. This includes creating and managing filter fields, as well as providing the corresponding PropertyInfo for filter fields.
-###### delegate/JSONFilterBarDelegate.js
+###### delegate/JSONFilterBarDelegate.ts
 ```typescript
 import FilterBarDelegate from "sap/ui/mdc/FilterBarDelegate"
 import JSONPropertyInfo from "mdc/tutorial/model/metadata/JSONPropertyInfo"
@@ -89,7 +89,7 @@ Use the filter association of the table to connect it to the filter bar and add 
 ## Step 3: Enable the Search in the JSONTableDelegate
 To implement the search feature, we need to extend the `JSONTableDelegate` and override the `getFilters` method. We implement a simple search feature by combining several filters and appending them to the regular filter set, which is prepared by the `TableDelegate`. Furthermore, we will extend interface of the `TablePayload`, which then should also contain the information about the `searchKeys`.
 
-###### delegate/JSONTableDelegate.js
+###### delegate/JSONTableDelegate.ts
 ```typescript
 interface TablePayload {
 	bindingPath: string

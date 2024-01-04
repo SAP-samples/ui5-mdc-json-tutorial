@@ -158,7 +158,7 @@ To determine in our delegate which properties should be associated with a value 
 ```
 ## Step 4: Add Value Help Creation in Delegate
 Accessing the payload allows us to identify if a specific filter field requires a value help if created by the delegate. Using this information, we can tie the filter field to the value help and attach it as a dependent to the filter bar, but this time within the appropriate callback. Replace the old implementation of `_createFilterField` as follows and add a interface for the `FilterBarPayload`, which defines its content:
-###### delegate/JSONTableDelegate.js
+###### delegate/JSONTableDelegate.ts
 ```typescript
 interface FilterBarPayload {
 	valueHelp: {
