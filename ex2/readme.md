@@ -66,7 +66,7 @@ To add a FilterBar to the XML view, we can use the [`sap.ui.mdc.FilterBar`](http
 				</mdc:FilterBar>
 ```
 
-Use the filter association of the table to connect it to the filter bar and add the fields we would like to search in the payload.
+Use the filter association of the table to connect it to the filter bar and add the fields we would like to search in the payload. For this, the `searchKeys` property is added to the delegate payload.
 ###### view/Mountains.view.xml
 ```xml
 			<mdc:Table
@@ -87,7 +87,7 @@ Use the filter association of the table to connect it to the filter bar and add 
 ```
 
 ## Step 3: Enable the Search in the JSONTableDelegate
-To implement the search feature, we need to extend the `JSONTableDelegate` and override the `getFilters` method. We implement a simple search feature by combining several filters and appending them to the regular filter set, which is prepared by the `TableDelegate`. Furthermore, we will extend interface of the `TablePayload`, which then should also contain the information about the `searchKeys`.
+To implement the search feature, we need to extend the `JSONTableDelegate` and override the `getFilters` method. We implement a simple search feature by combining several filters and appending them to the regular filter set, which is prepared by the `TableDelegate`. Furthermore, we will extend the interface of the `TablePayload`, which then should also contain the information about the `searchKeys`. At this point you might need to add missing imports for `Filter`, `FilterOperator`, and `FilterBar`, which you can either do manually or use the "Quick Fix" feature of e.g. Visual Studio Code.
 
 ###### delegate/JSONTableDelegate.ts
 ```typescript
@@ -115,7 +115,7 @@ JSONTableDelegate.getFilters = (oTable) => {
 	return aFilters
 }
 ```
-At this point you might need to add missing imports for `Filter`, `FilterOperator`, and `FilterBar`, which you can either do manually or use the "Quick Fix" feature of e.g. Visual Studio Code. Now go and try out the filter and search functionality in our application. The table should display only the filtered items! 🙌
+Now go and try out the filter and search functionality in our application. The table should display only the filtered items! 🙌
 
 ![Exercise 2 Result](ex2.png)
 
