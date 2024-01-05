@@ -132,6 +132,7 @@ To utilize the advanced value help in our view, we need to attach it as a depend
 					</mdc:dependents>
 ```
 Subsequently, it is crucial to connect the value help to the corresponding filter field by setting the `valueHelp` association. For the other value help, we are going to use a delegate-based method in the next step.
+###### view/Mountains.view.xml
 ```xml
 						<mdc:FilterField
 							label="Name"
@@ -142,7 +143,7 @@ Subsequently, it is crucial to connect the value help to the corresponding filte
 							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"/>
 ```
 ## Step 3: Incorporate Payload
-To determine in our delegate which properties should be associated with a value help, we can define a delegate-specific payload for this particular table instance. The payload can be added as follows:
+To determine which properties should be associated with a value help in our delegate, we can define a delegate-specific payload for this particular table instance. The payload can be added as follows:
 ###### view/Mountains.view.xml
 ```xml
                 <mdc:FilterBar id="filterbar" delegate="{
@@ -158,7 +159,7 @@ To determine in our delegate which properties should be associated with a value 
 ```
 ## Step 4: Add Value Help Creation in Delegate
 Accessing the payload allows us to identify if a specific filter field requires a value help if created by the delegate. Using this information, we can tie the filter field to the value help and attach it as a dependent to the filter bar, but this time within the appropriate callback. Replace the old implementation of `_createFilterField` as follows and add a interface for the `FilterBarPayload`, which defines its content:
-###### delegate/JSONTableDelegate.ts
+###### delegate/JSONFilterBarDelegate.ts
 ```typescript
 interface FilterBarPayload {
 	valueHelp: {

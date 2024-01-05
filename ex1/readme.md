@@ -2,11 +2,11 @@
 [![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)
 # Exercise 1: How to Use the MDC Table
 
-This exercise we will learn how to create a JSONTableDelegate for an MDC Table in an XMLView. These elements are crucial when building an MDC application that interfaces with JSON data.
+This exercise we will learn how to create a JSONTableDelegate for an MDC Table in an XMLView. These elements are crucial when building an MDC application that interfacts with JSON data.
 
 ## Step 1: Create a JSONTableDelegate
 
-Firstly, let's create a new JavaScript file named `JSONTableDelegate.ts` inside the `delegate` directory.
+Firstly, let's create a new directory named `delegate` within the `webapp` directory. Also, add a JavaScript file named `JSONTableDelegate.ts` inside the `delegate` directory.
 
 This file serves as a delegate for a UI5 table. Delegates offer a method to customize the behavior of a control without modifying the control itself. In this exampole, it contains the logic of how the table interacts with the sample JSON data.
 
@@ -84,7 +84,7 @@ Next, let's enhance the XML view named `Mountains.view.xml` in the `view` direct
 
 This XML view defines the user interface for a screen in our UI5 application. The view comprises a DynamicPage with a Table control in its content area. The table is set up to use our custom JSONTableDelegate.
 
-Below is the code we can add to content aggregation of the DynamicPage in the XML view. It includes a table with columns for name, height, range, first ascent, countries, and parent mountain, along with the data bindings. The corresponding model is automatically generated based on our sample data via the `manifest.json`.
+Below is the code we can add to the content aggregation of the DynamicPage in the XML view. It includes a table with columns for name, height, range, first ascent, countries, and parent mountain, along with the data bindings. The corresponding model is automatically generated based on our sample data via the `manifest.json`.
 ###### view/Mountains.view.xml
 ```xml
 			<mdc:Table
@@ -135,7 +135,7 @@ Below is the code we can add to content aggregation of the DynamicPage in the XM
 ```
 > ℹ️ Pay attention to how the controls are specified. All the MDCs included in the XML view will initially appear on the screen without any additional personalization. While this may seem superfluous when also providing the control creation method in the delegate, it allows us to establish a default without any hassle. Alternatively, we could opt to not provide any controls here and add them later through personalization.
 
-Run the application and see how with just the few lines of code we added, we get a personalizable table that shows properties of our JSON data! 😱
+Run the application and see how, with just the few lines of code we added, we get a personalizable table that shows properties of our JSON data! 😱
 
 ![Exercise 1 Result](ex1.png)
 ## Summary
