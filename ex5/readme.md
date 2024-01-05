@@ -13,7 +13,7 @@ We'll utilize the `sap/ui/fl/variants/VariantManagement` control. This does not 
 				</f:heading>
 			</f:DynamicPageTitle>
 ```
-Try it and create your favorite variant! How easy was that? 😎
+Try it and create your favorite variant! How easy was that? 😎 The following image shows a custom variant named "Very High Mountains" that adds a FilterField for the `Height` property.
 
 ![Exercise 5 Result](ex5.png)
 
