@@ -66,7 +66,7 @@ To add a FilterBar to the XML view, we can use the [`sap.ui.mdc.FilterBar`](http
 				</mdc:FilterBar>
 ```
 
-Use the filter association of the table to connect it to the filter bar and add the fields we would like to search in the payload. For this, the `searchKeys` property is added to the delegate payload.
+Use the filter association of the table to connect it to the filter bar and add the fields we would like to search in the payload. For this, add the `searchKeys` property to the delegate payload.
 ###### view/Mountains.view.xml
 ```xml
 			<mdc:Table

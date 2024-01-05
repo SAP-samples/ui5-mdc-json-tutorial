@@ -2,13 +2,13 @@
 [![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)
 # Exercise 1: How to Use the MDC Table
 
-This exercise we will learn how to create a JSONTableDelegate for an MDC Table in an XMLView. These elements are crucial when building an MDC application that interfacts with JSON data.
+This exercise we will learn how to create a JSONTableDelegate for an MDC Table in an XMLView. These elements are crucial when building an MDC application that interacts with JSON data.
 
 ## Step 1: Create a JSONTableDelegate
 
 Firstly, let's create a new directory named `delegate` within the `webapp` directory. Also, add a JavaScript file named `JSONTableDelegate.ts` inside the `delegate` directory.
 
-This file serves as a delegate for a UI5 table. Delegates offer a method to customize the behavior of a control without modifying the control itself. In this exampole, it contains the logic of how the table interacts with the sample JSON data.
+This file serves as a delegate for a UI5 table. Delegates offer a method to customize the behavior of a control without modifying the control itself. In this example, it contains the logic of how the table interacts with the sample JSON data.
 
 Below is the code for the delegate. It extends the [`sap/ui/mdc/TableDelegate`](https://sdk.openui5.org/api/module:sap/ui/mdc/TableDelegate) and includes functions to extract properties from the JSON metadata provided in `JSONPropertyInfo.ts` in the model folder, add items to the table, delete items from the table, and revise the table's binding information.
 
