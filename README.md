@@ -5,7 +5,7 @@ In this tutorial, we will cover some key concepts involving metadata-driven cont
 
 >⚠️ **Note**: The sap.ui.mdc library is still experimental API and we expect some (but not many) changes for the generally available version with UI5 2.0. 🧪
 
->ℹ️ This version of the tutorial uses TypeScript. You can still find the JavaScript version [here](https://github.com/SAP-samples/ui5-mdc-json-tutorial/tree/main), but that one will not receive any more updates or additions. We recommend using sap.ui.mdc with TypeScript.
+>ℹ️ This version of the tutorial uses TypeScript. You can still find the JavaScript version [here](https://github.com/SAP-samples/ui5-mdc-json-tutorial/tree/javascript), but that one will not receive any more updates or additions. We recommend using sap.ui.mdc with TypeScript.
 ### Metadata-Driven Controls
 Metadata-Driven Controls or MDCs are a powerful tool that allows we to create user interfaces dynamically at runtime. The controls are driven by metadata, which gives a description of the data and its characteristics. This way, we don't have to explicitly define every control in our UI, but we can configure and modify them based on the provided metadata. Find more details in the UI5 [Documentation](https://sdk.openui5.org/topic/1dd2aa91115d43409452a271d11be95b) and [API Reference](https://sdk.openui5.org/api/sap.ui.mdc).
 ### Delegates
