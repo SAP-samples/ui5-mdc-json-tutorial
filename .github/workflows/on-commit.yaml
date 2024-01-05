@@ -1,7 +1,7 @@
 on:
     push:
       branches:
-        - typescript
+        - main
 jobs:
     on-commit:
         runs-on: ubuntu-latest
@@ -33,4 +33,4 @@ jobs:
             cd ../
             git add ex*
             git commit -m "update ghpages"
-            git push -f origin typescript:ghpages
+            git push -f origin main:ghpages
