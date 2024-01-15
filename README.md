@@ -7,18 +7,18 @@ In this tutorial, we will cover some key concepts involving metadata-driven cont
 
 >ℹ️ This version of the tutorial uses TypeScript. You can still find the JavaScript version [here](https://github.com/SAP-samples/ui5-mdc-json-tutorial/tree/javascript), but that one will not receive any more updates or additions. We recommend using sap.ui.mdc with TypeScript.
 ### Metadata-Driven Controls
-Metadata-Driven Controls or MDCs are a powerful tool that allows we to create user interfaces dynamically at runtime. The controls are driven by metadata, which gives a description of the data and its characteristics. This way, we don't have to explicitly define every control in our UI, but we can configure and modify them based on the provided metadata. Find more details in the UI5 [Documentation](https://sdk.openui5.org/topic/1dd2aa91115d43409452a271d11be95b) and [API Reference](https://sdk.openui5.org/api/sap.ui.mdc).
+Metadata-Driven Controls or MDCs are a powerful tool that allows us to create user interfaces dynamically at runtime. The controls are driven by metadata, which gives a description of the data and its characteristics. This way, we don't have to explicitly define every control in our UI, but we can configure and modify them based on the provided metadata. Find more details in the UI5 [Documentation](https://sdk.openui5.org/topic/1dd2aa91115d43409452a271d11be95b) and [API Reference](https://sdk.openui5.org/api/sap.ui.mdc).
 ### Delegates
 Control Delegates are used to implement service or application-specific behavior for our MDCs. They allow developers to customize the default behavior of controls depending on the specific needs of their service or application. This can include things like custom control creation, metadata provision, or data binding.
 ### PropertyInfo
 PropertyInfo is used to define the necessary metadata that should be provided to the controls. This can include information like the control visibility, the data type, or other control-specific settings. PropertyInfo is essential in letting our MDCs know how they should behave.
 ### Used Controls
 These are some specific types of MDCs that we can use in our applications:
-- **Table**: This control lets we display data in a tabular format. We can define columns and rows based on the provided metadata.
+- **Table**: This control lets us display data in a tabular format. We can define columns and rows based on the provided metadata.
 - **Filter Bar**: This control provides a user interface for creating complex filter conditions. It can be used in conjunction with a Table control to filter the displayed data.
 - **Value Help**: This control is used to assist the user in inputting data. It can provide suggestions or a list of possible values to choose from based on the provided metadata.
 ### Custom Types
-The TypeMap is used for defining custom types in our MDCs. If the standard types provided are not sufficient for our needs, we can add our own using the TypeMap. This gives we even more flexibility in customizing our controls.
+The TypeMap is used for defining custom types in our MDCs. If the standard types provided are not sufficient for our needs, we can add our own using the TypeMap. This gives us even more flexibility in customizing our controls.
 ### Variant Management and Personalization
 Variant management is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a filter bar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
 ## Exercises
