@@ -1,7 +1,7 @@
 # UI5 MDC Tutorial
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-mdc-json-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-mdc-json-tutorial)
 ## Description
-In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, table, filter bar, ValueHelp, TypeMap, and variant management. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, we should be able to leverage the full potential of the MDC concepts in our own projects.
+In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, table, FilterBar, ValueHelp, TypeMap, and variant management. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, we should be able to leverage the full potential of the MDC concepts in our own projects.
 
 >⚠️ **Note**: The sap.ui.mdc library is still experimental API and we expect some (but not many) changes for the generally available version with UI5 2.0. 🧪
 
@@ -15,16 +15,16 @@ PropertyInfo is used to define the necessary metadata that should be provided to
 ### Used Controls
 These are some specific types of MDCs that we can use in our applications:
 - **Table**: This control lets us display data in a tabular format. We can define columns and rows based on the provided metadata.
-- **Filter Bar**: This control provides a user interface for creating complex filter conditions. It can be used in conjunction with a Table control to filter the displayed data.
+- **FilterBar**: This control provides a user interface for creating complex filter conditions. It can be used in conjunction with a Table control to filter the displayed data.
 - **ValueHelp**: This control is used to assist the user in inputting data. It can provide suggestions or a list of possible values to choose from based on the provided metadata.
 ### Custom Types
 The TypeMap is used for defining custom types in our MDCs. If the standard types provided are not sufficient for our needs, we can add our own using the TypeMap. This gives us even more flexibility in customizing our controls.
 ### Variant Management and Personalization
-Variant management is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a filter bar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
+Variant management is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a FilterBar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
 ## Exercises
 0. [Setup the Project on Your Machine](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/dist)*)
 1. [How to Use the MDC Table](ex1/) (*[browse sources](ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)*)
-1. [How to Use the MDC Filter Bar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/dist)*)
+1. [How to Use the MDC FilterBar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/dist)*)
 1. [How to Build Advanced ValueHelps](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/dist)*)
 1. [How to Add Custom Types](ex4/) (*[browse sources](ex4/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex4/dist)*)
 1. [How to Enable Variant Management](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/dist)*)

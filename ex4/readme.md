@@ -60,7 +60,7 @@ import JSONBaseDelegate from "./JSONBaseDelegate"
 var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegate)
 ```
 ## Step 4: Add Type Definition
-The final step involves using the type for the `height` property in our `Mountains.view.xml` file and adding it to the `PropertyInfo.ts` file, from where it will be assigned automatically to all other columns and filter fields via the delegates.
+The final step involves using the type for the `height` property in our `Mountains.view.xml` file and adding it to the `PropertyInfo.ts` file, from where it will be assigned automatically to all other columns and FilterFields via the delegates.
 ###### view/Mountains.view.xml
 ```xml
 				<mdct:Column
@@ -85,7 +85,7 @@ The final step involves using the type for the `height` property in our `Mountai
 		dataType: "mdc.tutorial.model.type.LengthMeter"
 	},{
 ```
-Check if the application now shows the meters properly in filter fields and columns! 🏔️
+Check if the application now shows the meters properly in FilterFields and columns! 🏔️
 
 ![Exercise 4 Result](ex4.png)
 
