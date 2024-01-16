@@ -1,12 +1,12 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
 [![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/dist)
-# Exercise 3: How to Build Advanced ValueHelps
-In this exercise, we will build advanced ValueHelps and integrate them into the FilterFields. This enhancement will improve the user's filtering experience and expedite the search for desired results.
+# Exercise 3: How to Build Advanced Value Helps
+In this exercise, we will build advanced value helps and integrate them into the FilterFields. This enhancement will improve the user's filtering experience and expedite the search for desired results.
 
-## Step 1: Build ValueHelps as Fragments
-Let's begin by creating a subfolder in the `view` folder of our web application, and name it `fragment`. Here, we will build two ValueHelps of varying complexity. These ValueHelps are defined in conjunction with the table wrappers, [`MTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MTable) and [`MDCTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MDCTable), which manage the orchestration of the associated table and the communication with the ValueHelp dialog.
+## Step 1: Build Value Helps as Fragments
+Let's begin by creating a subfolder in the `view` folder of our web application, and name it `fragment`. Here, we will build two value helps of varying complexity. These ValueHelps are defined in conjunction with the table wrappers, [`MTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MTable) and [`MDCTable`](https://sdk.openui5.org/api/sap.ui.mdc.valuehelp.content.MDCTable), which manage the orchestration of the associated table and the communication with the ValueHelp dialog.
 
-Firstly, create `RangeValueHelp.fragment.xml` and insert the following ValueHelp template. It includes a simple suggestion (type-ahead) for the specific mountain range.
+Firstly, create `RangeValueHelp.fragment.xml` and insert the following value help template. It includes a simple suggestion (type-ahead) for the specific mountain range.
 ###### view/fragment/RangeValueHelp.fragment.xml
 ```xml
 <core:FragmentDefinition
@@ -45,7 +45,7 @@ Firstly, create `RangeValueHelp.fragment.xml` and insert the following ValueHelp
 
 </core:FragmentDefinition>
 ```
-Next, construct `NameValueHelp.fragment.xml` with the template provided below. This time we are incorporating a comprehensive ValueHelp dialog with a selection table. The dialog will also host the default ValueHelp condition tab.
+Next, construct `NameValueHelp.fragment.xml` with the template provided below. This time we are incorporating a comprehensive value help dialog with a selection table. The dialog will also host the default ValueHelp condition tab.
 ###### view/fragment/NameValueHelp.fragment.xml
 ```xml
 <core:FragmentDefinition

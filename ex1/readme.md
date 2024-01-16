@@ -11,7 +11,7 @@ This file serves as a delegate for a UI5 table. Delegates offer a method to cust
 
 Below is the code for the delegate. It extends the [`sap/ui/mdc/TableDelegate`](https://sdk.openui5.org/api/module:sap/ui/mdc/TableDelegate) and includes functions to extract properties from the JSON metadata provided in `JSONPropertyInfo.ts` in the model folder, add items to the table, delete items from the table, and revise the table's binding information.
 
-Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case, the `bindingPath`` is specified, so that the table knows from there to get its data. Take a look at the implementation!
+Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case, the `bindingPath` is specified, so that the table knows from there to get its data. Take a look at the implementation!
 ###### delegate/JSONTableDelegate.ts
 ```typescript
 import TableDelegate from "sap/ui/mdc/TableDelegate"
