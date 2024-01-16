@@ -1,10 +1,10 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
 [![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/dist)
 # Exercise 5: How to Enable Variant Management
-Now that we've activated all of the remarkable features highlighted in the previous exercises, there's just one more step to complete. We want our users to have the ability to save their settings that they've applied in the sap.ui.mdc controls. To achieve this, we'll incorporate a [`VariantManagement`](https://sdk.openui5.org/api/sap.ui.fl.variants.VariantManagement) control.
+Now that we've activated all of the remarkable features highlighted in the previous exercises, there's just one more step to complete. We want our users to have the ability to save the settings that they've applied in the sap.ui.mdc controls. To achieve this, we'll incorporate a [`VariantManagement`](https://sdk.openui5.org/api/sap.ui.fl.variants.VariantManagement) control.
 
 ## Step 1: Incorporate Variant Management
-We'll utilize the `sap/ui/fl/variants/VariantManagement` control. This does not only provide persistency for user settings, but also offers support for key user adaptations. The implementation is straightforward, replace the Title control as follows:
+We'll utilize the `sap/ui/fl/variants/VariantManagement` control. This does not only provide persistence for user settings but also offers support for key user adaptations. The implementation is straightforward, replace the Title control as follows:
 ###### view/Mountains.view.xml
 ```xml
 			<f:DynamicPageTitle>

@@ -1,8 +1,7 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
 [![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)
 # Exercise 1: How to Use the MDC Table
-
-This exercise we will learn how to create a JSONTableDelegate for an MDC Table in an XMLView. These elements are crucial when building an MDC application that interacts with JSON data.
+In this exercise we will learn how to create a JSONTableDelegate for an MDC Table in an XMLView. These elements are crucial when building an MDC application that interacts with JSON data.
 
 ## Step 1: Create a JSONTableDelegate
 
@@ -12,7 +11,7 @@ This file serves as a delegate for a UI5 table. Delegates offer a method to cust
 
 Below is the code for the delegate. It extends the [`sap/ui/mdc/TableDelegate`](https://sdk.openui5.org/api/module:sap/ui/mdc/TableDelegate) and includes functions to extract properties from the JSON metadata provided in `JSONPropertyInfo.ts` in the model folder, add items to the table, delete items from the table, and revise the table's binding information.
 
-Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case the `bindingPath` is specified, so that the table knows from there to get its data. Take a look at the implementation!
+Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case, the `bindingPath`` is specified, so that the table knows from there to get its data. Take a look at the implementation!
 ###### delegate/JSONTableDelegate.ts
 ```typescript
 import TableDelegate from "sap/ui/mdc/TableDelegate"
@@ -60,7 +59,7 @@ JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
 
 export default JSONTableDelegate
 ```
-The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.ts` file to understand how the two properties `name` and `height` are defined.
+The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.ts` file to understand how the two properties, `name` and `height` are defined.
 ###### model/metadata/JSONPropertInfo.ts
 ```js
 	{
@@ -135,7 +134,7 @@ Below is the code we can add to the content aggregation of the DynamicPage in th
 ```
 > ℹ️ Pay attention to how the controls are specified. All the MDCs included in the XML view will initially appear on the screen without any additional personalization. While this may seem superfluous when also providing the control creation method in the delegate, it allows us to establish a default without any hassle. Alternatively, we could opt to not provide any controls here and add them later through personalization.
 
-Run the application and see how, with just the few lines of code we added, we get a personalizable table that shows properties of our JSON data! 😱
+Run the application and see how, with just a few lines of code we added, we get a personalizable table that shows the properties of our JSON data! 😱
 
 ![Exercise 1 Result](ex1.png)
 ## Summary

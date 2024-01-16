@@ -1,7 +1,7 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
 [![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex4/dist)
 # Exercise 4: How to Add Custom Types
-At his point the application can display the height of the mountains. However, it lacks the corresponding unit, "meters", which would provide a more accurate description. This exercise will illustrate how to add specific types and integrate them with the sap.ui.mdc controls.
+At this point the application can display the height of the mountains. However, it lacks the corresponding unit, "meters", which would provide a more accurate description. This exercise will illustrate how to add specific types and integrate them with the sap.ui.mdc controls.
 
 ## Step 1: Add a New Type
 Begin by creating a new folder named `type` within the `model` folder of the application. Inside this folder, create a file called `LengthMeter.ts`. While the name might seem unusual, it's derived from the corresponding cldr unit.
@@ -19,7 +19,7 @@ export default class LengthMeter extends Integer {
 ```
 >ℹ️ This is only an exemplary type, which makes not much sense and if we look very carefully we might find some issues with it. For a complete implementation of a custom type, see the corresponding article in the [UI5 Documentation](https://sdk.openui5.org/topic/07e4b920f5734fd78fdaa236f26236d8).
 ## Step 2: Add the Type Map
-In the same `type` folder, create a file named `TypeMap.ts`. This file will define a module that extends the `sap/ui/mdc/DefaultTypeMap`. This extension allows us to supplement the default set of type mappings with our specific type `LengthMeter`. Remember to import and freeze our custom type map as indicated in the following snippet.
+In the same `type` folder, create a file named `TypeMap.ts`. This file will define a module that extends the `sap/ui/mdc/DefaultTypeMap`. This extension allows us to supplement the default set of type mappings with our specific type `LengthMeter`. Remember to import and freeze our custom-type map as indicated in the following snippet.
 ###### model/type/TypeMap.ts
 ```typescript
 import DefaultTypeMap from "sap/ui/mdc/DefaultTypeMap"
@@ -46,7 +46,7 @@ export default {
     }
 }
 ```
-In both `JSONTableDelegate` and `JSONFilterBarDelegate` files, import and add the new `JSONBaseDelegate` to the assign call as a third argument.
+In both `JSONTableDelegate` and `JSONFilterBarDelegate` files, import and add the new `JSONBaseDelegate` to the assigned call as a third argument.
 ###### delegate/JSONTableDelegate.ts
 ```typescript
 import JSONBaseDelegate from "./JSONBaseDelegate"
@@ -60,7 +60,7 @@ import JSONBaseDelegate from "./JSONBaseDelegate"
 var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegate)
 ```
 ## Step 4: Add Type Definition
-The final step involves using the type for the `height` property in our `Mountains.view.xml` file and adding it to the `PropertyInfo.ts` file, from where it will be assigned automaticall to all other columns and filter fields via the delegates.
+The final step involves using the type for the `height` property in our `Mountains.view.xml` file and adding it to the `PropertyInfo.ts` file, from where it will be assigned automatically to all other columns and filter fields via the delegates.
 ###### view/Mountains.view.xml
 ```xml
 				<mdct:Column
