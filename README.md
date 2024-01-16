@@ -1,7 +1,7 @@
 # UI5 MDC Tutorial
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-mdc-json-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-mdc-json-tutorial)
 ## Description
-In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, table, FilterBar, ValueHelp, TypeMap, and variant management. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, we should be able to leverage the full potential of the MDC concepts in our own projects.
+In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, table, FilterBar, ValueHelp, TypeMap, and VariantManagement. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, we should be able to leverage the full potential of the MDC concepts in our own projects.
 
 >⚠️ **Note**: The sap.ui.mdc library is still experimental API and we expect some (but not many) changes for the generally available version with UI5 2.0. 🧪
 
@@ -19,15 +19,15 @@ These are some specific types of MDCs that we can use in our applications:
 - **ValueHelp**: This control is used to assist the user in inputting data. It can provide suggestions or a list of possible values to choose from based on the provided metadata.
 ### Custom Types
 The TypeMap is used for defining custom types in our MDCs. If the standard types provided are not sufficient for our needs, we can add our own using the TypeMap. This gives us even more flexibility in customizing our controls.
-### Variant Management and Personalization
-Variant management is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a FilterBar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
+### VariantManagement and Personalization
+VariantManagement is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a FilterBar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
 ## Exercises
 0. [Setup the Project on Your Machine](ex0/) (*[browse sources](ex0/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/dist)*)
 1. [How to Use the MDC Table](ex1/) (*[browse sources](ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)*)
 1. [How to Use the MDC FilterBar](ex2/) (*[browse sources](ex2/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/dist)*)
 1. [How to Build Advanced ValueHelps](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/dist)*)
 1. [How to Add Custom Types](ex4/) (*[browse sources](ex4/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex4/dist)*)
-1. [How to Enable Variant Management](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/dist)*)
+1. [How to Enable VariantManagement](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/dist)*)
 ## Requirements
 ### Technical Requirements
 * A current version of [Node.js](https://nodejs.org/) (preferably 18+)
