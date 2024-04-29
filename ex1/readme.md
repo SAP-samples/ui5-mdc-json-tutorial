@@ -59,6 +59,9 @@ JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
 
 export default JSONTableDelegate
 ```
+
+> ℹ️ The `fetchProperties` is a special function as its return value is used for further UI adaptation functionalities. Due to this, the result of this function must be kept stable throughout the lifecycle of your application. Any changes of the returned values might result in undesired effects. As we're using a PropertyInfo at this point, be aware to keep it stable throughout the lifecycle of your application.
+
 The PropertyInfo provides all necessary metadata for the MDC Table to function. Take a look at this excerpt of the `JSONPropertyInfo.ts` file to understand how the two properties, `name` and `height` are defined.
 ###### model/metadata/JSONPropertInfo.ts
 ```js
@@ -133,6 +136,8 @@ Below is the code we can add to the content aggregation of the DynamicPage in th
 			</mdc:Table>
 ```
 > ℹ️ Pay attention to how the controls are specified. All the MDCs included in the XML view will initially appear on the screen without any additional personalization. While this may seem superfluous when also providing the control creation method in the delegate, it allows us to establish a default without any hassle. Alternatively, we could opt to not provide any controls here and add them later through personalization.
+
+> ℹ️ The columns we define in our table are used for UI adaptation functionalities like the aforementioned `fetchProperties` function. Hence, the values must again be kept stable throughout the lifecycle of your application to prevent undesired effects. For this reason, using bindings or changing the aggregation's value dynamically through controller code is not advised.
 
 Run the application and see how, with just a few lines of code we added, we get a personalizable table that shows the properties of our JSON data! 😱
 
