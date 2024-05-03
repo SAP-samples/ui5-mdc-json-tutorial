@@ -1,4 +1,5 @@
 specVersion: '3.2'
+type: application
 metadata:
   name: mdc-json-tutorial
 type: application
