@@ -48,7 +48,8 @@ const _createFilterField = async (id:string, property:FilterBarPropertyInfo, fil
 JSONFilterBarDelegate.addItem = async (filterBar:FilterBar, propertyKey:string) => {
 	const property = JSONPropertyInfo.find((p) => p.key === propertyKey) as FilterBarPropertyInfo
 	const id = `${filterBar.getId()}--filter--${propertyKey}`
-	return Element.getElementById(id) ?? await _createFilterField(id, property, filterBar)
+	const filterField = Element.getElementById(id) as FilterField
+	return filterField ?? _createFilterField(id, property, filterBar)
 }
 
 export default JSONFilterBarDelegate
