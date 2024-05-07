@@ -167,30 +167,30 @@ interface FilterBarPayload {
 	}
 }
 
-const _createValueHelp = async (filterBar:FilterBar, propertyName:string) => {
+const _createValueHelp = async (filterBar:FilterBar, propertyKey:string) => {
 	const path = "mdc.tutorial.view.fragment."
 	const valueHelp = await Fragment.load({
-		name: path + (filterBar.getPayload() as FilterBarPayload).valueHelp[propertyName]
+		name: path + (filterBar.getPayload() as FilterBarPayload).valueHelp[propertyKey]
 	}) as unknown as ValueHelp
 	filterBar.addDependent(valueHelp)
 	return valueHelp
 }
 
 const _createFilterField = async (id:string, property:FilterBarPropertyInfo, filterBar:FilterBar) => {
-	const propertyName = property.name
+	const propertyKey = property.key
 	const filterField = new FilterField(id, {
 		dataType: property.dataType,
-		conditions: `{$filters>/conditions/${propertyName}}`,
-		propertyKey: propertyName,
+		conditions: `{$filters>/conditions/${propertyKey}}`,
+		propertyKey: propertyKey,
 		required: property.required,
 		label: property.label,
 		maxConditions: property.maxConditions,
 		delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
 	})
-	if ((filterBar.getPayload() as FilterBarPayload).valueHelp[propertyName] ) {
+	if ((filterBar.getPayload() as FilterBarPayload).valueHelp[propertyKey] ) {
 		const dependents = filterBar.getDependents()
-		let valueHelp = dependents.find((dependent) => dependent.getId().includes(propertyName)) as ValueHelp
-		valueHelp ??= await _createValueHelp(filterBar, propertyName)
+		let valueHelp = dependents.find((dependent) => dependent.getId().includes(propertyKey)) as ValueHelp
+		valueHelp ??= await _createValueHelp(filterBar, propertyKey)
 		filterField.setValueHelp(valueHelp)
 	}
 	return filterField

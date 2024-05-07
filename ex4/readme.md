@@ -72,13 +72,13 @@ The final step involves using the type for the `height` property in our `Mountai
 ###### model/metadata/JSONPropertyInfo.ts
 ```js
 	},{
-		name: "height",
+		key: "height",
 		label: "Height",
 		visible: true,
 		path: "height",
 		dataType: "mdc.tutorial.model.type.LengthMeter"
 	},{
-		name: "prominence",
+		key: "prominence",
 		label: "Prominence",
 		visible: true,
 		path: "prominence",

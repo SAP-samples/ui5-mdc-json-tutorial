@@ -28,11 +28,11 @@ interface TablePayload {
 const JSONTableDelegate = Object.assign({}, TableDelegate)
 
 JSONTableDelegate.fetchProperties = async () => {
-	return JSONPropertyInfo.filter((oPI) => oPI.name !== "$search")
+	return JSONPropertyInfo.filter((p) => p.key !== "$search")
 }
 
 const _createColumn = (propertyInfo:TablePropertyInfo, table:Table) => {
-	const name = propertyInfo.name
+	const name = propertyInfo.key
 	const id = table.getId() + "---col-" + name
 	return Element.getElementById(id) ?? new Column(id, {
 		propertyKey: name,
@@ -46,8 +46,8 @@ const _createColumn = (propertyInfo:TablePropertyInfo, table:Table) => {
 	})
 }
 
-JSONTableDelegate.addItem = async (table:Table, propertyName:string) => {
-	const propertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === propertyName)
+JSONTableDelegate.addItem = async (table:Table, propertyKey:string) => {
+	const propertyInfo = JSONPropertyInfo.find((p) => p.key === propertyKey)
 	return _createColumn(propertyInfo, table)
 }
 
@@ -63,13 +63,13 @@ The PropertyInfo provides all necessary metadata for the MDC Table to function. 
 ###### model/metadata/JSONPropertInfo.ts
 ```js
 	{
-		name: "name",
+		key: "name",
 		label: "Name",
 		visible: true,
 		path: "name",
 		dataType: "sap.ui.model.type.String"
 	},{
-		name: "height",
+		key: "height",
 		label: "Height",
 		visible: true,
 		path: "height",
