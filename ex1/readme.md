@@ -34,7 +34,8 @@ JSONTableDelegate.fetchProperties = async () => {
 const _createColumn = (propertyInfo:TablePropertyInfo, table:Table) => {
 	const name = propertyInfo.key
 	const id = table.getId() + "---col-" + name
-	return Element.getElementById(id) ?? new Column(id, {
+	const column = Element.getElementById(id) as Column
+	return column ?? new Column(id, {
 		propertyKey: name,
 		header: propertyInfo.label,
 		template: new Text({
