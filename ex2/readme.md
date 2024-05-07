@@ -16,24 +16,24 @@ var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate)
 
 JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo
 
-const _createFilterField = (sId:string, oProperty:FilterBarPropertyInfo, oFilterBar:FilterBar) => {
-	const sPropertyName = oProperty.name
-	const oFilterField = new FilterField(sId, {
-		dataType: oProperty.dataType,
-		conditions: `{$filters>/conditions/${sPropertyName}}`,
-		propertyKey: sPropertyName,
-		required: oProperty.required,
-		label: oProperty.label,
-		maxConditions: oProperty.maxConditions,
+const _createFilterField = (id:string, property:FilterBarPropertyInfo, filterBar:FilterBar) => {
+	const propertyName = property.name
+	const filterField = new FilterField(id, {
+		dataType: property.dataType,
+		conditions: `{$filters>/conditions/${propertyName}}`,
+		propertyKey: propertyName,
+		required: property.required,
+		label: property.label,
+		maxConditions: property.maxConditions,
 		delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
 	})
-	return oFilterField
+	return filterField
 }
 
-JSONFilterBarDelegate.addItem = async (oFilterBar:FilterBar, sPropertyName:string) => {
-	const oProperty = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName) as FilterBarPropertyInfo
-	const sId = `${oFilterBar.getId()}--filter--${sPropertyName}`
-	return Element.getElementById(sId) ?? _createFilterField(sId, oProperty, oFilterBar)
+JSONFilterBarDelegate.addItem = async (filterBar:FilterBar, propertyName:string) => {
+	const property = JSONPropertyInfo.find((oPI) => oPI.name === propertyName) as FilterBarPropertyInfo
+	const id = `${filterBar.getId()}--filter--${propertyName}`
+	return Element.getElementById(id) ?? _createFilterField(id, property, filterBar)
 }
 
 export default JSONFilterBarDelegate
@@ -96,23 +96,23 @@ interface TablePayload {
 	searchKeys: string[]
 }
 
-const _createSearchFilters = (sSearch:string, aKeys:string[]) => {
-	const aFilters = aKeys.map((aKey) => new Filter({
-		path: aKey,
+const _createSearchFilters = (search:string, keys:string[]) => {
+	const filters = keys.map((key) => new Filter({
+		path: key,
 		operator: FilterOperator.Contains,
-		value1: sSearch
+		value1: search
 	}))
-	return [new Filter(aFilters, false)]
+	return [new Filter(filters, false)]
 }
 
-JSONTableDelegate.getFilters = (oTable) => {
-	const sSearch = (Element.getElementById(oTable.getFilter()) as FilterBar).getSearch()
-	const aKeys = (oTable.getPayload() as TablePayload).searchKeys
-	let aFilters = TableDelegate.getFilters(oTable)
-	if (sSearch && aKeys) {
-		aFilters = aFilters.concat(_createSearchFilters(sSearch, aKeys))
+JSONTableDelegate.getFilters = (table) => {
+	const search = (Element.getElementById(table.getFilter()) as FilterBar).getSearch()
+	const keys = (table.getPayload() as TablePayload).searchKeys
+	let filters = TableDelegate.getFilters(table)
+	if (search && keys) {
+		filters = filters.concat(_createSearchFilters(search, keys))
 	}
-	return aFilters
+	return filters
 }
 ```
 Now go and try out the filter and search functionality in our application. The table should display only the filtered items! 🙌

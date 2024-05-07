@@ -18,49 +18,49 @@ JSONTableDelegate.fetchProperties = async () => {
 	return JSONPropertyInfo.filter((oPI) => oPI.name !== "$search")
 }
 
-const _createColumn = (oPropertyInfo:TablePropertyInfo, oTable:Table) => {
-	const sName = oPropertyInfo.name
-	const sId = oTable.getId() + "---col-" + sName
-	return Element.getElementById(sId) ?? new Column(sId, {
-		propertyKey: sName,
-		header: oPropertyInfo.label,
+const _createColumn = (propertyInfo:TablePropertyInfo, table:Table) => {
+	const name = propertyInfo.name
+	const id = table.getId() + "---col-" + name
+	return Element.getElementById(id) ?? new Column(id, {
+		propertyKey: name,
+		header: propertyInfo.label,
 		template: new Text({
 			text: {
-				path: "mountains>" + sName,
-				type: oPropertyInfo.dataType
+				path: "mountains>" + name,
+				type: propertyInfo.dataType
 			}
 		})
 	})
 }
 
-JSONTableDelegate.addItem = async (oTable:Table, sPropertyName:string) => {
-	const oPropertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName)
-	return _createColumn(oPropertyInfo, oTable)
+JSONTableDelegate.addItem = async (table:Table, propertyName:string) => {
+	const propertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === propertyName)
+	return _createColumn(propertyInfo, table)
 }
 
-JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
-	TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo)
-	oBindingInfo.path = (oTable.getPayload() as TablePayload).bindingPath
-	oBindingInfo.templateShareable = true
+JSONTableDelegate.updateBindingInfo = (table, bindingInfo) => {
+	TableDelegate.updateBindingInfo.call(JSONTableDelegate, table, bindingInfo)
+	bindingInfo.path = (table.getPayload() as TablePayload).bindingPath
+	bindingInfo.templateShareable = true
 }
 
-const _createSearchFilters = (sSearch:string, aKeys:string[]) => {
-	const aFilters = aKeys.map((aKey) => new Filter({
-		path: aKey,
+const _createSearchFilters = (search:string, keys:string[]) => {
+	const filters = keys.map((key) => new Filter({
+		path: key,
 		operator: FilterOperator.Contains,
-		value1: sSearch
+		value1: search
 	}))
-	return [new Filter(aFilters, false)]
+	return [new Filter(filters, false)]
 }
 
-JSONTableDelegate.getFilters = (oTable) => {
-	const sSearch = (Element.getElementById(oTable.getFilter()) as FilterBar).getSearch()
-	const aKeys = (oTable.getPayload() as TablePayload).searchKeys
-	let aFilters = TableDelegate.getFilters(oTable)
-	if (sSearch && aKeys) {
-		aFilters = aFilters.concat(_createSearchFilters(sSearch, aKeys))
+JSONTableDelegate.getFilters = (table) => {
+	const search = (Element.getElementById(table.getFilter()) as FilterBar).getSearch()
+	const keys = (table.getPayload() as TablePayload).searchKeys
+	let filters = TableDelegate.getFilters(table)
+	if (search && keys) {
+		filters = filters.concat(_createSearchFilters(search, keys))
 	}
-	return aFilters
+	return filters
 }
 
 export default JSONTableDelegate

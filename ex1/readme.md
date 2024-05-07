@@ -31,30 +31,30 @@ JSONTableDelegate.fetchProperties = async () => {
 	return JSONPropertyInfo.filter((oPI) => oPI.name !== "$search")
 }
 
-const _createColumn = (oPropertyInfo:TablePropertyInfo, oTable:Table) => {
-	const sName = oPropertyInfo.name
-	const sId = oTable.getId() + "---col-" + sName
-	return Element.getElementById(sId) ?? new Column(sId, {
-		propertyKey: sName,
-		header: oPropertyInfo.label,
+const _createColumn = (propertyInfo:TablePropertyInfo, table:Table) => {
+	const name = propertyInfo.name
+	const id = table.getId() + "---col-" + name
+	return Element.getElementById(id) ?? new Column(id, {
+		propertyKey: name,
+		header: propertyInfo.label,
 		template: new Text({
 			text: {
-				path: "mountains>" + sName,
-				type: oPropertyInfo.dataType
+				path: "mountains>" + name,
+				type: propertyInfo.dataType
 			}
 		})
 	})
 }
 
-JSONTableDelegate.addItem = async (oTable:Table, sPropertyName:string) => {
-	const oPropertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName)
-	return _createColumn(oPropertyInfo, oTable)
+JSONTableDelegate.addItem = async (table:Table, propertyName:string) => {
+	const propertyInfo = JSONPropertyInfo.find((oPI) => oPI.name === propertyName)
+	return _createColumn(propertyInfo, table)
 }
 
-JSONTableDelegate.updateBindingInfo = (oTable, oBindingInfo) => {
-	TableDelegate.updateBindingInfo.call(JSONTableDelegate, oTable, oBindingInfo)
-	oBindingInfo.path = (oTable.getPayload() as TablePayload).bindingPath
-	oBindingInfo.templateShareable = true
+JSONTableDelegate.updateBindingInfo = (table, bindingInfo) => {
+	TableDelegate.updateBindingInfo.call(JSONTableDelegate, table, bindingInfo)
+	bindingInfo.path = (table.getPayload() as TablePayload).bindingPath
+	bindingInfo.templateShareable = true
 }
 
 export default JSONTableDelegate

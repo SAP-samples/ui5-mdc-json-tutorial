@@ -17,39 +17,39 @@ var JSONFilterBarDelegate = Object.assign({}, FilterBarDelegate, JSONBaseDelegat
 
 JSONFilterBarDelegate.fetchProperties = async () => JSONPropertyInfo
 
-const _createValueHelp = async (oFilterBar:FilterBar, sPropertyName:string) => {
-	const sPath = "mdc.tutorial.view.fragment."
-	const oValueHelp = await Fragment.load({
-		name: sPath + (oFilterBar.getPayload() as FilterBarPayload).valueHelp[sPropertyName]
+const _createValueHelp = async (filterBar:FilterBar, propertyName:string) => {
+	const path = "mdc.tutorial.view.fragment."
+	const valueHelp = await Fragment.load({
+		name: path + (filterBar.getPayload() as FilterBarPayload).valueHelp[propertyName]
 	}) as unknown as ValueHelp
-	oFilterBar.addDependent(oValueHelp)
-	return oValueHelp
+	filterBar.addDependent(valueHelp)
+	return valueHelp
 }
 
-const _createFilterField = async (sId:string, oProperty:FilterBarPropertyInfo, oFilterBar:FilterBar) => {
-	const sPropertyName = oProperty.name
-	const oFilterField = new FilterField(sId, {
-		dataType: oProperty.dataType,
-		conditions: `{$filters>/conditions/${sPropertyName}}`,
-		propertyKey: sPropertyName,
-		required: oProperty.required,
-		label: oProperty.label,
-		maxConditions: oProperty.maxConditions,
+const _createFilterField = async (id:string, property:FilterBarPropertyInfo, filterBar:FilterBar) => {
+	const propertyName = property.name
+	const filterField = new FilterField(id, {
+		dataType: property.dataType,
+		conditions: `{$filters>/conditions/${propertyName}}`,
+		propertyKey: propertyName,
+		required: property.required,
+		label: property.label,
+		maxConditions: property.maxConditions,
 		delegate: {name: "sap/ui/mdc/field/FieldBaseDelegate", payload: {}}
 	})
-	if ((oFilterBar.getPayload() as FilterBarPayload).valueHelp[sPropertyName] ) {
-		const aDependents = oFilterBar.getDependents()
-		let oValueHelp = aDependents.find((oD) => oD.getId().includes(sPropertyName)) as ValueHelp
-		oValueHelp ??= await _createValueHelp(oFilterBar, sPropertyName)
-		oFilterField.setValueHelp(oValueHelp)
+	if ((filterBar.getPayload() as FilterBarPayload).valueHelp[propertyName] ) {
+		const dependents = filterBar.getDependents()
+		let valueHelp = dependents.find((dependent) => dependent.getId().includes(propertyName)) as ValueHelp
+		valueHelp ??= await _createValueHelp(filterBar, propertyName)
+		filterField.setValueHelp(valueHelp)
 	}
-	return oFilterField
+	return filterField
 }
 
-JSONFilterBarDelegate.addItem = async (oFilterBar:FilterBar, sPropertyName:string) => {
-	const oProperty = JSONPropertyInfo.find((oPI) => oPI.name === sPropertyName) as FilterBarPropertyInfo
-	const sId = `${oFilterBar.getId()}--filter--${sPropertyName}`
-	return Element.getElementById(sId) ?? await _createFilterField(sId, oProperty, oFilterBar)
+JSONFilterBarDelegate.addItem = async (filterBar:FilterBar, propertyName:string) => {
+	const property = JSONPropertyInfo.find((oPI) => oPI.name === propertyName) as FilterBarPropertyInfo
+	const id = `${filterBar.getId()}--filter--${propertyName}`
+	return Element.getElementById(id) ?? await _createFilterField(id, property, filterBar)
 }
 
 export default JSONFilterBarDelegate
