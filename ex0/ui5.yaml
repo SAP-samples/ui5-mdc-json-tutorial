@@ -2,7 +2,9 @@ specVersion: '3.2'
 type: application
 metadata:
   name: mdc-json-tutorial
-type: application
+framework:
+  name: OpenUI5
+  version: '1.120.2'
 builder:
   customTasks:
     - name: ui5-tooling-transpile-task
