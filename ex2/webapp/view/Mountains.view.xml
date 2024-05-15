@@ -54,7 +54,7 @@
 				delegate="{
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',
 					payload: {
-						bindingPath: 'mountains>/mountains'
+						bindingPath: 'mountains>/mountains',
 						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
 					}
 				}">
