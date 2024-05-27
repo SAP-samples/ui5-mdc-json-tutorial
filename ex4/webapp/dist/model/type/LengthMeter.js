@@ -1,0 +1,2 @@
+"use strict";sap.ui.define(["sap/ui/model/type/Integer","sap/ui/core/format/NumberFormat"],function(e,t){"use strict";class r extends e{formatValue(e){const r=t.getUnitInstance();return r.format(e,"length-meter")}}return r});
+//# sourceMappingURL=LengthMeter.js.map

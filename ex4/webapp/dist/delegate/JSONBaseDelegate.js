@@ -1,0 +1,2 @@
+"use strict";sap.ui.define(["mdc/tutorial/model/type/TypeMap"],function(e){"use strict";function t(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const u=t(e);var n={getTypeMap:function(){return u}};return n});
+//# sourceMappingURL=JSONBaseDelegate.js.map
