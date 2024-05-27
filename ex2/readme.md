@@ -44,6 +44,7 @@ export default JSONFilterBarDelegate
 To add a FilterBar to the XML view, we can use the [`sap.ui.mdc.FilterBar`](https://sdk.openui5.org/api/sap.ui.mdc.FilterBar) control. Setting the previously created delegate makes sure, that the FilterBar can deal with the specific JSON data we are facing. Place the FilterBar inside of the DynamicPageHeader.
 ###### view/Mountains.view.xml
 ```xml
+			<f:DynamicPageHeader pinnable="true">
 				<mdc:FilterBar id="filterbar" delegate="{name: 'mdc/tutorial/delegate/JSONFilterBarDelegate'}"
 						p13nMode = "Item,Value">
 					<mdc:basicSearchField>
@@ -65,6 +66,7 @@ To add a FilterBar to the XML view, we can use the [`sap.ui.mdc.FilterBar`](http
 
 					</mdc:dependents>
 				</mdc:FilterBar>
+			</f:DynamicPageHeader>
 ```
 
 >⚠️ Like columns in the MDC table, the filter items are used for UI adaptation functionalities. Hence, do not change them, manually or dynamically, or use bindings to prevent undesired effects.
