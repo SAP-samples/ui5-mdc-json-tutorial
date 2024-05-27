@@ -22,8 +22,8 @@ jobs:
               cd "$dir"
               npm install
               npm run build
-              mv dist ../../../gh-pages/"$dir"/webapp
-              cd ../../..
+              mv dist ../gh-pages/"$dir"/webapp
+              cd ../
           done
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
