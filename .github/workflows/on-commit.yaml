@@ -18,11 +18,11 @@ jobs:
           zip -r gh-pages/mdc.tutorial.zip ex0 -x 'readme.md' -x '*.png'
 
           for dir in ./ex*/; do
-              mkdir -p gh-pages/"$dir"/webapp
+              mkdir -p gh-pages/"$dir"
               cd "$dir"
               npm install
               npm run build
-              mv dist ../gh-pages/"$dir"/webapp
+              mv dist ../gh-pages/"$dir"
               cd ../
           done
       - name: Deploy 🚀
