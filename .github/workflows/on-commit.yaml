@@ -1,36 +1,30 @@
 on:
-    push:
-      branches:
-        - main
+  push:
+    branches:
+      - main
 jobs:
-    on-commit:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-        - uses: actions/setup-node@v4
-          with:
-            cache: 'npm'
-            cache-dependency-path: 'ex0/package-lock.json'
-        - run: |
-            git config user.name github-actions
-            git config user.email github-actions@github.com
-            cd ex0
-            zip -r ../mdc.tutorial.zip ./ -x 'readme.md' -x '*.png'
-            cd ../
-            git add mdc.tutorial.zip
-            git commit -m "update mdc.tutorial.zip"
-            mkdir tmp
-            cp ex0/*.json ex0/ui5.yaml tmp
-            cd tmp
-            npm i
-            mkdir webapp
-            for dir in ../ex*/; do
-                cp -r "$dir"/webapp/* ./webapp
-                npm run build
-                mv dist "$dir"
-                rm -rf webapp/*
-            done
-            cd ../
-            git add ex*
-            git commit -m "update ghpages"
-            git push -f origin main:ghpages
+  deploy-pages:
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          cache: 'npm'
+          cache-dependency-path: 'ex0/package-lock.json'
+
+      - name: Install and build exercises
+        run: |
+          mkdir gh-pages
+          zip -r gh-pages/mdc.tutorial.zip ex0 -x 'readme.md' -x '*.png'
+
+          for dir in ./ex*/; do
+              mkdir -p gh-pages/"$dir"/webapp
+              cd "$dir"
+              npm run build
+              mv dist ../../../gh-pages/"$dir"/webapp
+              cd ../../..
+          done
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: gh-pages
