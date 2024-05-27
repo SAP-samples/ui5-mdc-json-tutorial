@@ -20,6 +20,7 @@ jobs:
           for dir in ./ex*/; do
               mkdir -p gh-pages/"$dir"/webapp
               cd "$dir"
+              npm install
               npm run build
               mv dist ../../../gh-pages/"$dir"/webapp
               cd ../../..
