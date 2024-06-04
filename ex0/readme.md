@@ -54,10 +54,10 @@ Finally, we will serve the project using ui5.
 - In the terminal or command prompt at our project's root directory, run the following command:
 
 ```bash
-ui5 serve
+npm start
 ```
 
-This command will start a development server for our project. You can access the development server at https://localhost:8080 and check out the running application! 🚀
+This command will start a development server for our project. You can access the development server at http://localhost:8080/index.html and check out the running application! 🚀
 
 ![Exercise 0 Result](ex0.png)
 

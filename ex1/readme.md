@@ -90,6 +90,7 @@ This XML view defines the user interface for a screen in our UI5 application. Th
 Below is the code we can add to the content aggregation of the DynamicPage in the XML view. It includes a table with columns for name, height, range, first ascent, countries, and parent mountain, along with the data bindings. The corresponding model is automatically generated based on our sample data via the `manifest.json`.
 ###### view/Mountains.view.xml
 ```xml
+		<f:content>
 			<mdc:Table
 				id="table"
 				header="Mountains"
@@ -99,42 +100,43 @@ Below is the code we can add to the content aggregation of the DynamicPage in th
 				filter="filterbar"
 				showRowCount="false"
 				delegate="{
-					name: 'mdc/tutorial/delegate/JSONTableDelegate',
-					payload: {
-						bindingPath: 'mountains>/mountains'
-					}
-				}">
+				name: 'mdc/tutorial/delegate/JSONTableDelegate',
+				payload: {
+					bindingPath: 'mountains>/mountains'
+				}
+			}">
 				<mdct:Column
 					propertyKey="name"
 					header="Name">
-					<Text text="{mountains>name}"/>
+					<Text text="{mountains>name}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="height"
 					header="Height">
-					<Text text="{path: 'mountains>height'}"/>
+					<Text text="{path: 'mountains>height'}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="range"
 					header="Range">
-					<Text text="{mountains>range}"/>
+					<Text text="{mountains>range}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="first_ascent"
 					header="First Ascent">
-					<Text text="{mountains>first_ascent}"/>
+					<Text text="{mountains>first_ascent}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="countries"
 					header="Countries">
-					<Text text="{mountains>countries}"/>
+					<Text text="{mountains>countries}" />
 				</mdct:Column>
 				<mdct:Column
 					propertyKey="parent_mountain"
 					header="Parent Mountain">
-					<Text text="{mountains>parent_mountain}"/>
+					<Text text="{mountains>parent_mountain}" />
 				</mdct:Column>
 			</mdc:Table>
+		</f:content>
 ```
 > ℹ️ Pay attention to how the controls are specified. All the MDCs included in the XML view will initially appear on the screen without any additional personalization. While this may seem superfluous when also providing the control creation method in the delegate, it allows us to establish a default without any hassle. Alternatively, we could opt to not provide any controls here and add them later through personalization.
 
