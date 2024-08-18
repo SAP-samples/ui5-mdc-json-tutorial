@@ -19,8 +19,7 @@ This command should display the installed version of Node.js.
 ## Step 2: Download and Extract Project Files
 
 Next, we will download the project files contained in a .zip file.
-
-- Download the project files from [mdc.tutorial.zip](https://github.com/SAP-samples/ui5-mdc-json-tutorial/raw/ghpages/mdc.tutorial.zip).
+- Download the project files from [mdc.tutorial.zip](https://sap-samples.github.io/ui5-mdc-json-tutorial/mdc.tutorial.zip).
 - Once the download is complete, navigate to the download location and extract the .zip file.
 
 ## Step 3: Open the Project Folder
