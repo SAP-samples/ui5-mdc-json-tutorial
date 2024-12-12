@@ -13,7 +13,9 @@ export default class Mountains extends View {
             preprocessors: {
                 xml: {
                     models: {
-                        pi: JSONPropertyInfo
+                        pi: {
+                            PropertyInfo: JSONPropertyInfo
+                        }
                     }
                 }
             },
