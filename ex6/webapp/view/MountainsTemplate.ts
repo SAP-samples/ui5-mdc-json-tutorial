@@ -10,6 +10,7 @@ import JSONPropertyInfo from "../model/metadata/JSONPropertyInfo";
 export default class Mountains extends View {
     async createContent(): Promise<Control> {
         return XMLView.create({
+            id: "mountains",
             preprocessors: {
                 xml: {
                     models: {
