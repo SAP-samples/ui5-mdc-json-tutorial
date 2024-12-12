@@ -11,10 +11,6 @@
 	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
 	template:require="{BindingHelper:'mdc/tutorial/model/util/BindingHelper'}">
 
-	<template:if test="true">
-		<Button text="Hello World"/>
-	</template:if>
-
 	<f:DynamicPage id="page">
 		<f:title>
 			<f:DynamicPageTitle>

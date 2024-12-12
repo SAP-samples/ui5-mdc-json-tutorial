@@ -1,5 +1,4 @@
 import Control from "sap/ui/core/Control";
-import "sap/ui/core/mvc/View";
 import View from "sap/ui/core/mvc/View";
 import XMLView from "sap/ui/core/mvc/XMLView";
 import JSONPropertyInfo from "../model/metadata/JSONPropertyInfo";
@@ -14,7 +13,7 @@ export default class Mountains extends View {
             preprocessors: {
                 xml: {
                     models: {
-                        pi: {
+                        pim: {
                             PropertyInfo: JSONPropertyInfo
                         }
                     }
