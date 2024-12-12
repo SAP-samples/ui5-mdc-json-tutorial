@@ -1,0 +1,92 @@
+<mvc:View
+	height="100%"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+	xmlns:core="sap.ui.core"
+	xmlns:mdc="sap.ui.mdc"
+	xmlns:mdct="sap.ui.mdc.table"
+	xmlns:vm="sap.ui.fl.variants"
+	xmlns:template="http://schemas.sap.com/sapui5/extension/sap.ui.core.template/1"
+	template:require="{BindingHelper:'mdc/tutorial/model/util/BindingHelper'}">
+
+	<f:DynamicPage id="page">
+		<f:title>
+			<f:DynamicPageTitle>
+				<f:heading>
+					<vm:VariantManagement id="variants" for="filterbar, table"/>
+				</f:heading>
+			</f:DynamicPageTitle>
+		</f:title>
+		<f:header>
+			<f:DynamicPageHeader pinnable="true">
+				<mdc:FilterBar id="filterbar" delegate="{
+							name: 'mdc/tutorial/delegate/JSONFilterBarDelegate',
+							payload: {
+								valueHelp: {
+									name: 'NameValueHelp',
+									range: 'RangeValueHelp'
+								}
+							}
+						}"
+						p13nMode = "Item,Value">
+					<mdc:basicSearchField>
+						<mdc:FilterField
+							delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"
+							dataType="sap.ui.model.type.String"
+							placeholder= "Search Mountains"
+							conditions="{$filters>/conditions/$search}"
+							maxConditions="1"/>
+					</mdc:basicSearchField>
+					<mdc:filterItems>
+						<template:repeat list="{pim>/PropertyInfo}">
+							<template:if test="{= ${pim>/ViewConfig/filterFields}.includes(${pim>key})}">
+								<mdc:FilterField
+									label="{pim>label}"
+									propertyKey="{pim>key}"
+									dataType="sap.ui.model.type.String"
+									conditions="{:= '{$filters>/conditions/' + ${pim>key} + '}' }"
+									valueHelp="name-vh"
+									delegate="{name: 'sap/ui/mdc/field/FieldBaseDelegate'}"/>
+							</template:if>
+						</template:repeat>
+					</mdc:filterItems>
+					<mdc:dependents>
+						<core:Fragment fragmentName="mdc.tutorial.view.fragment.NameValueHelp" type="XML"/>
+					</mdc:dependents>
+				</mdc:FilterBar>
+			</f:DynamicPageHeader>
+		</f:header>
+		<f:content>
+			<mdc:Table
+				id="table"
+				header="Mountains"
+				p13nMode="Sort,Column"
+				type="ResponsiveTable"
+				threshold="100"
+				filter="filterbar"
+				showRowCount="false"
+				delegate="{
+					name: 'mdc/tutorial/delegate/JSONTableDelegate',
+					payload: {
+						bindingPath: 'mountains>/mountains',
+						searchKeys: ['name', 'range', 'parent_mountain', 'countries']
+					}
+				}">
+				
+				<template:repeat list="{pim>/PropertyInfo}">
+					<template:if test="{= ${pim>/ViewConfig/columns}.includes(${pim>key})}">
+						<mdct:Column
+							propertyKey="{pim>key}"
+							header="{pim>label}">
+							<Text text="{:= '{mountains>' + ${pim>key} + '}' }"/>
+						</mdct:Column>
+					</template:if>
+				</template:repeat>
+				
+			</mdc:Table>
+		</f:content>
+	</f:DynamicPage>
+
+</mvc:View>
