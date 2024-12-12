@@ -46,7 +46,7 @@
 			}
 		},
 		"rootView": {
-			"viewName": "module:mdc/tutorial/view/Mountains.view",
+			"viewName": "module:mdc/tutorial/view/MountainsTemplate",
 			"async": true,
 			"id": "sample"
 		}

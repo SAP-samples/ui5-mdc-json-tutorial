@@ -13,11 +13,11 @@ export default class Mountains extends View {
             preprocessors: {
                 xml: {
                     models: {
-                        meta: JSONPropertyInfo
+                        pi: JSONPropertyInfo
                     }
                 }
             },
-            viewName: "mdc.tutorial.view.MountainsTemplate"
+            viewName: "mdc.tutorial.view.Mountains"
         });
     } 
 }
