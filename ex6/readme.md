@@ -3,7 +3,7 @@
 # Exercise 6: Enable XML Templating
 Yay - template xml stuff :)
 
-## Step 1: Enable XML Templating
+## Step 1: Enable XL Templating
 * Create a MountainsTemplate.ts typed view view with preprocessor config
 
 ```typescript
