@@ -1,5 +1,3 @@
-"use strict";
-
 sap.ui.define(["sap/ui/mdc/DefaultTypeMap", "sap/ui/mdc/enums/BaseType"], function (DefaultTypeMap, BaseType) {
   "use strict";
 

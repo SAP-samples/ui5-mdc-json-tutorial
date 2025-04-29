@@ -1,5 +1,3 @@
-"use strict";
-
 sap.ui.define(["mdc/tutorial/model/type/TypeMap"], function (__TypeMap) {
   "use strict";
 

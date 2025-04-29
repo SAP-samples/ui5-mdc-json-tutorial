@@ -1,5 +1,3 @@
-"use strict";
-
 sap.ui.define(["sap/ui/mdc/TableDelegate", "sap/m/Text", "sap/ui/core/Element", "mdc/tutorial/model/metadata/JSONPropertyInfo", "sap/ui/mdc/table/Column", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "./JSONBaseDelegate"], function (TableDelegate, Text, Element, __JSONPropertyInfo, Column, Filter, FilterOperator, __JSONBaseDelegate) {
   "use strict";
 

@@ -1,5 +1,3 @@
-"use strict";
-
 sap.ui.define(["sap/ui/mdc/FilterBarDelegate", "mdc/tutorial/model/metadata/JSONPropertyInfo", "sap/ui/mdc/FilterField", "sap/ui/core/Element"], function (FilterBarDelegate, __JSONPropertyInfo, FilterField, Element) {
   "use strict";
 

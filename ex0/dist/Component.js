@@ -1,2 +1,2 @@
-"use strict";sap.ui.define(["sap/ui/core/UIComponent"],function(t){"use strict";const e=t.extend("mdc.tutorial.Component",{});return e});
+sap.ui.define(["sap/ui/core/UIComponent"],function(n){"use strict";const t=n.extend("mdc.tutorial.Component",{});return t});
 //# sourceMappingURL=Component.js.map

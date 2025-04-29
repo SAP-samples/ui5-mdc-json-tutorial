@@ -1,5 +1,3 @@
-"use strict";
-
 sap.ui.define(["sap/ui/model/type/Integer", "sap/ui/core/format/NumberFormat"], function (Integer, NumberFormat) {
   "use strict";
 
