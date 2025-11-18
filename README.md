@@ -1,7 +1,7 @@
 # UI5 MDC Tutorial
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-mdc-json-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-mdc-json-tutorial)
 ## Description
-In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, table, FilterBar, value help, TypeMap, and VariantManagement. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, we should be able to leverage the full potential of the MDC concepts in our own projects.
+In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, table, Geomap, FilterBar, value help, TypeMap, and VariantManagement. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, we should be able to leverage the full potential of the MDC concepts in our own projects.
 
 >ℹ️ This version of the tutorial uses TypeScript. You can still find the JavaScript version [here](https://github.com/SAP-samples/ui5-mdc-json-tutorial/tree/javascript), but that one will not receive any more updates or additions. We recommend using sap.ui.mdc with TypeScript.
 ### Metadata-Driven Controls
@@ -26,6 +26,12 @@ VariantManagement is a feature that allows users to save their personalization s
 1. [How to Build Advanced Value Helps](ex3/) (*[browse sources](ex3/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/dist)*)
 1. [How to Add Custom Types](ex4/) (*[browse sources](ex4/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex4/dist)*)
 1. [How to Enable VariantManagement](ex5/) (*[browse sources](ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex5/dist)*)
+1. [How to Use the MDC Geomap](ex6) (*[browse sources](ex6/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex6/dist)*)
+
+> [!CAUTION]
+> [How to Use the MDC Geomap](ex6) - This package is provided under the terms of the [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt).
+
+
 ## Requirements
 ### Technical Requirements
 * A current version of [Node.js](https://nodejs.org/) (preferably 18+)

@@ -1,0 +1,2441 @@
+{
+	"ranges": [
+		{"range": "Mahalangur Himalaya"},
+		{"range": "Baltoro Karakoram"},
+		{"range": "Kangchenjunga Himalaya"},
+		{"range": "Dhaulagiri Himalaya"},
+		{"range": "Manaslu Himalaya"},
+		{"range": "Nanga Parbat Himalaya"},
+		{"range": "Annapurna Himalaya"},
+		{"range": "Jugal Himalaya"},
+		{"range": "Hispar Karakoram"},
+		{"range": "Masherbrum Karakoram"},
+		{"range": "Garhwal Himalaya"},
+		{"range": "Batura Karakoram"},
+		{"range": "Rakaposhi-Haramosh Karakoram"},
+		{"range": "Assam Himalaya"},
+		{"range": "Saltoro Karakoram"},
+		{"range": "Hindu Kush"},
+		{"range": "Langtang Himalaya"},
+		{"range": "Nalakankar Himalaya"},
+		{"range": "Saser Karakoram"},
+		{"range": "Kongur Shan (Eastern Pamirs)"},
+		{"range": "Kula Kangri Himalaya"},
+		{"range": "Daxue Mountains (Hengduan Shan)"},
+		{"range": "Rimo Karakoram"},
+		{"range": "Muztagata (Eastern Pamirs)"},
+		{"range": "Pamir (Academy of Sciences Range)"},
+		{"range": "Siachen Karakoram"},
+		{"range": "Tian Shan"},
+		{"range": "Ganesh Himalaya"},
+		{"range": "Labuche Himalaya"},
+		{"range": "Jomolhari Himalaya"},
+		{"range": "Yengisogat Karakoram"},
+		{"range": "Panmah Karakoram"},
+		{"range": "Baiku Himalaya"},
+		{"range": "Lunana Himalaya"},
+		{"range": "Nagarze Himalaya"}
+	],
+	"mountains": [
+		{
+			"coordinates": "27°59'17''N 86°55'31''E",
+			"parent_mountain": "-",
+			"first_ascent": 1953,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.92527777777778,
+					27.988055555555558
+				],
+				"properties": {
+					"name": "Mount Everest",
+					"height": 8848,
+					"rank": 1,
+					"prominence": 8848,
+					"range": "Mahalangur Himalaya",
+					"countries": "Nepal, China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°52'53''N 76°30'48''E",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1954,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.51333333333334,
+					35.88138888888889
+				],
+				"properties": {
+					"name": "K2",
+					"height": 8611,
+					"rank": 2,
+					"prominence": 402,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "27°42'12''N 88°08'51''E *",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1955,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					88.14750000000001,
+					27.703333333333333
+				],
+				"properties": {
+					"name": "Kangchenjunga",
+					"height": 8586,
+					"rank": 3,
+					"prominence": 3922,
+					"range": "Kangchenjunga Himalaya",
+					"countries": "Nepal, India"
+				}
+			}
+		},
+		{
+			"coordinates": "27°57'42''N 86°55'59''E",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1956,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.93305555555555,
+					27.961666666666666
+				],
+				"properties": {
+					"name": "Lhotse",
+					"height": 8516,
+					"rank": 4,
+					"prominence": 610,
+					"range": "Mahalangur Himalaya",
+					"countries": "Nepal, China"
+				}
+			}
+		},
+		{
+			"coordinates": "27°53'23''N 87°05'20''E",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1955,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					87.08888888888889,
+					27.889722222222222
+				],
+				"properties": {
+					"name": "Makalu",
+					"height": 8485,
+					"rank": 5,
+					"prominence": 2378,
+					"range": "Mahalangur Himalaya",
+					"countries": "Nepal, China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°05'39''N 86°39'39''E",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1954,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.66083333333334,
+					28.094166666666666
+				],
+				"properties": {
+					"name": "Cho Oyu",
+					"height": 8188,
+					"rank": 6,
+					"prominence": 234,
+					"range": "Mahalangur Himalaya",
+					"countries": "Nepal, China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°41'48''N 83°29'35''E",
+			"parent_mountain": "K2",
+			"first_ascent": 1960,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.49305555555556,
+					28.696666666666665
+				],
+				"properties": {
+					"name": "Dhaulagiri I",
+					"height": 8167,
+					"rank": 7,
+					"prominence": 3357,
+					"range": "Dhaulagiri Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "28°33'00''N 84°33'35''E",
+			"parent_mountain": "Cho Oyu",
+			"first_ascent": 1956,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					84.55972222222222,
+					28.55
+				],
+				"properties": {
+					"name": "Manaslu",
+					"height": 8163,
+					"rank": 8,
+					"prominence": 3092,
+					"range": "Manaslu Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°14'14''N 74°35'21''E",
+			"parent_mountain": "Dhaulagiri",
+			"first_ascent": 1953,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.58916666666666,
+					35.23722222222222
+				],
+				"properties": {
+					"name": "Nanga Parbat",
+					"height": 8126,
+					"rank": 9,
+					"prominence": 4608,
+					"range": "Nanga Parbat Himalaya",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°35'44''N 83°49'13''E",
+			"parent_mountain": "Cho Oyu",
+			"first_ascent": 1950,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.82027777777778,
+					28.595555555555553
+				],
+				"properties": {
+					"name": "Annapurna I",
+					"height": 8091,
+					"rank": 10,
+					"prominence": 2984,
+					"range": "Annapurna Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°43'28''N 76°41'47''E",
+			"parent_mountain": "K2",
+			"first_ascent": 1958,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.69638888888889,
+					35.724444444444444
+				],
+				"properties": {
+					"name": "Gasherbrum I, Hidden Peak, K5",
+					"height": 8080,
+					"rank": 11,
+					"prominence": 2155,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°48'38''N 76°34'06''E",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1957,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.56833333333333,
+					35.81055555555555
+				],
+				"properties": {
+					"name": "Broad Peak",
+					"height": 8051,
+					"rank": 12,
+					"prominence": 1701,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°45'28''N 76°39'12''E",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1956,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.65333333333334,
+					35.757777777777775
+				],
+				"properties": {
+					"name": "Gasherbrum II, K4",
+					"height": 8035,
+					"rank": 13,
+					"prominence": 1524,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°21'12''N 85°46'43''E",
+			"parent_mountain": "Cho Oyu",
+			"first_ascent": 1964,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					85.7786111111111,
+					28.353333333333335
+				],
+				"properties": {
+					"name": "Shishapangma",
+					"height": 8027,
+					"rank": 14,
+					"prominence": 2897,
+					"range": "Jugal Himalaya",
+					"countries": "China, Gosainthan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°05'53''N 86°44'42''E",
+			"parent_mountain": "Cho Oyu",
+			"first_ascent": 1964,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.745,
+					28.098055555555554
+				],
+				"properties": {
+					"name": "Gyachung Kang",
+					"height": 7952,
+					"rank": 15,
+					"prominence": 672,
+					"range": "Mahalangur Himalaya",
+					"countries": "Nepal, China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°45'33''N 76°38'30''E",
+			"parent_mountain": "Gasherbrum II",
+			"first_ascent": 1975,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.64166666666668,
+					35.759166666666665
+				],
+				"properties": {
+					"name": "Gasherbrum III, K3a",
+					"height": 7946,
+					"rank": "S",
+					"prominence": 355,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°32'05''N 84°07'19''E",
+			"parent_mountain": "Annapurna I",
+			"first_ascent": 1960,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					84.12194444444444,
+					28.534722222222225
+				],
+				"properties": {
+					"name": "Annapurna II",
+					"height": 7937,
+					"rank": 16,
+					"prominence": 2437,
+					"range": "Annapurna Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°45'38''N 76°36'58''E",
+			"parent_mountain": "Gasherbrum III",
+			"first_ascent": 1958,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.61611111111111,
+					35.760555555555555
+				],
+				"properties": {
+					"name": "Gasherbrum IV, K3",
+					"height": 7932,
+					"rank": 17,
+					"prominence": 712,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°26'12''N 84°38'23''E *",
+			"parent_mountain": "Manaslu",
+			"first_ascent": 1960,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					84.63972222222223,
+					28.436666666666667
+				],
+				"properties": {
+					"name": "Himalchuli",
+					"height": 7893,
+					"rank": 18,
+					"prominence": 1633,
+					"range": "Manaslu Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "36°19'33''N 75°11'16''E",
+			"parent_mountain": "K2",
+			"first_ascent": 1960,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.18777777777778,
+					36.325833333333335
+				],
+				"properties": {
+					"name": "Distaghil Sar",
+					"height": 7884,
+					"rank": 19,
+					"prominence": 2525,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°30'12''N 84°34'00''E",
+			"parent_mountain": "Manaslu",
+			"first_ascent": 1979,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					84.56666666666666,
+					28.503333333333334
+				],
+				"properties": {
+					"name": "Ngadi Chuli",
+					"height": 7871,
+					"rank": 20,
+					"prominence": 1011,
+					"range": "Manaslu Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "27°58'03''N 86°53'13''E",
+			"parent_mountain": "Lhotse",
+			"first_ascent": 1961,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.88694444444445,
+					27.967499999999998
+				],
+				"properties": {
+					"name": "Nuptse",
+					"height": 7864,
+					"rank": "S",
+					"prominence": 305,
+					"range": "Mahalangur Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "36°12'19''N 75°12'28''E *",
+			"parent_mountain": "Distaghil Sar",
+			"first_ascent": 1971,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.20777777777778,
+					36.20527777777778
+				],
+				"properties": {
+					"name": "Khunyang Chhish",
+					"height": 7823,
+					"rank": 21,
+					"prominence": 1765,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "35°38'28''N 76°18'21''E",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1960,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.30583333333333,
+					35.64111111111111
+				],
+				"properties": {
+					"name": "Masherbrum, K1",
+					"height": 7821,
+					"rank": 22,
+					"prominence": 2457,
+					"range": "Masherbrum Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "30°22'33''N 79°58'15''E",
+			"parent_mountain": "Dhaulagiri",
+			"first_ascent": 1936,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					79.97083333333333,
+					30.375833333333333
+				],
+				"properties": {
+					"name": "Nanda Devi",
+					"height": 7816,
+					"rank": 23,
+					"prominence": 3139,
+					"range": "Garhwal Himalaya",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "27°55'50''N 87°06'28''E",
+			"parent_mountain": "Makalu",
+			"first_ascent": 1954,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					87.10777777777777,
+					27.930555555555557
+				],
+				"properties": {
+					"name": "Chomo Lonzo",
+					"height": 7804,
+					"rank": 24,
+					"prominence": 590,
+					"range": "Mahalangur Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "36°30'37''N 74°31'21''E",
+			"parent_mountain": "Distaghil Sar",
+			"first_ascent": 1976,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.5225,
+					36.51027777777778
+				],
+				"properties": {
+					"name": "Batura Sar",
+					"height": 7795,
+					"rank": 25,
+					"prominence": 3118,
+					"range": "Batura Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "36°08'33''N 74°29'22''E",
+			"parent_mountain": "Khunyang Chhish",
+			"first_ascent": 1958,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.48944444444444,
+					36.1425
+				],
+				"properties": {
+					"name": "Rakaposhi",
+					"height": 7788,
+					"rank": 26,
+					"prominence": 2818,
+					"range": "Rakaposhi-Haramosh Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "29°37'52''N 95°03'19''E",
+			"parent_mountain": "Kangchenjunga",
+			"first_ascent": 1992,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					95.05527777777777,
+					29.63111111111111
+				],
+				"properties": {
+					"name": "Namcha Barwa",
+					"height": 7782,
+					"rank": 27,
+					"prominence": 4106,
+					"range": "Assam Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "36°12'20''N 75°25'01''E",
+			"parent_mountain": "Khunyang Chhish",
+			"first_ascent": 1959,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.41694444444445,
+					36.205555555555556
+				],
+				"properties": {
+					"name": "Kanjut Sar",
+					"height": 7760,
+					"rank": 28,
+					"prominence": 166,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "30°55'12''N 79°35'30''E *",
+			"parent_mountain": "Nanda Devi",
+			"first_ascent": 1931,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					79.59166666666667,
+					30.92
+				],
+				"properties": {
+					"name": "Kamet",
+					"height": 7756,
+					"rank": 29,
+					"prominence": 2825,
+					"range": "Garhwal Himalaya",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "28°45'46''N 83°23'18''E",
+			"parent_mountain": "Dhaulagiri",
+			"first_ascent": 1971,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.38833333333334,
+					28.762777777777778
+				],
+				"properties": {
+					"name": "Dhaulagiri II",
+					"height": 7751,
+					"rank": 30,
+					"prominence": 2397,
+					"range": "Dhaulagiri Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°23'57''N 76°50'53''E *",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1962,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.84805555555555,
+					35.399166666666666
+				],
+				"properties": {
+					"name": "Saltoro Kangri, K10",
+					"height": 7742,
+					"rank": 31,
+					"prominence": 216,
+					"range": "Saltoro Karakoram",
+					"countries": "India, Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "27°40'56''N 88°02'40''E *",
+			"parent_mountain": "Kangchenjunga",
+			"first_ascent": 1962,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					88.04444444444444,
+					27.682222222222222
+				],
+				"properties": {
+					"name": "Kumbhakarna, Jannu",
+					"height": 7711,
+					"rank": 32,
+					"prominence": 1036,
+					"range": "Kangchenjunga Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "36°15'19''N 71°50'30''E *",
+			"parent_mountain": "Batura Sar",
+			"first_ascent": 1950,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					71.84166666666667,
+					36.25527777777778
+				],
+				"properties": {
+					"name": "Tirich Mir",
+					"height": 7708,
+					"rank": 33,
+					"prominence": 391,
+					"range": "Hindu Kush",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°21'18''N 85°48'35''E",
+			"parent_mountain": "Shishapangma",
+			"first_ascent": 1981,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					85.80972222222222,
+					28.355
+				],
+				"properties": {
+					"name": "Molamenqing",
+					"height": 7703,
+					"rank": "S",
+					"prominence": 433,
+					"range": "Langtang Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "30°26'19''N 81°17'48''E",
+			"parent_mountain": "Dhaulagiri",
+			"first_ascent": 1985,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					81.29666666666667,
+					30.43861111111111
+				],
+				"properties": {
+					"name": "Gurla Mandhata",
+					"height": 7694,
+					"rank": 34,
+					"prominence": 2788,
+					"range": "Nalakankar Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "34°52'00''N 77°45'09''E",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1973,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.7525,
+					34.86666666666667
+				],
+				"properties": {
+					"name": "Saser Kangri I, K22",
+					"height": 7672,
+					"rank": 35,
+					"prominence": 2304,
+					"range": "Saser Karakoram",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "35°36'47''N 76°34'29''E",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1975,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.57472222222222,
+					35.613055555555555
+				],
+				"properties": {
+					"name": "Chogolisa",
+					"height": 7665,
+					"rank": 36,
+					"prominence": 1624,
+					"range": "Masherbrum Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°44'09''N 83°18'55''E",
+			"parent_mountain": "Dhaulagiri II",
+			"first_ascent": 1975,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.31527777777778,
+					28.735833333333336
+				],
+				"properties": {
+					"name": "Dhaulagiri IV",
+					"height": 7661,
+					"rank": "S",
+					"prominence": 469,
+					"range": "Dhaulagiri Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "38°35'36''N 75°18'48''E",
+			"parent_mountain": "Distaghil Sar",
+			"first_ascent": 1981,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.31333333333333,
+					38.593333333333334
+				],
+				"properties": {
+					"name": "Kongur Tagh",
+					"height": 7649,
+					"rank": 37,
+					"prominence": 3585,
+					"range": "Kongur Shan (Eastern Pamirs)",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°44'02''N 83°21'41''E *",
+			"parent_mountain": "Dhaulagiri IV",
+			"first_ascent": 1975,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.36138888888888,
+					28.733888888888888
+				],
+				"properties": {
+					"name": "Dhaulagiri V",
+					"height": 7618,
+					"rank": "S",
+					"prominence": 340,
+					"range": "Dhaulagiri Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "36°26'26''N 74°40'51''E",
+			"parent_mountain": "Batura Sar",
+			"first_ascent": 1974,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.68083333333334,
+					36.440555555555555
+				],
+				"properties": {
+					"name": "Shispare",
+					"height": 7611,
+					"rank": 38,
+					"prominence": 124,
+					"range": "Batura Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "36°17'15''N 75°05'06''E *",
+			"parent_mountain": "Distaghil Sar",
+			"first_ascent": 1960,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.085,
+					36.2875
+				],
+				"properties": {
+					"name": "Trivor",
+					"height": 7577,
+					"rank": 39,
+					"prominence": 997,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°02'50''N 90°27'19''E *",
+			"parent_mountain": "Kangchenjunga",
+			"first_ascent": "none",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					90.45527777777778,
+					28.047222222222224
+				],
+				"properties": {
+					"name": "Gangkhar Puensum",
+					"height": 7570,
+					"rank": 40,
+					"prominence": 2995,
+					"range": "Kula Kangri Himalaya",
+					"countries": "Bhutan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "29°35'43''N 101°52'47''E",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1932,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					101.87972222222221,
+					29.595277777777778
+				],
+				"properties": {
+					"name": "Minya Konka",
+					"height": 7556,
+					"rank": 41,
+					"prominence": 3642,
+					"range": "Daxue Mountains (Hengduan Shan)",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°35'06''N 83°59'24''E",
+			"parent_mountain": "Annapurna I",
+			"first_ascent": 1961,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.99,
+					28.584999999999997
+				],
+				"properties": {
+					"name": "Annapurna III",
+					"height": 7555,
+					"rank": 42,
+					"prominence": 703,
+					"range": "Annapurna Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°55'35''N 76°34'03''E",
+			"parent_mountain": "K2",
+			"first_ascent": 1976,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.5675,
+					35.92638888888889
+				],
+				"properties": {
+					"name": "Skyang Kangri",
+					"height": 7545,
+					"rank": 43,
+					"prominence": 1085,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°01'29''N 86°54'51''E",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1982,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.91416666666667,
+					28.02472222222222
+				],
+				"properties": {
+					"name": "Changtse",
+					"height": 7543,
+					"rank": 44,
+					"prominence": 514,
+					"range": "Mahalangur Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°13'37''N 90°36'59''E",
+			"parent_mountain": "Gangkhar Puensum",
+			"first_ascent": 1986,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					90.61638888888888,
+					28.22694444444444
+				],
+				"properties": {
+					"name": "Kula Kangri",
+					"height": 7538,
+					"rank": 45,
+					"prominence": 1654,
+					"range": "Kula Kangri Himalaya",
+					"countries": "China, Bhutan"
+				}
+			}
+		},
+		{
+			"coordinates": "38°36'57''N 75°11'45''E",
+			"parent_mountain": "Kongur Tagh",
+			"first_ascent": 1956,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.19583333333334,
+					38.615833333333335
+				],
+				"properties": {
+					"name": "Kongur Tiube",
+					"height": 7530,
+					"rank": 46,
+					"prominence": 840,
+					"range": "Kongur Shan (Eastern Pamirs)",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°32'15''N 84°4'58''E",
+			"parent_mountain": "Annapurna",
+			"first_ascent": 1955,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					84.08277777777778,
+					28.5375
+				],
+				"properties": {
+					"name": "Annapurna IV",
+					"height": 7525,
+					"rank": "S",
+					"prominence": 255,
+					"range": "Annapurna Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°08'31''N 77°34'39''E",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1984,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.5775,
+					35.14194444444444
+				],
+				"properties": {
+					"name": "Mamostong Kangri",
+					"height": 7516,
+					"rank": 47,
+					"prominence": 1803,
+					"range": "Rimo Karakoram",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "34°48'17''N 77°48'24''E",
+			"parent_mountain": "Saser Kangri I",
+			"first_ascent": 2011,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.80666666666666,
+					34.80472222222222
+				],
+				"properties": {
+					"name": "Saser Kangri II E",
+					"height": 7513,
+					"rank": 48,
+					"prominence": 1458,
+					"range": "Saser Karakoram",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "38°16'33''N 75°06'58''E",
+			"parent_mountain": "Kongur Tagh",
+			"first_ascent": 1956,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.11611111111111,
+					38.27583333333333
+				],
+				"properties": {
+					"name": "Muztagh Ata",
+					"height": 7509,
+					"rank": 49,
+					"prominence": 2698,
+					"range": "Muztagata (Eastern Pamirs)",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "38°56'35''N 72°00'57''E",
+			"parent_mountain": "Muztagh Ata",
+			"first_ascent": 1933,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					72.01583333333333,
+					38.94305555555555
+				],
+				"properties": {
+					"name": "Ismoil Somoni Peak",
+					"height": 7495,
+					"rank": 50,
+					"prominence": 3402,
+					"range": "Pamir (Academy of Sciences Range)",
+					"countries": "Tajikistan"
+				}
+			}
+		},
+		{
+			"coordinates": "34°50'44''N 77°47'06''E",
+			"parent_mountain": "Saser Kangri I",
+			"first_ascent": 1986,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.785,
+					34.845555555555556
+				],
+				"properties": {
+					"name": "Saser Kangri III",
+					"height": 7495,
+					"rank": 51,
+					"prominence": 835,
+					"range": "Saser Karakoram",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "36°25'56''N 71°49'43''E",
+			"parent_mountain": "Tirich Mir",
+			"first_ascent": 1960,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					71.8286111111111,
+					36.43222222222222
+				],
+				"properties": {
+					"name": "Noshaq",
+					"height": 7492,
+					"rank": 52,
+					"prominence": 2024,
+					"range": "Hindu Kush",
+					"countries": "Afghanistan, Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "36°12'41''N 75°15'01''E",
+			"parent_mountain": "Khunyang Chhish",
+			"first_ascent": 1979,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.25027777777778,
+					36.21138888888889
+				],
+				"properties": {
+					"name": "Pumari Chhish",
+					"height": 7492,
+					"rank": 53,
+					"prominence": 884,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "36°29'16''N 74°35'16''E",
+			"parent_mountain": "Batura Sar",
+			"first_ascent": 1994,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.58777777777777,
+					36.48777777777778
+				],
+				"properties": {
+					"name": "Passu Sar",
+					"height": 7476,
+					"rank": 54,
+					"prominence": 647,
+					"range": "Batura Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "36°15'04''N 75°22'29''E",
+			"parent_mountain": "Pumari Chhish",
+			"first_ascent": 1984,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.37472222222222,
+					36.25111111111111
+				],
+				"properties": {
+					"name": "Yukshin Gardan Sar",
+					"height": 7469,
+					"rank": 55,
+					"prominence": 1374,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "35°34'48''N 77°04'42''E",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1975,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.07833333333333,
+					35.580000000000005
+				],
+				"properties": {
+					"name": "Teram Kangri I",
+					"height": 7462,
+					"rank": 56,
+					"prominence": 1703,
+					"range": "Siachen Karakoram",
+					"countries": "India, China"
+				}
+			}
+		},
+		{
+			"coordinates": "27°52'54''N 88°08'09''E",
+			"parent_mountain": "Kangchenjunga",
+			"first_ascent": 1930,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					88.13583333333334,
+					27.881666666666668
+				],
+				"properties": {
+					"name": "Jongsong Peak",
+					"height": 7462,
+					"rank": 57,
+					"prominence": 1298,
+					"range": "Kangchenjunga Himalaya",
+					"countries": "India, China, Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "36°00'12''N 74°52'31''E",
+			"parent_mountain": "Rakaposhi",
+			"first_ascent": 1971,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.87527777777777,
+					36.00333333333333
+				],
+				"properties": {
+					"name": "Malubiting",
+					"height": 7458,
+					"rank": 58,
+					"prominence": 2193,
+					"range": "Rakaposhi-Haramosh Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°36'18''N 83°57'49''E",
+			"parent_mountain": "Annapurna III",
+			"first_ascent": 1965,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.96361111111112,
+					28.605
+				],
+				"properties": {
+					"name": "Gangapurna",
+					"height": 7455,
+					"rank": 59,
+					"prominence": 563,
+					"range": "Annapurna Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "42°02'05''N 80°07'47''E",
+			"parent_mountain": "Ismail Samani Peak",
+			"first_ascent": 1956,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					80.12972222222221,
+					42.03472222222222
+				],
+				"properties": {
+					"name": "Jengish Chokusu",
+					"height": 7439,
+					"rank": 60,
+					"prominence": 4148,
+					"range": "Tian Shan",
+					"countries": "Kyrgyzstan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "30°22'00''N 79°59'40''E",
+			"parent_mountain": "Nanda Devi",
+			"first_ascent": 1939,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					79.99444444444444,
+					30.366666666666667
+				],
+				"properties": {
+					"name": "Sunanda Devi",
+					"height": 7434,
+					"rank": "S",
+					"prominence": 229,
+					"range": "Garhwal Himalaya",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "35°17'45''N 77°01'20''E",
+			"parent_mountain": "Saltoro Kangri",
+			"first_ascent": 1974,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.02222222222223,
+					35.295833333333334
+				],
+				"properties": {
+					"name": "K12",
+					"height": 7428,
+					"rank": 61,
+					"prominence": 1978,
+					"range": "Saltoro Karakoram",
+					"countries": "India, Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°23'29''N 85°07'38''E",
+			"parent_mountain": "Shishapangma",
+			"first_ascent": 1955,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					85.12722222222222,
+					28.391388888888887
+				],
+				"properties": {
+					"name": "Yangra, Ganesh I",
+					"height": 7422,
+					"rank": 62,
+					"prominence": 2352,
+					"range": "Ganesh Himalaya",
+					"countries": "Nepal, China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°39'48''N 76°45'42''E",
+			"parent_mountain": "Gasherbrum I",
+			"first_ascent": 1934,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.76166666666667,
+					35.663333333333334
+				],
+				"properties": {
+					"name": "Sia Kangri",
+					"height": 7422,
+					"rank": 63,
+					"prominence": 642,
+					"range": "Siachen Karakoram",
+					"countries": "Pakistan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "36°19'04''N 75°02'11''E *",
+			"parent_mountain": "Trivor",
+			"first_ascent": 1964,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.0363888888889,
+					36.31777777777778
+				],
+				"properties": {
+					"name": "Momhil Sar",
+					"height": 7414,
+					"rank": 64,
+					"prominence": 907,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "27°38'02''N 88°07'00''E",
+			"parent_mountain": "Kangchenjunga",
+			"first_ascent": 1994,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					88.11666666666666,
+					27.633888888888887
+				],
+				"properties": {
+					"name": "Kabru N",
+					"height": 7412,
+					"rank": 65,
+					"prominence": 720,
+					"range": "Kangchenjunga Himalaya",
+					"countries": "India, Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°51'03''N 76°25'43''E",
+			"parent_mountain": "K2",
+			"first_ascent": 1957,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.42861111111111,
+					35.850833333333334
+				],
+				"properties": {
+					"name": "Skil Brum",
+					"height": 7410,
+					"rank": 66,
+					"prominence": 1152,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "35°50'24''N 74°53'51''E",
+			"parent_mountain": "Malubiting",
+			"first_ascent": 1958,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.89750000000001,
+					35.84
+				],
+				"properties": {
+					"name": "Haramosh Peak",
+					"height": 7409,
+					"rank": 67,
+					"prominence": 2277,
+					"range": "Rakaposhi-Haramosh Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "36°22'32''N 71°53'54''E",
+			"parent_mountain": "Noshaq",
+			"first_ascent": 1969,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					71.89833333333334,
+					36.37555555555556
+				],
+				"properties": {
+					"name": "Istor-o-Nal",
+					"height": 7403,
+					"rank": 68,
+					"prominence": 1043,
+					"range": "Hindu Kush",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "35°31'04''N 76°48'02''E",
+			"parent_mountain": "Saltoro Kangri",
+			"first_ascent": 1961,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.80055555555555,
+					35.51777777777777
+				],
+				"properties": {
+					"name": "Ghent Kangri",
+					"height": 7401,
+					"rank": 69,
+					"prominence": 1493,
+					"range": "Saltoro Karakoram",
+					"countries": "India, Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "36°23'27''N 74°43'00''E",
+			"parent_mountain": "Shispare",
+			"first_ascent": 1996,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.71666666666667,
+					36.39083333333333
+				],
+				"properties": {
+					"name": "Ultar",
+					"height": 7388,
+					"rank": 70,
+					"prominence": 688,
+					"range": "Batura Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "35°21'18''N 77°22'08''E",
+			"parent_mountain": "Teram Kangri I",
+			"first_ascent": 1988,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.36888888888888,
+					35.355000000000004
+				],
+				"properties": {
+					"name": "Rimo I",
+					"height": 7385,
+					"rank": 71,
+					"prominence": 1428,
+					"range": "Rimo Karakoram",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "28°44'05''N 83°13'03''E",
+			"parent_mountain": "Dhaulagiri IV",
+			"first_ascent": 1970,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.2175,
+					28.734722222222224
+				],
+				"properties": {
+					"name": "Churen Himal",
+					"height": 7385,
+					"rank": 72,
+					"prominence": 650,
+					"range": "Dhaulagiri Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°35'59''N 77°02'53''E",
+			"parent_mountain": "Teram Kangri I",
+			"first_ascent": 1979,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.04805555555555,
+					35.599722222222226
+				],
+				"properties": {
+					"name": "Teram Kangri III",
+					"height": 7382,
+					"rank": 73,
+					"prominence": 520,
+					"range": "Siachen Karakoram",
+					"countries": "India, China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°27'58''N 76°46'53''E *",
+			"parent_mountain": "Ghent Kangri",
+			"first_ascent": 1976,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.78138888888888,
+					35.46611111111111
+				],
+				"properties": {
+					"name": "Sherpi Kangri",
+					"height": 7380,
+					"rank": 74,
+					"prominence": 132,
+					"range": "Saltoro Karakoram",
+					"countries": "India, Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°18'15''N 86°21'03''E",
+			"parent_mountain": "Cho Oyu",
+			"first_ascent": 1987,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.35083333333333,
+					28.304166666666667
+				],
+				"properties": {
+					"name": "Labuche Kang",
+					"height": 7367,
+					"rank": 75,
+					"prominence": 1957,
+					"range": "Labuche Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "27°47'16''N 88°11'43''E",
+			"parent_mountain": "Kangchenjunga",
+			"first_ascent": 1939,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					88.19527777777778,
+					27.78777777777778
+				],
+				"properties": {
+					"name": "Kirat Chuli",
+					"height": 7362,
+					"rank": 76,
+					"prominence": 1168,
+					"range": "Kangchenjunga Himalaya",
+					"countries": "India, Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "30°55'57''N 79°36'09''E",
+			"parent_mountain": "Kamet",
+			"first_ascent": 1950,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					79.60249999999999,
+					30.9325
+				],
+				"properties": {
+					"name": "Abi Gamin",
+					"height": 7355,
+					"rank": "S",
+					"prominence": 217,
+					"range": "Garhwal Himalaya",
+					"countries": "India, China"
+				}
+			}
+		},
+		{
+			"coordinates": "27°44'27''N 88°09'31''E",
+			"parent_mountain": "Kangchenjunga",
+			"first_ascent": 1994,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					88.15861111111111,
+					27.740833333333335
+				],
+				"properties": {
+					"name": "Gimmigela Chuli, The Twins",
+					"height": 7350,
+					"rank": "S",
+					"prominence": 432,
+					"range": "Kangchenjunga Himalaya",
+					"countries": "India, Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "28°04'24''N 86°36'51''E",
+			"parent_mountain": "Cho Oyu",
+			"first_ascent": 1986,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.61416666666666,
+					28.073333333333334
+				],
+				"properties": {
+					"name": "Nangpai Gosum",
+					"height": 7350,
+					"rank": "S",
+					"prominence": 427,
+					"range": "Mahalangur Himalaya",
+					"countries": "Nepal, China"
+				}
+			}
+		},
+		{
+			"coordinates": "36°32'51''N 72°06'54''E",
+			"parent_mountain": "Noshaq",
+			"first_ascent": 1959,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					72.115,
+					36.5475
+				],
+				"properties": {
+					"name": "Saraghrar",
+					"height": 7349,
+					"rank": 77,
+					"prominence": 1979,
+					"range": "Hindu Kush",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "27°39'18''N 88°07'51''E *",
+			"parent_mountain": "Kabru",
+			"first_ascent": 1964,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					88.13083333333333,
+					27.654999999999998
+				],
+				"properties": {
+					"name": "Talung",
+					"height": 7349,
+					"rank": "S",
+					"prominence": 366,
+					"range": "Kangchenjunga Himalaya",
+					"countries": "Nepal, India"
+				}
+			}
+		},
+		{
+			"coordinates": "27°49'36''N 89°16'04''E *",
+			"parent_mountain": "Gangkhar Puensum",
+			"first_ascent": 1937,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					89.26777777777778,
+					27.826666666666668
+				],
+				"properties": {
+					"name": "Jomolhari",
+					"height": 7326,
+					"rank": 78,
+					"prominence": 2341,
+					"range": "Jomolhari Himalaya",
+					"countries": "Bhutan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "27°46'30''N 86°58'47''E",
+			"parent_mountain": "Lhotse",
+			"first_ascent": 1961,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.97972222222222,
+					27.775
+				],
+				"properties": {
+					"name": "Chamlang",
+					"height": 7321,
+					"rank": 79,
+					"prominence": 1241,
+					"range": "Mahalangur Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°54'55''N 76°25'45''E",
+			"parent_mountain": "Skil Brum",
+			"first_ascent": 1994,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.42916666666667,
+					35.915277777777774
+				],
+				"properties": {
+					"name": "Chongtar",
+					"height": 7315,
+					"rank": 80,
+					"prominence": 1295,
+					"range": "Baltoro Karakoram",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°38'21''N 76°40'24''E",
+			"parent_mountain": "Chogolisa",
+			"first_ascent": 1963,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.67333333333333,
+					35.63916666666667
+				],
+				"properties": {
+					"name": "Baltoro Kangri",
+					"height": 7312,
+					"rank": 81,
+					"prominence": 114,
+					"range": "Masherbrum Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°08'50''N 86°41'06''E",
+			"parent_mountain": "Cho Oyu",
+			"first_ascent": 1989,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.685,
+					28.147222222222222
+				],
+				"properties": {
+					"name": "Siguang Ri",
+					"height": 7309,
+					"rank": 82,
+					"prominence": 669,
+					"range": "Mahalangur Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "36°06'24''N 76°12'21''E",
+			"parent_mountain": "Skil Brum (K2)",
+			"first_ascent": 1993,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.20583333333333,
+					36.10666666666667
+				],
+				"properties": {
+					"name": "The Crown, Huang Guan Shan",
+					"height": 7295,
+					"rank": 83,
+					"prominence": 1919,
+					"range": "Yengisogat Karakoram",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "29°48'52''N 94°58'07''E",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1986,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					94.96861111111112,
+					29.814444444444444
+				],
+				"properties": {
+					"name": "Gyala Peri",
+					"height": 7294,
+					"rank": 84,
+					"prominence": 2942,
+					"range": "Assam Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°23'22''N 85°43'12''E",
+			"parent_mountain": "Shishapangma",
+			"first_ascent": 1982,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					85.72,
+					28.389444444444443
+				],
+				"properties": {
+					"name": "Porong Ri",
+					"height": 7292,
+					"rank": 85,
+					"prominence": 512,
+					"range": "Langtang Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°56'51''N 75°45'12''E *",
+			"parent_mountain": "Kanjut Sar",
+			"first_ascent": 1977,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.75333333333333,
+					35.9475
+				],
+				"properties": {
+					"name": "Baintha Brakk, The Ogre",
+					"height": 7285,
+					"rank": 86,
+					"prominence": 1891,
+					"range": "Panmah Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "36°13'35''N 75°22'02''E",
+			"parent_mountain": "Yukshin Gardan Sar",
+			"first_ascent": 1980,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.36722222222221,
+					36.22638888888889
+				],
+				"properties": {
+					"name": "Yutmaru Sar",
+					"height": 7283,
+					"rank": 87,
+					"prominence": 680,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "35°25'06''N 76°33'06''E",
+			"parent_mountain": "Chogolisa",
+			"first_ascent": 1970,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.55166666666666,
+					35.41833333333333
+				],
+				"properties": {
+					"name": "K6, Baltistan Peak",
+					"height": 7282,
+					"rank": 88,
+					"prominence": 1962,
+					"range": "Masherbrum Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°33'03''N 85°32'44''E",
+			"parent_mountain": "Shishapangma",
+			"first_ascent": 1982,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					85.54555555555555,
+					28.550833333333333
+				],
+				"properties": {
+					"name": "Kangpenqing",
+					"height": 7281,
+					"rank": 89,
+					"prominence": 1345,
+					"range": "Baiku Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°49'40''N 76°21'40''E",
+			"parent_mountain": "Skil Brum",
+			"first_ascent": 1956,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.3611111111111,
+					35.82777777777778
+				],
+				"properties": {
+					"name": "Muztagh Tower",
+					"height": 7276,
+					"rank": 90,
+					"prominence": 171,
+					"range": "Baltoro Karakoram",
+					"countries": "Pakistan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "30°52'50''N 79°36'55''E",
+			"parent_mountain": "Kamet",
+			"first_ascent": 1937,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					79.61527777777778,
+					30.880555555555556
+				],
+				"properties": {
+					"name": "Mana Peak",
+					"height": 7272,
+					"rank": 91,
+					"prominence": 732,
+					"range": "Garhwal Himalaya",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "28°42'31''N 83°16'27''E",
+			"parent_mountain": "Dhaulagiri IV",
+			"first_ascent": 1970,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.27416666666666,
+					28.70861111111111
+				],
+				"properties": {
+					"name": "Dhaulagiri VI",
+					"height": 7268,
+					"rank": "S",
+					"prominence": 488,
+					"range": "Dhaulagiri Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "36°07'13''N 74°39'42''E",
+			"parent_mountain": "Malubiting",
+			"first_ascent": 1968,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					74.66166666666668,
+					36.12027777777778
+				],
+				"properties": {
+					"name": "Diran",
+					"height": 7266,
+					"rank": 92,
+					"prominence": 1329,
+					"range": "Rakaposhi-Haramosh Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°18'05''N 86°23'02''E",
+			"parent_mountain": "Labuche Himilaya",
+			"first_ascent": "none",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.38388888888889,
+					28.30138888888889
+				],
+				"properties": {
+					"name": "Labuche Kang III",
+					"height": 7250,
+					"rank": 93,
+					"prominence": 570,
+					"range": "Labuche Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°44'52''N 83°08'46''E",
+			"parent_mountain": "Churen Himal",
+			"first_ascent": 1954,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.14611111111111,
+					28.747777777777777
+				],
+				"properties": {
+					"name": "Putha Hiunchuli",
+					"height": 7246,
+					"rank": 94,
+					"prominence": 1151,
+					"range": "Dhaulagiri Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "35°32'19''N 77°08'55''E",
+			"parent_mountain": "Teram Kangri I",
+			"first_ascent": 1976,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.14861111111112,
+					35.53861111111111
+				],
+				"properties": {
+					"name": "Apsarasas Kangri",
+					"height": 7245,
+					"rank": 95,
+					"prominence": 607,
+					"range": "Siachen Karakoram",
+					"countries": "India, China"
+				}
+			}
+		},
+		{
+			"coordinates": "30°56'57''N 79°34'12''E",
+			"parent_mountain": "Kamet",
+			"first_ascent": 1951,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					79.57,
+					30.949166666666667
+				],
+				"properties": {
+					"name": "Mukut Parbat",
+					"height": 7242,
+					"rank": 96,
+					"prominence": 683,
+					"range": "Garhwal Himalaya",
+					"countries": "India, China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°22'31''N 77°21'42''E",
+			"parent_mountain": "Rimo I",
+			"first_ascent": 1985,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					77.36166666666666,
+					35.375277777777775
+				],
+				"properties": {
+					"name": "Rimo III",
+					"height": 7233,
+					"rank": 97,
+					"prominence": 613,
+					"range": "Rimo Karakoram",
+					"countries": "India"
+				}
+			}
+		},
+		{
+			"coordinates": "28°15'22''N 85°31'01''E",
+			"parent_mountain": "Shishapangma",
+			"first_ascent": 1978,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					85.51694444444445,
+					28.25611111111111
+				],
+				"properties": {
+					"name": "Langtang Lirung",
+					"height": 7227,
+					"rank": 98,
+					"prominence": 1534,
+					"range": "Langtang Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "28°15'27''N 90°38'49''E",
+			"parent_mountain": "Kula Kangri",
+			"first_ascent": "none",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					90.64694444444446,
+					28.2575
+				],
+				"properties": {
+					"name": "Karjiang",
+					"height": 7221,
+					"rank": 99,
+					"prominence": 895,
+					"range": "Kula Kangri Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°31'06''N 83°48'22''E",
+			"parent_mountain": "Annapurna",
+			"first_ascent": 1964,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					83.80611111111111,
+					28.51833333333333
+				],
+				"properties": {
+					"name": "Annapurna Dakshin (Annapurna South)",
+					"height": 7219,
+					"rank": 100,
+					"prominence": 769,
+					"range": "Annapurna Himalaya",
+					"countries": "Nepal"
+				}
+			}
+		},
+		{
+			"coordinates": "28°03'49''N 86°58'39''E",
+			"parent_mountain": "Mount Everest",
+			"first_ascent": 1935,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					86.9775,
+					28.06361111111111
+				],
+				"properties": {
+					"name": "Khartaphu",
+					"height": 7213,
+					"rank": 101,
+					"prominence": 712,
+					"range": "Mahalangur Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°11'12''N 89°57'27''E",
+			"parent_mountain": "Gangkhar Puensum",
+			"first_ascent": "none",
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					89.9575,
+					28.186666666666667
+				],
+				"properties": {
+					"name": "Tongshanjiabu[19]",
+					"height": 7207,
+					"rank": 102,
+					"prominence": 1757,
+					"range": "Lunana Himalaya",
+					"countries": "Bhutan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "36°21'47''N 75°08'57''E",
+			"parent_mountain": "Distaghil Sar",
+			"first_ascent": 1985,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.14916666666667,
+					36.363055555555555
+				],
+				"properties": {
+					"name": "Malangutti Sar",
+					"height": 7207,
+					"rank": 103,
+					"prominence": 507,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		},
+		{
+			"coordinates": "28°56'48''N 90°10'42''E",
+			"parent_mountain": "Gangkhar Puensum",
+			"first_ascent": 1986,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					90.17833333333334,
+					28.946666666666665
+				],
+				"properties": {
+					"name": "Noijin Kangsang",
+					"height": 7206,
+					"rank": 104,
+					"prominence": 216,
+					"range": "Nagarze Himalaya",
+					"countries": "China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°22'53''N 85°41'01''E",
+			"parent_mountain": "Shishapangma",
+			"first_ascent": 1981,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					85.68361111111112,
+					28.38138888888889
+				],
+				"properties": {
+					"name": "Langtang Ri",
+					"height": 7205,
+					"rank": 105,
+					"prominence": 665,
+					"range": "Langtang Himalaya",
+					"countries": "Nepal, China"
+				}
+			}
+		},
+		{
+			"coordinates": "28°09'24''N 90°04'15''E",
+			"parent_mountain": "Tongshanjiabu",
+			"first_ascent": 2002,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					90.07083333333333,
+					28.156666666666666
+				],
+				"properties": {
+					"name": "Kangphu Kang, Shimokangri",
+					"height": 7204,
+					"rank": 106,
+					"prominence": 1244,
+					"range": "Lunana Himalaya",
+					"countries": "Bhutan, China"
+				}
+			}
+		},
+		{
+			"coordinates": "35°35'59''N 76°59'01''E",
+			"parent_mountain": "Teram Kangri III",
+			"first_ascent": 1976,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					76.98361111111112,
+					35.599722222222226
+				],
+				"properties": {
+					"name": "Singhi Kangri",
+					"height": 7202,
+					"rank": 107,
+					"prominence": 730,
+					"range": "Siachen Karakoram",
+					"countries": "India, China"
+				}
+			}
+		},
+		{
+			"coordinates": "36°21'01''N 75°02'13''E *",
+			"parent_mountain": "Momhil Sar",
+			"first_ascent": 1979,
+			"geometry": {
+				"type": "Point",
+				"coordinates": [
+					75.03694444444444,
+					36.35027777777778
+				],
+				"properties": {
+					"name": "Lupghar Sar",
+					"height": 7200,
+					"rank": 108,
+					"prominence": 730,
+					"range": "Hispar Karakoram",
+					"countries": "Pakistan"
+				}
+			}
+		}
+	]
+}
