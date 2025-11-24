@@ -6,9 +6,10 @@
 	xmlns:core="sap.ui.core"
 	xmlns:mdc="sap.ui.mdc">
 
-	<f:DynamicPage id="page">
-		<f:content>
-
+	<App id="MyApp" defaultTransitionName="show">
+		<Page id="P0" title="Geomap with JSON Delegate" titleLevel="H1">
+			<Text class="sapUiResponsiveMargin" text="This sample explains basic use case of MDC Geomap control with JSONDelegate using Geomap Web Component." />
+			<Text class="sapUiResponsiveMargin" text="Some of the markers displayed on the map have additional information which is shown in popover with additional information. Clicking on the marker opens the popover." />
 			<mdc:Geomap
 					id="geomap"
 					delegate="{
@@ -31,13 +32,14 @@
 					height="600px"
 					enableSelectionControl="true"
 					enableCopyrightControl="true"
+					class="sapUiResponsiveMargin"
 			>
 				<!--<mdc:items>
                     <mdcgm:Item id="geometry" propertyKey="geometry" label="Geometry Point"/>
                     <mdcgm:Item id="geometry2" propertyKey="geometry2" label="Geometry Point 2"/>
                 </mdc:items>-->
 			</mdc:Geomap>
-		</f:content>
-	</f:DynamicPage>
+		</Page>
+	</App>
 
 </mvc:View>
