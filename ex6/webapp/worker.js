@@ -1,0 +1,1 @@
+importScripts("<YOUR-DOMAIN>/resources/sap/ui/geomap/thirdparty/maplibre-gl-csp-worker.js?commonjs-es-import");
