@@ -469,7 +469,15 @@ The PropertyInfo provides all necessary metadata for the MDC Geomap to function.
 ```
 >ℹ️ For a comprehensive description of what information should be contained within `PropertyInfo` objects, see the [API Reference](https://sdk.openui5.org/api/sap.ui.mdc.geomap.PropertyInfo). In real-life scenarios we might retrieve this metadata from the data service and we would have to translate it into the PropertyInfo format, easy to digest for the controls.
 >ℹ️ As `mdc.tutorial.model.type.Geometry` is custom type, you might need to check [How to Add Custom Types](../ex4/).
-## Step 2: Use the MDC Geomap
+
+## Step 2: Prepare a bridge for worker
+As MDC Geomap uses `sap.ui.geomap` library build on top of Geomap Web Component which requires a Web Worker and because of the strict CSP policies we need to create a "bridge" to allow worker to be created.
+This is achievable by simply creating a "worker.js" in the webapp root with the following:
+```js
+importScripts("<YOUR-DOMAIN>/resources/sap/ui/geomap/thirdparty/maplibre-gl-csp-worker.js?commonjs-es-import");
+```
+
+## Step 3: Use the MDC Geomap
 
 Next, let's enhance the XML view named `Mountains.view.xml` in the `view` directory.
 
