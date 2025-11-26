@@ -4,7 +4,7 @@ metadata:
   name: mdc-json-tutorial
 framework:
   name: OpenUI5
-  version: '1.124.0'
+  version: '1.136.0'
 builder:
   customTasks:
     - name: ui5-tooling-transpile-task
