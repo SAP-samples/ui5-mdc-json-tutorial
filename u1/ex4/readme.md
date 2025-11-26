@@ -1,5 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
-[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex4/dist)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex4/dist)
 # Exercise 4: How to Add Custom Types
 At this point the application can display the height of the mountains. However, it lacks the corresponding unit, "meters", which would provide a more accurate description. This exercise will illustrate how to add specific types and integrate them with the sap.ui.mdc controls.
 
@@ -87,9 +87,9 @@ The final step involves using the type for the `height` property in our `Mountai
 ```
 Check if the application now shows the meters properly in FilterFields and columns! 🏔️
 
-![Exercise 4 Result](ex4.png)
+![Exercise 4 Result](u1/ex4.png)
 
 ## Summary
 In this exercise, we've learned how to add a specific type, "LengthMeter", to the sap.ui.mdc controls in our application. This included creating a new file for the type, extending the default TypeMap, creating a base delegate, and adding the type definition to the view and property info files.
 
-Proceed to - [Exercise 5](../ex5/readme.md)
+Proceed to - [Exercise 5](../u1/ex5/readme.md)

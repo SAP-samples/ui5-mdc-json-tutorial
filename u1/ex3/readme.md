@@ -1,5 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
-[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex3/dist)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex3/dist)
 # Exercise 3: How to Build Advanced Value Helps
 In this exercise, we will build advanced value helps and integrate them into the FilterFields. This enhancement will improve the user's filtering experience and expedite the search for desired results.
 
@@ -198,8 +198,8 @@ const _createFilterField = async (id:string, property:FilterBarPropertyInfo, fil
 ```
 Check that our ValueHelps work by using the suggestion and the ValueHelp dialog of the corresponding fields! 🤓
 
-![Exercise 3 Result](ex3.png)
+![Exercise 3 Result](u1/ex3.png)
 ## Summary
 In this exercise, we learned how to construct ValueHelps as fragments and improve the user's filtering experience. These ValueHelps were linked with FilterFields and added as dependents to the FilterBar. Additionally, a delegate-specific payload was incorporated into the delegate to specify which properties should have a ValueHelp attached.
 
-Proceed to - [Exercise 4](../ex4/readme.md)
+Proceed to - [Exercise 4](../u1/ex4/readme.md)
