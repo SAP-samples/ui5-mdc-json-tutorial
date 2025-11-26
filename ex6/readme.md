@@ -11,7 +11,7 @@ This file serves as a delegate for a UI5 geomap. Delegates offer a method to cus
 
 Below is the code for the delegate. It extends the [`sap/ui/mdc/GeomapDelegate`](https://sdk.openui5.org/api/module:sap/ui/mdc/GeomapDelegate) and includes functions to extract properties from the JSON metadata provided in `JSONPropertyInfo.ts` in the model folder, add items to the geomap, delete items from the geomap, and revise the geomap's binding information.
 
-Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case, the `bindingPath` is specified, so that the geomap knows from there to get its data. Take a look at the implementation!
+Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case, the `bindingPath` is specified, so that the geomap knows from where to get its data. Take a look at the implementation!
 ###### delegate/JSONGeomapDelegate.ts
 ```typescript
 import GeomapDelegate from "sap/ui/mdc/GeomapDelegate"
@@ -471,10 +471,10 @@ The PropertyInfo provides all necessary metadata for the MDC Geomap to function.
 >ℹ️ As `mdc.tutorial.model.type.Geometry` is custom type, you might need to check [How to Add Custom Types](../ex4/).
 
 ## Step 2: Prepare a bridge for worker
-As MDC Geomap uses `sap.ui.geomap` library build on top of Geomap Web Component which requires a Web Worker and because of the strict CSP policies we need to create a "bridge" to allow worker to be created.
+As MDC Geomap uses the `sap.ui.geomap` library — built on top of the Geomap Web Component and requiring a Web Worker — and because strict CSP policies apply, we need to create a "bridge" to enable the Web Worker
 This is achievable by simply creating a "worker.js" in the webapp root with the following:
 ```js
-importScripts("<YOUR-DOMAIN>/resources/sap/ui/geomap/thirdparty/maplibre-gl-csp-worker.js?commonjs-es-import");
+importScripts("<SAPUI5-DOMAIN>/resources/sap/ui/geomap/thirdparty/maplibre-gl-csp-worker.js?commonjs-es-import");
 ```
 
 ## Step 3: Use the MDC Geomap

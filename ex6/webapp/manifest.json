@@ -6,7 +6,7 @@
 			"version": "1.0.0"
 		},
 		"title": "MDC JSON Tutorial",
-		"description": "MDC JSON Tutorial featuring Жедпьз",
+		"description": "MDC JSON Tutorial featuring Geomap",
 		"dataSources": {
 			"mountains" : {
 				"uri": "model/mountains.json",
