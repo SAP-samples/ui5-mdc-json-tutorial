@@ -14,17 +14,18 @@ jobs:
 
       - name: Install and build exercises
         run: |
-          mkdir gh-pages
+          mkdir -p gh-pages/u1
           zip -r gh-pages/mdc.tutorial.zip u1/ex0 -x 'readme.md' -x '*.png'
 
           for dir in ./u1/ex*/; do
-              mkdir -p gh-pages/u1/"$dir"
-              cd "$dir"
+              mkdir -p gh-pages/u1/$(basename "$dir")
+              pushd "$dir"
               npm install
               npm run build
-              mv dist ../gh-pages/u1/"$dir"
-              cd ../
+              mv dist ../../gh-pages/u1/$(basename "$dir")
+              pop
           done
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
