@@ -1,5 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
-[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex1/dist)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex1/dist)
 # Exercise 1: How to Use the MDC Table
 In this exercise we will learn how to create a JSONTableDelegate for an MDC Table in an XMLView. These elements are crucial when building an MDC application that interacts with JSON data.
 
@@ -144,9 +144,9 @@ Below is the code we can add to the content aggregation of the DynamicPage in th
 
 Run the application and see how, with just a few lines of code we added, we get a personalizable table that shows the properties of our JSON data! 😱
 
-![Exercise 1 Result](ex1.png)
+![Exercise 1 Result](u1/ex1.png)
 ## Summary
 
 The main takeaway is that delegates offer a potent mechanism to adapt the behavior of sap.ui.mdc controls without altering the controls themselves. With a custom delegate, we can customize a control to handle a specific type of data, such as JSON data. Furthermore, XML views provide declarative means to define the user interface for a screen in a UI5 application.
 
-Proceed to - [Exercise 2](../ex2/readme.md)
+Proceed to - [Exercise 2](../u1/ex2/readme.md)

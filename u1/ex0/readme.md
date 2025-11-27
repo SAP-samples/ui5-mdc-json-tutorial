@@ -1,5 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
-[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex0/dist)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex0/dist)
 # Exercise 0: Setup the Project on Your Machine
 
 This exercise will guide you through the process of setting up a development environment. We will install Node.js, download and extract a zip file for a project, install project dependencies using npm, and serve the project using the UI5 tooling.
@@ -31,7 +31,7 @@ Now, we will open the project folder in our code editor.
 
 The structure should look like this:
 
-![Alt text](ex0_folder.png)
+![Alt text](u1/ex0_folder.png)
 
 ## Step 4: Install Project Dependencies
 
@@ -58,9 +58,9 @@ npm start
 
 This command will start a development server for our project. You can access the development server at http://localhost:8080/index.html and check out the running application! 🚀
 
-![Exercise 0 Result](ex0.png)
+![Exercise 0 Result](u1/ex0.png)
 
 ## Summary
 Congratulations, we have successfully set up our development environment and served our project!
 
-Continue to - [Exercise 1](../ex1/readme.md)
+Continue to - [Exercise 1](../u1/ex1/readme.md)

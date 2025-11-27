@@ -1,5 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
-[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/ex2/dist)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex2/dist)
 # Exercise 2: How to Use the MDC FilterBar
 In this exercise, we will create a FilterBarDelegate, add a FilterBar to the XML view, use the filter association of the table and implement the search feature as a combination of filters.
 ## Step 1: Create a FilterBarDelegate
@@ -122,9 +122,9 @@ JSONTableDelegate.getFilters = (table) => {
 ```
 Now go and try out the filter and search functionality in our application. The table should display only the filtered items! 🙌
 
-![Exercise 2 Result](ex2.png)
+![Exercise 2 Result](u1/ex2.png)
 
 ## Summary
 In this exercise, we have extended the functionality of our application by adding a FilterBarDelegate to handle filtering operations, and a JSONTableDelegate to handle search operations. We have also learned how to use the filter association of the table to connect the FilterBar to the Table. This allows us to create a more interactive and dynamic user interface, where the user can filter and search the data in the table based on their needs.
 
-Continue to - [Exercise 3](../ex3/readme.md)
+Continue to - [Exercise 3](../u1/ex3/readme.md)

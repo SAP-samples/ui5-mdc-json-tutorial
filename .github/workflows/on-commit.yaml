@@ -10,19 +10,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           cache: 'npm'
-          cache-dependency-path: 'ex0/package-lock.json'
+          cache-dependency-path: 'u1/ex0/package-lock.json'
 
       - name: Install and build exercises
         run: |
           mkdir gh-pages
-          zip -r gh-pages/mdc.tutorial.zip ex0 -x 'readme.md' -x '*.png'
+          zip -r gh-pages/mdc.tutorial.zip u1/ex0 -x 'readme.md' -x '*.png'
 
-          for dir in ./ex*/; do
-              mkdir -p gh-pages/"$dir"
+          for dir in ./u1/ex*/; do
+              mkdir -p gh-pages/u1/"$dir"
               cd "$dir"
               npm install
               npm run build
-              mv dist ../gh-pages/"$dir"
+              mv dist ../gh-pages/u1/"$dir"
               cd ../
           done
       - name: Deploy 🚀
