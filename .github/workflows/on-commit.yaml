@@ -23,7 +23,7 @@ jobs:
               npm install
               npm run build
               mv dist ../../gh-pages/u1/$(basename "$dir")
-              pop
+              popd
           done
 
       - name: Deploy 🚀
