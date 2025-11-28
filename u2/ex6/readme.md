@@ -474,8 +474,13 @@ The PropertyInfo provides all necessary metadata for the MDC Geomap to function.
 As MDC Geomap uses the `sap.ui.geomap` library — built on top of the Geomap Web Component and requiring a Web Worker — and because strict CSP policies apply, we need to create a "bridge" to enable the Web Worker
 This is achievable by simply creating a "worker.js" in the webapp root with the following:
 ```js
-importScripts("<SAPUI5-DOMAIN>/resources/sap/ui/geomap/thirdparty/maplibre-gl-csp-worker.js?commonjs-es-import");
+importScripts(new URLSearchParams(self.location.search).get("worker"));
 ```
+
+Here is some explanation to that - Since Geomap internally uses Web Workers, for Strict CSP environments it is required that the worker is loaded on Application side.
+We create a "bridge" between the library and the application and allow the Geomap Web Component to pick up the worker URL automatically and use it.
+
+The library provides the path of the worker to be loaded and passes it to "worker.js" on app side which simply loads it using `importScripts`.
 
 ## Step 3: Use the MDC Geomap
 
