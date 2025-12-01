@@ -16,7 +16,7 @@ Thanks to TypeScript we can provide a delegate-specific interface for the payloa
 
 ### Create the delegate extending the base one
 
-In the sample code below we create new delegate that we would later use for our Geomap control.
+In the sample code below, we create a new delegate we will later use for our Geomap control.
 
 ###### delegate/JSONGeomapDelegate.ts
 ```typescript
@@ -36,7 +36,7 @@ export default JSONGeomapDelegate
 
 ### Implement PropertyInfo handling
 
-The next part adds some methods responsible for working with the propertyInfo.
+The next part adds some methods responsible for working with the `propertyInfo` object.
 
 ###### delegate/JSONGeomapDelegate.ts: propertyInfo
 ```typescript
@@ -83,7 +83,7 @@ JSONGeomapDelegate.getBindingInfo = function (oGeomap: MDCGeomap) {
 
 >⚠️ The `fetchProperties` is a special function as its return value is used for further UI adaptation functionalities. Due to this, the result of this function must be kept stable throughout the lifecycle of your application. Any changes of the returned values might result in undesired effects. As we're using a PropertyInfo at this point, be aware to keep it stable throughout the lifecycle of your application.
 
-The PropertyInfo provides all necessary metadata for the MDC Geomap to function. Take a look at this excerpt of the `JSONPropertyInfo.ts` file to understand how the `geometry` property is defined.
+`PropertyInfo` provides all necessary metadata for the MDC Geomap to function. Take a look at this excerpt of the `JSONPropertyInfo.ts` file to understand how the `geometry` property is defined.
 ###### model/metadata/JSONPropertInfo.ts
 ```js
 {
@@ -94,11 +94,11 @@ The PropertyInfo provides all necessary metadata for the MDC Geomap to function.
     dataType: "mdc.tutorial.model.type.Geometry"
 }
 ```
->ℹ️ For a comprehensive description of what information should be contained within `PropertyInfo` objects, see the [API Reference](https://sdk.openui5.org/api/sap.ui.mdc.geomap.PropertyInfo). In real-life scenarios we might retrieve this metadata from the data service and we would have to translate it into the PropertyInfo format, easy to digest for the controls.<br/>
->ℹ️ As `mdc.tutorial.model.type.Geometry` is custom type, you might need to check [How to Add Custom Types](../u1/ex4/).
+>ℹ️ For a comprehensive description of what information `PropertyInfo` objects should contain, see the [API Reference](https://sdk.openui5.org/api/sap.ui.mdc.geomap.PropertyInfo). In real-life scenarios, we may retrieve this metadata from the data service and we would have to translate it into the format of the `PropertyInfo` object - easy to digest for the controls.<br/>
+>ℹ️ As the `mdc.tutorial.model.type.Geometry` is a custom type, you may need to check [How to Add Custom Types](../u1/ex4/).
 
 ### Working with `sap.ui.geomap`.
-In this tutorial we're using `sap.ui.geomap` library for internal map. It is part of SAPUI5 and requires [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt)
+In this tutorial, we're using a `sap.ui.geomap` library for an internal map. It is part of SAPUI5 and requires [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt)
 
 ###### delegate/JSONGeomapDelegate.ts: import `sap.ui.geomap`
 ```typescript
@@ -201,8 +201,7 @@ JSONGeomapDelegate.createItemTemplateFactory = (oGeomap: MDCGeomap, sId: string,
 };
 ```
 
-As `sap.ui.geomap` is actually a wrapper for `SapGeomap Web Component`, which aggregates different types of geo objects (spots, circles, polygons etc.) in single aggregation
-but the architecture of a database allows having multiple lines with multiple columns containing data for different types of geo objects, we need to take care for this manually:
+The `sap.ui.geomap` control is a wrapper for the `SapGeomap Web Component`, which aggregates various geo objects (spots, circles, polygons, etc.) into a single aggregation. However, a database allows having multiple lines with multiple columns containing data for different types of geo objects. Therefore, you  must handle this mapping manually:
 
 ###### delegate/JSONGeomapDelegate.ts: model handling
 ```typescript
@@ -291,8 +290,8 @@ This is achievable by simply creating a "worker.js" in the webapp root with the 
 importScripts(new URLSearchParams(self.location.search).get("worker"));
 ```
 
-Here is some explanation to that - Since Geomap internally uses Web Workers, for Strict CSP environments it is required that the worker is loaded on Application side.
-We create a "bridge" between the library and the application and allow the Geomap Web Component to pick up the worker URL automatically and use it.
+To elaborate a bit - since Geomap uses Web Workers internally, in environments with a strict Content Security Policy (CSP) the worker must be loaded by the application.
+We create a "bridge" between the library and the application so the Geomap Web Component can automatically discover and use the worker URL.
 
 The library provides the path of the worker to be loaded and passes it to "worker.js" on app side which simply loads it using `importScripts`.
 
