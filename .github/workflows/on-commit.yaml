@@ -25,6 +25,16 @@ jobs:
               mv dist ../../gh-pages/u1/$(basename "$dir")
               popd
           done
+          
+          mkdir -p gh-pages/u2
+          for dir in ./u2/ex*/; do
+              mkdir -p gh-pages/u2/$(basename "$dir")
+              pushd "$dir"
+              npm install
+              npm run build
+              mv dist ../../gh-pages/u2/$(basename "$dir")
+              popd
+          done
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4

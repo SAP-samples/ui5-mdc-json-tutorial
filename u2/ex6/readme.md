@@ -12,31 +12,18 @@ This file serves as a delegate for a UI5 geomap. Delegates offer a method to cus
 Below is the code for the delegate. It extends the [`sap/ui/mdc/GeomapDelegate`](https://sdk.openui5.org/api/module:sap/ui/mdc/GeomapDelegate) and includes functions to extract properties from the JSON metadata provided in `JSONPropertyInfo.ts` in the model folder, add items to the geomap, delete items from the geomap, and revise the geomap's binding information.
 
 Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case, the `bindingPath` is specified, so that the geomap knows from where to get its data. Take a look at the implementation!
+(We separate it in parts with some explanations to bring more clarity.)
+
+### Part 1. Create the delegate extending the base one
+
+In the sample code below we create new delegate that we would later use for our Geomap control.
+
 ###### delegate/JSONGeomapDelegate.ts
 ```typescript
 import GeomapDelegate from "sap/ui/mdc/GeomapDelegate"
-import Text from "sap/m/Text"
 import JSONPropertyInfo from "mdc/tutorial/model/metadata/JSONPropertyInfo"
 import {Geomap as MDCGeomap, PropertyInfo as GeomapPropertyInfo} from "sap/ui/mdc/Geomap"
 import JSONBaseDelegate from "./JSONBaseDelegate"
-import Geomap from 'sap/ui/geomap/Geomap'
-import GeomapProvider from 'sap/ui/geomap/GeomapProvider'
-import GeomapSpot from 'sap/ui/geomap/GeomapSpot'
-import GeomapNavigationControl from	'sap/ui/geomap/GeomapNavigationControl'
-import GeomapSelectionControl from 'sap/ui/geomap/GeomapSelectionControl'
-import GeomapScaleControl from 'sap/ui/geomap/GeomapScaleControl'
-import GeomapCopyrightControl from 'sap/ui/geomap/GeomapCopyrightControl'
-import GeomapFullscreenControl from 'sap/ui/geomap/GeomapFullscreenControl'
-import GeomapControlPosition from "sap/ui/mdc/enums/GeomapControlPosition"
-import GeomapPolygon from "sap/ui/geomap/GeomapPolygon"
-import GeomapPoint from "sap/ui/geomap/GeomapPoint"
-import GeomapLine from "sap/ui/geomap/GeomapLine"
-import JSONModel from "sap/ui/model/json/JSONModel"
-import Popover from "sap/m/Popover"
-import List from "sap/m/List"
-import StandardListItem from "sap/m/StandardListItem"
-import Log from "sap/base/Log"
-import Link from "sap/m/Link"
 
 interface GeomapPayload {
     bindingPath: string
@@ -44,24 +31,15 @@ interface GeomapPayload {
 
 const JSONGeomapDelegate = Object.assign({}, GeomapDelegate, JSONBaseDelegate)
 
-const mStateMap = new window.WeakMap();
+export default JSONGeomapDelegate
+```
 
-JSONGeomapDelegate._getState = function(oGeomap: MDCGeomap) {
-    if (mStateMap.has(oGeomap)) {
-        return mStateMap.get(oGeomap);
-    }
+### Part 2. Implement PropertyInfo handling
 
-    return {};
-};
+The next part adds some methods responsible for working with the propertyInfo.
 
-JSONGeomapDelegate._setState = function(oGeomap: MDCGeomap, oState: any) {
-    mStateMap.set(oGeomap, oState);
-};
-
-JSONGeomapDelegate._getMetadataInfo = (oGeomap: MDCGeomap) => {
-    return oGeomap.getDelegate().payload;
-};
-
+###### delegate/JSONGeomapDelegate.ts - part 2
+```typescript
 JSONGeomapDelegate.fetchProperties = function (oGeomap: MDCGeomap) {
     const aProperties = JSONPropertyInfo.filter((oPI) => oPI.key !== "$search");
 
@@ -83,6 +61,64 @@ JSONGeomapDelegate.initializeGeomap = function (oGeomap: MDCGeomap) {
     return JSONGeomapDelegate._createContentFromPropertyInfos(oGeomap);
 };
 
+JSONGeomapDelegate.updateBindingInfo = function (oGeomap: MDCGeomap, oBindingInfo: any) {
+    JSONGeomapDelegate.updateBindingInfo.call(JSONGeomapDelegate, oGeomap, oBindingInfo);
+    oBindingInfo.path = "/" + oGeomap.getPayload().collectionName;
+};
+
+JSONGeomapDelegate._getInnerGeomap = function (oGeomap: MDCGeomap) {
+    return oGeomap.getAggregation("_geomap");
+};
+
+JSONGeomapDelegate.getBindingInfo = function (oGeomap: MDCGeomap) {
+
+    const sEntitySetPath = "/" + JSONGeomapDelegate._getMetadataInfo(oGeomap).collectionName;
+    const oBindingInfo = {
+        path: sEntitySetPath
+    };
+    return oBindingInfo;
+};
+
+```
+
+>⚠️ The `fetchProperties` is a special function as its return value is used for further UI adaptation functionalities. Due to this, the result of this function must be kept stable throughout the lifecycle of your application. Any changes of the returned values might result in undesired effects. As we're using a PropertyInfo at this point, be aware to keep it stable throughout the lifecycle of your application.
+
+The PropertyInfo provides all necessary metadata for the MDC Geomap to function. Take a look at this excerpt of the `JSONPropertyInfo.ts` file to understand how the `geometry` property is defined.
+###### model/metadata/JSONPropertInfo.ts
+```js
+{
+    key: "geometry",
+    label: "Geometry",
+    visible: true,
+    path: "geometry",
+    dataType: "mdc.tutorial.model.type.Geometry"
+}
+```
+>ℹ️ For a comprehensive description of what information should be contained within `PropertyInfo` objects, see the [API Reference](https://sdk.openui5.org/api/sap.ui.mdc.geomap.PropertyInfo). In real-life scenarios we might retrieve this metadata from the data service and we would have to translate it into the PropertyInfo format, easy to digest for the controls.<br/>
+>ℹ️ As `mdc.tutorial.model.type.Geometry` is custom type, you might need to check [How to Add Custom Types](../u1/ex4/).
+
+### Part 3. Working with `sap.ui.geomap`.
+In this tutorial we're using `sap.ui.geomap` library for internal map. It is part of SAPUI5 and requires [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt)
+
+###### delegate/JSONGeomapDelegate.ts - part 3.1 - import `sap.ui.geomap`
+```typescript
+import Geomap from 'sap/ui/geomap/Geomap'
+import GeomapProvider from 'sap/ui/geomap/GeomapProvider'
+import GeomapSpot from 'sap/ui/geomap/GeomapSpot'
+import GeomapNavigationControl from	'sap/ui/geomap/GeomapNavigationControl'
+import GeomapSelectionControl from 'sap/ui/geomap/GeomapSelectionControl'
+import GeomapScaleControl from 'sap/ui/geomap/GeomapScaleControl'
+import GeomapCopyrightControl from 'sap/ui/geomap/GeomapCopyrightControl'
+import GeomapFullscreenControl from 'sap/ui/geomap/GeomapFullscreenControl'
+import GeomapControlPosition from "sap/ui/mdc/enums/GeomapControlPosition"
+import GeomapPolygon from "sap/ui/geomap/GeomapPolygon"
+import GeomapPoint from "sap/ui/geomap/GeomapPoint"
+import GeomapLine from "sap/ui/geomap/GeomapLine"
+import JSONModel from "sap/ui/model/json/JSONModel"
+```
+
+###### delegate/JSONGeomapDelegate.ts - part 3.2 - usage of `sap.ui.geomap`
+```typescript
 JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeomap, bForceRebind: boolean) {
     return new Promise(function (resolve, reject) {
 
@@ -119,21 +155,8 @@ JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeoma
         }
 
         if (oGeomap.getEnableCopyrightControl()) {
-
-            const oText = new Text({text: "Map data from "});
-            oText.addStyleClass("copyright");
-            const oLink =  new Link({
-                text: "OpenStreetMap",
-                href: "https://www.openstreetmap.org/copyright",
-                target: "_blank"
-            });
-            oLink.addStyleClass("sapUiTinyMarginBegin")
             aMapControls.push(new GeomapCopyrightControl({
-                position: GeomapControlPosition.BottomRight,
-                content: [
-                    oText,
-                    oLink
-                ]
+                position: GeomapControlPosition.BottomRight
             }));
         }
 
@@ -149,6 +172,46 @@ JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeoma
 
         geomapInstance.setModel(oGeomap.getModel());
 
+        // ... see next snippet
+        
+        geomapInstance.bindAggregation("items", {
+            path: "/",
+            factory: JSONGeomapDelegate.createItemTemplateFactory.bind(this, oGeomap),
+            templateShareable: false
+        });
+
+        oGeomap.setAggregation("_geomap", geomapInstance);
+        oGeomap._applyConfigurations();
+
+        resolve(oGeomap);
+    });
+};
+
+JSONGeomapDelegate.createItemTemplateFactory = (oGeomap: MDCGeomap, sId: string, oContext: any) => {
+    const oContextObject = oContext.getObject();
+    let oTemplate;
+    switch (oContextObject.geometry.type) {
+        case "Point": {
+            oTemplate = _createSpotObject("", oContextObject, oGeomap);
+            break;
+        }
+        // ... handling for any other geo object types
+    }
+    return oTemplate;
+};
+```
+
+As `sap.ui.geomap` is actually a wrapper for `SapGeomap Web Component`, which aggregates different types of geo objects (spots, circles, polygons etc.) in single aggregation
+but the architecture of a database allows having multiple lines with multiple columns containing data for different types of geo objects, we need to take care for this manually:
+
+###### delegate/JSONGeomapDelegate.ts - part 3.3 - model handling
+```typescript
+JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeomap, bForceRebind: boolean) {
+    return new Promise(function (resolve, reject) {
+        
+        // ... see previous snippet
+
+        // flatten the model
         const oModel = oGeomap.getModel();
         if (bForceRebind) {
             oModel.fireRequestCompleted();
@@ -195,280 +258,31 @@ JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeoma
                 templateShareable: false
             });
         }
-
-        geomapInstance.attachMapClick((event: any) => {
-            const mParams = event.getParameters();
-            Log.info(`Map clicked at ${mParams.lng}, ${mParams.lat}`);
-        });
-
-        oGeomap.setAggregation("_geomap", geomapInstance);
-        oGeomap._applyConfigurations();
-
-        const oState = JSONGeomapDelegate._getState(oGeomap);
-        oState.innerGeomap = geomapInstance;
-        JSONGeomapDelegate._setState(oGeomap, oState);
-
+        
+        // ... see previous snippet
+        
         resolve(oGeomap);
     });
 };
+```
 
-JSONGeomapDelegate.createItemTemplateFactory = (oGeomap: MDCGeomap, sId: string, oContext: any) => {
-    const oContextObject = oContext.getObject();
-    let oTemplate;
-    switch (oContextObject.geometry.type) {
-        case "Point": {
-            oTemplate = _createSpotObject("", oContextObject, oGeomap);
-            break;
-        }
-        case "Polygon": {
-            oTemplate = _createPolygonObject("", oContextObject, oGeomap);
-            break;
-        }
-        case "LineString": {
-            oTemplate = _createLineObject("", oContextObject, oGeomap);
-            break;
-        }
-    }
-    return oTemplate;
-};
-
-/**
- * "Forwards" the initial content (items) for the geomap
- * @param oGeomap
- */
-JSONGeomapDelegate.createInitialGeomapContent = function (oGeomap: MDCGeomap) {
-    const oGeomapInstance = oGeomap.getAggregation("_geomap");
-
-    // if in future we need to pass some initial content, we can do it here
-
-    const oState = JSONGeomapDelegate._getState(oGeomap);
-    oState.innerGeomap = oGeomapInstance;
-    JSONGeomapDelegate._setState(oGeomap, oState);
-};
-
+###### delegate/JSONGeomapDelegate.ts - part 3.5 - geo object factories
+```typescript
 const _createSpotObject = (sId: string, oContext: any, oGeomap: MDCGeomap) => {
-    let color =  "#000000";
-    let width = "1rem";
-    const icon = "map";
-
-    if (oContext.geometry.properties.height > 8000) {
-        color = "#e70a29";
-    } else if (oGeomap.getDelegate().payload?.spotConfig?.color) {
-        color = oGeomap.getDelegate().payload?.spotConfig?.color;
-    }
-    if (oContext.geometry.properties.height > 5000) {
-        width = "2rem";
-    } else if (oContext.geometry.properties.height > 2000) {
-        width = "1.5rem";
-    }
-
     const oSpot = new GeomapSpot({
         lng: oContext.geometry.coordinates[0],
         lat: oContext.geometry.coordinates[1],
         height: oGeomap.getDelegate().payload?.spotConfig?.height,
-        color: color,
-        icon: icon,
-        width: width
-    });
-
-    oSpot.attachClick((e: any) => {
-        const oTarget = e.getSource();
-        const oPopover = new Popover({
-            title: oContext.geometry.properties.name,
-            content: [
-                new List({
-                    items: [
-                        new StandardListItem({
-                            title: "Height: " + oContext.geometry.properties.height
-                        }),
-                        new StandardListItem({
-                            title: "Rank: " + oContext.geometry.properties.rank
-                        }),
-                        new StandardListItem({
-                            title: "Prominence: " + oContext.geometry.properties.prominence
-                        }),
-                        new StandardListItem({
-                            title: "Range: " + oContext.geometry.properties.range
-                        }),
-                        new StandardListItem({
-                            title: "Countries: " + oContext.geometry.properties.countries
-                        })
-                    ]
-                })
-            ]
-        });
-        oTarget.addDependent(oPopover);
-        oPopover.openBy(oTarget);
+        color: "#000000",
+        icon: "map",
+        width: "1rem"
     });
 
     return oSpot;
 };
-
-const _createPolygonObject = (sId: string, oContext: any, oGeomap: MDCGeomap) => {
-    const oPolygon = new GeomapPolygon({
-        points: oContext.geometry.coordinates[0].map((aPoint: any[]) => {
-            return new GeomapPoint({
-                lng: aPoint[0],
-                lat: aPoint[1]
-            });
-        })
-    });
-    return oPolygon;
-};
-const _createLineObject = (sId: string, oContext: any, oGeomap: MDCGeomap) => {
-    const oLine = new GeomapLine({
-        width: 10,
-        points: oContext.geometry.coordinates.map((aPoint: any[]) => {
-            return new GeomapPoint({
-                lng: aPoint[0],
-                lat: aPoint[1]
-            });
-        })
-    });
-    return oLine;
-};
-
-/**
- * Updates the binding info
- * @param oGeomap
- * @param oBindingInfo
- */
-JSONGeomapDelegate.updateBindingInfo = function (oGeomap: MDCGeomap, oBindingInfo: any) {
-    JSONGeomapDelegate.updateBindingInfo.call(JSONGeomapDelegate, oGeomap, oBindingInfo);
-    oBindingInfo.path = "/" + oGeomap.getPayload().collectionName;
-};
-
-/**
- * Propagates the changes from the control to the inner Geomap instance (webc)
- * @param oGeomap
- * @param oChange
- */
-JSONGeomapDelegate.propagateItemChangeToGeomap = function (oGeomap: MDCGeomap, oChange: any) {
-    if (oChange.mutation === "insert") {
-        if (oChange.child) {
-            Log.info("Inserting item to geomap: " + oChange);
-        }
-
-        JSONGeomapDelegate.rebind(oGeomap, JSONGeomapDelegate.getBindingInfo(oGeomap));
-    }
-};
-
-/**
- * Returns the inner Geomap instance (webc)
- * @param oGeomap
- * @returns {sap.ui.geomap.Geomap}
- * @private
- */
-JSONGeomapDelegate._getInnerGeomap = function (oGeomap: MDCGeomap) {
-    return oGeomap.getAggregation("_geomap");
-};
-
-/**
- * Returns the binding info for given geomap.
- * If no binding info exists yet, a new one will be created.
- * @param {sap.ui.mdc.Geomap} oGeomap Reference to the MDC geomap
- * @returns {object} BindingInfo object
- *
- * @experimental
- * @private
- * @ui5-restricted sap.fe, sap.ui.mdc
- */
-JSONGeomapDelegate.getBindingInfo = function (oGeomap: MDCGeomap) {
-
-    const sEntitySetPath = "/" + JSONGeomapDelegate._getMetadataInfo(oGeomap).collectionName;
-    const oBindingInfo = {
-        path: sEntitySetPath
-    };
-    return oBindingInfo;
-};
-
-/**
- * Returns the current zoom level of the inner Geomap instance (webc)
- * @param oGeomap
- * @returns {number}
- */
-JSONGeomapDelegate.getZoomLevel = function(oGeomap: MDCGeomap) {
-    oGeomap.getControlDelegate()._getInnerGeomap(oGeomap).getZoom();
-};
-
-/**
- * Sets the zoom level of the inner Geomap instance (webc)
- * @param oGeomap
- * @param iZoomLevel
- */
-JSONGeomapDelegate.zoomIn = function(oGeomap: MDCGeomap) {
-    oGeomap.getAggregation("_geomap").setZoom(oGeomap.getAggregation("_geomap").getZoom() + 1);
-};
-
-/**
- * Sets the zoom level of the inner Geomap instance (webc)
- * @param oGeomap
- * @param iZoomLevel
- */
-JSONGeomapDelegate.zoomOut = function(oGeomap: MDCGeomap) {
-    oGeomap.getAggregation("_geomap").setZoom(oGeomap.getAggregation("_geomap").getZoom() - 1);
-};
-
-JSONGeomapDelegate.getGeomapBound = function(oGeomap: MDCGeomap) {
-    const oState = this._getState(oGeomap);
-    return !!oState?.innerGeomap;
-};
-
-JSONGeomapDelegate.getControlPositions = function() {
-    return {
-        controlPositions: {
-            navigation: GeomapControlPosition.TopLeft,
-            selection: GeomapControlPosition.TopRight,
-            fullscreen: GeomapControlPosition.TopRight,
-            scale: GeomapControlPosition.BottomLeft
-        }
-    };
-};
-
-JSONGeomapDelegate.getProvider = function() {
-    const osm = sap.ui.require.toUrl("mdc/tutorial/model/osm.json");
-    return `${window.location.origin}/${osm}`;
-};
-
-JSONGeomapDelegate._setBindingInfoForState = function(oGeomap: MDCGeomap, oBindingInfo: any) {
-    if (mStateMap.has(oGeomap)) {
-        mStateMap.get(oGeomap).bindingInfo = oBindingInfo;
-    } else {
-        mStateMap.set(oGeomap, { bindingInfo: oBindingInfo });
-    }
-};
-
-JSONGeomapDelegate.rebind = function(oGeomap: MDCGeomap, oBindingInfo: any) {
-    if (oGeomap && oBindingInfo && this._getInnerGeomap(oGeomap)) {
-
-        if (oBindingInfo.binding) {
-            oBindingInfo.binding.bHasAnalyticalInfo = true;
-        }
-
-        JSONGeomapDelegate._createContentFromPropertyInfos(oGeomap, true);
-
-        this._setBindingInfoForState(oGeomap, oBindingInfo);
-    }
-};
-
-export default JSONGeomapDelegate
 ```
 
->⚠️ The `fetchProperties` is a special function as its return value is used for further UI adaptation functionalities. Due to this, the result of this function must be kept stable throughout the lifecycle of your application. Any changes of the returned values might result in undesired effects. As we're using a PropertyInfo at this point, be aware to keep it stable throughout the lifecycle of your application.
-
-The PropertyInfo provides all necessary metadata for the MDC Geomap to function. Take a look at this excerpt of the `JSONPropertyInfo.ts` file to understand how the `geometry` property is defined.
-###### model/metadata/JSONPropertInfo.ts
-```js
-{
-    key: "geometry",
-    label: "Geometry",
-    visible: true,
-    path: "geometry",
-    dataType: "mdc.tutorial.model.type.Geometry"
-}
-```
->ℹ️ For a comprehensive description of what information should be contained within `PropertyInfo` objects, see the [API Reference](https://sdk.openui5.org/api/sap.ui.mdc.geomap.PropertyInfo). In real-life scenarios we might retrieve this metadata from the data service and we would have to translate it into the PropertyInfo format, easy to digest for the controls.
->ℹ️ As `mdc.tutorial.model.type.Geometry` is custom type, you might need to check [How to Add Custom Types](../ex4/).
+>ℹ️ Full version of the JSONGeomapDelegate used in this sample is available [here](../webapp/delegate/JSONGeomapDelegate).
 
 ## Step 2: Prepare a bridge for worker
 As MDC Geomap uses the `sap.ui.geomap` library — built on top of the Geomap Web Component and requiring a Web Worker — and because strict CSP policies apply, we need to create a "bridge" to enable the Web Worker
