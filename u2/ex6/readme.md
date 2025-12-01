@@ -14,7 +14,7 @@ Below is the code for the delegate. It extends the [`sap/ui/mdc/GeomapDelegate`]
 Thanks to TypeScript we can provide a delegate-specific interface for the payload, which clearly defines what content can be provided. In this case, the `bindingPath` is specified, so that the geomap knows from where to get its data. Take a look at the implementation!
 (We separate it in parts with some explanations to bring more clarity.)
 
-### Part 1. Create the delegate extending the base one
+### Create the delegate extending the base one
 
 In the sample code below we create new delegate that we would later use for our Geomap control.
 
@@ -34,11 +34,11 @@ const JSONGeomapDelegate = Object.assign({}, GeomapDelegate, JSONBaseDelegate)
 export default JSONGeomapDelegate
 ```
 
-### Part 2. Implement PropertyInfo handling
+### Implement PropertyInfo handling
 
 The next part adds some methods responsible for working with the propertyInfo.
 
-###### delegate/JSONGeomapDelegate.ts - part 2
+###### delegate/JSONGeomapDelegate.ts: propertyInfo
 ```typescript
 JSONGeomapDelegate.fetchProperties = function (oGeomap: MDCGeomap) {
     const aProperties = JSONPropertyInfo.filter((oPI) => oPI.key !== "$search");
@@ -97,10 +97,10 @@ The PropertyInfo provides all necessary metadata for the MDC Geomap to function.
 >ℹ️ For a comprehensive description of what information should be contained within `PropertyInfo` objects, see the [API Reference](https://sdk.openui5.org/api/sap.ui.mdc.geomap.PropertyInfo). In real-life scenarios we might retrieve this metadata from the data service and we would have to translate it into the PropertyInfo format, easy to digest for the controls.<br/>
 >ℹ️ As `mdc.tutorial.model.type.Geometry` is custom type, you might need to check [How to Add Custom Types](../u1/ex4/).
 
-### Part 3. Working with `sap.ui.geomap`.
+### Working with `sap.ui.geomap`.
 In this tutorial we're using `sap.ui.geomap` library for internal map. It is part of SAPUI5 and requires [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt)
 
-###### delegate/JSONGeomapDelegate.ts - part 3.1 - import `sap.ui.geomap`
+###### delegate/JSONGeomapDelegate.ts: import `sap.ui.geomap`
 ```typescript
 import Geomap from 'sap/ui/geomap/Geomap'
 import GeomapProvider from 'sap/ui/geomap/GeomapProvider'
@@ -117,7 +117,7 @@ import GeomapLine from "sap/ui/geomap/GeomapLine"
 import JSONModel from "sap/ui/model/json/JSONModel"
 ```
 
-###### delegate/JSONGeomapDelegate.ts - part 3.2 - usage of `sap.ui.geomap`
+###### delegate/JSONGeomapDelegate.ts: using of `sap.ui.geomap`
 ```typescript
 JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeomap, bForceRebind: boolean) {
     return new Promise(function (resolve, reject) {
@@ -204,7 +204,7 @@ JSONGeomapDelegate.createItemTemplateFactory = (oGeomap: MDCGeomap, sId: string,
 As `sap.ui.geomap` is actually a wrapper for `SapGeomap Web Component`, which aggregates different types of geo objects (spots, circles, polygons etc.) in single aggregation
 but the architecture of a database allows having multiple lines with multiple columns containing data for different types of geo objects, we need to take care for this manually:
 
-###### delegate/JSONGeomapDelegate.ts - part 3.3 - model handling
+###### delegate/JSONGeomapDelegate.ts: model handling
 ```typescript
 JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeomap, bForceRebind: boolean) {
     return new Promise(function (resolve, reject) {
@@ -266,7 +266,7 @@ JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeoma
 };
 ```
 
-###### delegate/JSONGeomapDelegate.ts - part 3.5 - geo object factories
+###### delegate/JSONGeomapDelegate.ts: geo object factories
 ```typescript
 const _createSpotObject = (sId: string, oContext: any, oGeomap: MDCGeomap) => {
     const oSpot = new GeomapSpot({
