@@ -187,6 +187,17 @@ JSONGeomapDelegate._createContentFromPropertyInfos = function (oGeomap: MDCGeoma
     });
 };
 
+JSONGeomapDelegate.getControlPositions = function() {
+    return {
+        controlPositions: {
+            navigation: GeomapControlPosition.TopLeft,
+            selection: GeomapControlPosition.TopRight,
+            fullscreen: GeomapControlPosition.TopRight,
+            scale: GeomapControlPosition.BottomLeft
+        }
+    };
+};
+
 JSONGeomapDelegate.createItemTemplateFactory = (oGeomap: MDCGeomap, sId: string, oContext: any) => {
     const oContextObject = oContext.getObject();
     let oTemplate;
@@ -278,6 +289,18 @@ const _createSpotObject = (sId: string, oContext: any, oGeomap: MDCGeomap) => {
     });
 
     return oSpot;
+};
+```
+
+The map requires a provider that shall be used for fetching map data such as vectors/raster tiles.<br/>
+This usually requires license/subscription. For this tutorial we will use OpenStreetMap.<br/>
+The following code snippet shows how this can be achived by loading `osm.json` located in the model folder of this tutorial:
+
+###### delegate/JSONGeomapDelegate.ts: the provider
+```typescript
+JSONGeomapDelegate.getProvider = function() {
+    const osm = sap.ui.require.toUrl("mdc/tutorial/model/osm.json");
+    return `${window.location.origin}/${osm}`;
 };
 ```
 
