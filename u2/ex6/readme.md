@@ -212,7 +212,7 @@ JSONGeomapDelegate.createItemTemplateFactory = (oGeomap: MDCGeomap, sId: string,
 };
 ```
 
-The `sap.ui.geomap` control is a wrapper for the `SapGeomap Web Component`, which aggregates various geo objects (spots, circles, polygons, etc.) into a single aggregation. However, a database allows having multiple lines with multiple columns containing data for different types of geo objects. Therefore, you  must handle this mapping manually:
+The `sap.ui.geomap` control is a wrapper for the `Sap Geomap Web Component`, which aggregates various geo objects (spots, circles, polygons, etc.) into a single aggregation. However, a database allows having multiple lines with multiple columns containing data for different types of geo objects. Therefore, you  must handle this mapping manually:
 
 ###### delegate/JSONGeomapDelegate.ts: model handling
 ```typescript
@@ -294,7 +294,7 @@ const _createSpotObject = (sId: string, oContext: any, oGeomap: MDCGeomap) => {
 
 The map requires a provider that shall be used for fetching map data such as vectors/raster tiles.<br/>
 This usually requires license/subscription. For this tutorial we will use OpenStreetMap.<br/>
-The following code snippet shows how this can be achived by loading `osm.json` located in the model folder of this tutorial:
+The following code snippet shows how this can be achieved by loading `osm.json` located in the model folder of this tutorial:
 
 ###### delegate/JSONGeomapDelegate.ts: the provider
 ```typescript
@@ -307,14 +307,14 @@ JSONGeomapDelegate.getProvider = function() {
 >ℹ️ Full version of the JSONGeomapDelegate used in this sample is available [here](../webapp/delegate/JSONGeomapDelegate).
 
 ## Step 2: Prepare a bridge for worker
-As MDC Geomap uses the `sap.ui.geomap` library — built on top of the Geomap Web Component and requiring a Web Worker — and because strict CSP policies apply, we need to create a "bridge" to enable the Web Worker
+As MDC Geomap uses the `sap.ui.geomap` library — built on top of the SAP Geomap Web Component and requiring a Web Worker — and because strict CSP policies apply, we need to create a "bridge" to enable the Web Worker
 This is achievable by simply creating a "worker.js" in the webapp root with the following:
 ```js
 importScripts(new URLSearchParams(self.location.search).get("worker"));
 ```
 
 To elaborate a bit - since Geomap uses Web Workers internally, in environments with a strict Content Security Policy (CSP) the worker must be loaded by the application.
-We create a "bridge" between the library and the application so the Geomap Web Component can automatically discover and use the worker URL.
+We create a "bridge" between the library and the application so the SAP Geomap Web Component can automatically discover and use the worker URL.
 
 The library provides the path of the worker to be loaded and passes it to "worker.js" on app side which simply loads it using `importScripts`.
 
