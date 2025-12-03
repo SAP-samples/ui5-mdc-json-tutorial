@@ -1,5 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
-[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/u2/ex6/dist)
+[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/u2/ex1/dist)
 # Exercise 6: How to Use the MDC Geomap
 In this exercise we will learn how to create a JSONGeomapDelegate for an MDC Geomap in an XMLView. These elements are crucial when building an MDC application that interacts with JSON data.
 
@@ -356,7 +356,7 @@ Below is the code we can add to the content aggregation of the DynamicPage in th
 ```
 Run the application and see how, with just a few lines of code we added, we get a geomap that shows the properties of our JSON data! 😱
 
-![Exercise 6 Result](ex6.png)
+![Exercise 6 Result](ex1.png)
 ## Summary
 
 The main takeaway is that delegates offer a potent mechanism to adapt the behavior of sap.ui.mdc controls without altering the controls themselves. With a custom delegate, we can customize a control to handle a specific type of data, such as JSON data. Furthermore, XML views provide declarative means to define the user interface for a screen in a UI5 application.

@@ -20,16 +20,19 @@ The TypeMap is used for defining custom types in our MDCs. If the standard types
 ### VariantManagement and Personalization
 VariantManagement is a feature that allows users to save their personalization settings. This can include things like the layout of a table, filter conditions in a FilterBar, or others. These settings can then be loaded later, allowing users to customize their experience and increase their productivity.
 ## Exercises
+### Unit 1:
 0. [Setup the Project on Your Machine](u1/ex0/) (*[browse sources](u1/ex0/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex0/dist)*)
 1. [How to Use the MDC Table](u1/ex1/) (*[browse sources](u1/ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex1/dist)*)
 1. [How to Use the MDC FilterBar](u1/ex2/) (*[browse sources](u1/ex2/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex2/dist)*)
 1. [How to Build Advanced Value Helps](u1/ex3/) (*[browse sources](u1/ex3/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex3/dist)*)
 1. [How to Add Custom Types](u1/ex4/) (*[browse sources](u1/ex4/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex4/dist)*)
 1. [How to Enable VariantManagement](u1/ex5/) (*[browse sources](u1/ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex5/dist)*)
-1. [How to Use the MDC Geomap](u2/ex6) (*[browse sources](u2/ex6/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u2/ex6/dist)*)
+
+### Unit 2:
+1. [How to Use the MDC Geomap](u2/ex1) (*[browse sources](u2/ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u2/ex1/dist)*)
 
 > [!CAUTION]
-> [How to Use the MDC Geomap](u2/ex6) - This package is provided under the terms of the [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt).
+> [How to Use the MDC Geomap](u2/ex1) - This package is provided under the terms of the [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt).
 
 
 ## Requirements
