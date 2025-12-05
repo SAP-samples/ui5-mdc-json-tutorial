@@ -29,7 +29,7 @@ VariantManagement is a feature that allows users to save their personalization s
 1. [How to Enable VariantManagement](u1/ex5/) (*[browse sources](u1/ex5/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u1/ex5/dist)*)
 
 ### Unit 2:
-1. [How to Use the MDC Geomap](u2/ex1) (*[browse sources](u2/ex1/webapp) - [run app](https://sap-samples.github.io/ui5-mdc-json-tutorial/u2/ex1/dist)*)
+1. [How to Use the MDC Geomap](u2/ex1) (*[browse sources](u2/ex1/webapp)*)
 
 > [!CAUTION]
 > [How to Use the MDC Geomap](u2/ex1) - This package is provided under the terms of the [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt).

@@ -1,5 +1,5 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
-[![demo](https://flat.badgen.net/badge/demo/deployed/blue?icon=github)](https://sap-samples.github.io/ui5-mdc-json-tutorial/u2/ex1/dist)
+
 # Exercise 6: How to Use the MDC Geomap
 In this exercise we will learn how to create a JSONGeomapDelegate for an MDC Geomap in an XMLView. These elements are crucial when building an MDC application that interacts with JSON data.
 
