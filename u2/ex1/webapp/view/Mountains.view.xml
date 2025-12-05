@@ -1,0 +1,45 @@
+<mvc:View controllerName="mdc.tutorial.controller.Mountains"
+	width="100%" height="100%"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.f"
+	xmlns:core="sap.ui.core"
+	xmlns:mdc="sap.ui.mdc">
+
+	<App id="MyApp" defaultTransitionName="show">
+		<Page id="P0" title="Geomap with JSON Delegate" titleLevel="H1">
+			<Text class="sapUiResponsiveMargin" text="This sample explains basic use case of MDC Geomap control with JSONDelegate using Geomap Web Component." />
+			<Text class="sapUiResponsiveMargin" text="Some of the markers displayed on the map have additional information which is shown in popover with additional information. Clicking on the marker opens the popover." />
+			<mdc:Geomap
+					id="geomap"
+					delegate="{
+						'name': 'mdc/tutorial/delegate/JSONGeomapDelegate',
+						'payload': {
+							bindingPath: 'mountains>/mountains',
+							collectionName: 'mountains',
+							infomodel: 'propertyinfos',
+							spotConfig: {
+								width: '3rem',
+								height: '3rem',
+								color: '#0057D2'
+							}
+						}
+					}"
+					centerLat="35.88138888888889"
+					centerLng="76.51333333333334"
+					zoom="4.5"
+					width="700px"
+					height="600px"
+					enableSelectionControl="true"
+					enableCopyrightControl="true"
+					class="sapUiResponsiveMargin"
+			>
+				<!--<mdc:items>
+                    <mdcgm:Item id="geometry" propertyKey="geometry" label="Geometry Point"/>
+                    <mdcgm:Item id="geometry2" propertyKey="geometry2" label="Geometry Point 2"/>
+                </mdc:items>-->
+			</mdc:Geomap>
+		</Page>
+	</App>
+
+</mvc:View>
