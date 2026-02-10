@@ -34,6 +34,11 @@ VariantManagement is a feature that allows users to save their personalization s
 > [!CAUTION]
 > [How to Use the MDC Geomap](u2/ex1) - This package is provided under the terms of the [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt).
 
+### Unit 3:
+1. [How to Use the MDC Chart with ChartJs](u3/ex1) (*[browse sources](u3/ex1/webapp)*)
+
+> [!CAUTION]
+> [How to Use the MDC Chart with ChartJs](u3/ex1) - This package uses ChartJs, hammerjs, chartjs-zoom-plugin under the terms of the [MIT](https://github.com/UI5/openui5/blob/master/LICENSES/MIT.txt).
 
 ## Requirements
 ### Technical Requirements

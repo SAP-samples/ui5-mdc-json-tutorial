@@ -1,0 +1,68 @@
+
+{
+	"sap.app": {
+		"id": "mdc.tutorial.ChartJS",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "mdc Chart Demo",
+		"description": "MDC Chart with Chart.js",
+		"dataSources": {
+			"Products" : {
+				"uri": "model/Products.json",
+				"type": "JSON"
+			},
+			"PropertyInfos" : {
+				"uri": "model/PropertyInfos.json",
+				"type": "JSON"
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "mdc.tutorial.view.Demo",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"dependencies": {
+			"minUI5Version": "1.114.1",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.mdc": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"products": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "Products"
+			},
+			"propertyinfos": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "PropertyInfos"
+			}
+		}
+	}
+}
