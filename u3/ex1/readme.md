@@ -432,7 +432,5 @@ In this exercise, we learned how to:
 - Create a custom ChartDelegate that bridges MDC Chart with Chart.js
 - Create a ChartWrapper control to manage Chart.js rendering
 
-The key takeaway is that the MDC Chart's delegate pattern allows for flexible integration with any charting library while maintaining the powerful P13n (personalization) features like chart type switching, item configuration, sorting, and filtering.
-
 ## License
 This package uses ChartJs, hammerjs, chartjs-zoom-plugin under the terms of the [MIT](https://github.com/UI5/openui5/blob/master/LICENSES/MIT.txt).
