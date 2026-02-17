@@ -1,4 +1,3 @@
-// TypeScript version of ChartJSDelegate.js
 import BaseDelegate from "sap/ui/mdc/ChartDelegate";
 import ChartWrapper from "mdc/tutorial/control/ChartWrapper";
 import ChartJSPropertyHelper from "./ChartJSPropertyHelper";
@@ -6,20 +5,15 @@ import ChartItem from "sap/ui/mdc/chart/Item";
 import ChartItemRoleType from "sap/ui/mdc/enums/ChartItemRoleType";
 import ChartItemPanel from "sap/ui/mdc/p13n/panels/ChartItemPanel";
 import Sorter from "sap/ui/model/Sorter";
-
-// Add type definitions as needed for oChart, oItem, etc.
-// For brevity, many types are left as 'any'. For production, define proper interfaces.
+import Element from "sap/ui/core/Element";
+import FilterField from "sap/ui/mdc/FilterField";
 
 type Chart = any;
 type ChartItemType = any;
 type PropertyBag = any;
-type FilterField = any;
-
-declare const sap: any;
-declare const window: any;
 
 const ChartDelegate: any = { ...BaseDelegate };
-const mStateMap = new window.WeakMap();
+const mStateMap = new WeakMap();
 
 ChartDelegate._getState = function(oChart: Chart) {
     if (mStateMap.has(oChart)) {
@@ -38,7 +32,7 @@ ChartDelegate.getFilterDelegate = function(oChart: Chart) {
         addItem: function(oChart: Chart, sPropertyKey: string) {
             const oPropertyInfo = oChart.getPropertyHelper().getProperty(sPropertyKey);
             return Promise.resolve(
-                new sap.ui.mdc.FilterField(
+                new FilterField(
                     oChart.getId() + "--" + sPropertyKey,
                     {
                         propertyKey: oPropertyInfo.key,
@@ -65,11 +59,15 @@ ChartDelegate.removeItem = function(oChart: Chart, oItem: ChartItemType, mProper
     oItem.destroy();
     return Promise.resolve(true);
 };
+
+//  * Inserts a chart item (measure / dimension for <code>sap.chart.Chart</code>) into the inner chart.<br>
 ChartDelegate.insertItemToInnerChart = function(oChart: Chart, oItem: ChartItemType, iIndex: number) {
-    // ...existing code...
+    // console.log("insertItemToInnerChart " + oItem.getLabel());
 };
+
+// * Removes a chart item (measure / dimension for <code>sap.chart.Chart</code>) from the inner chart.<br>
 ChartDelegate.removeItemFromInnerChart = function(oChart: Chart, oItem: ChartItemType) {
-    // ...existing code...
+    // console.log("removeItemFromInnerChart " + oItem.getLabel());
 };
 ChartDelegate.initializeInnerChart = function(oChart: Chart) {
     return new Promise(function(resolve, reject) {
@@ -79,8 +77,10 @@ ChartDelegate.initializeInnerChart = function(oChart: Chart) {
         resolve(oState.innerChart);
     }.bind(this));
 };
+
+//  * Creates the initial content for the chart before the metadata is retrieved.<br>
+//  * This can be used by chart libraries that can already show some information without the actual data (for example, axis labels, legend, ...).
 ChartDelegate.createInitialChartContent = function(oChart: Chart) {
-    // ...existing code...
 };
 ChartDelegate.createInnerChartContent = function(oChart: Chart, fnCallbackDataLoaded: Function) {
     return new Promise(function(resolve, reject) {
@@ -225,7 +225,7 @@ ChartDelegate._rebind = function(oChart: Chart, oBindingInfo: any) {
     const oDataBindingInfo = { ...oBindingInfo };
     oDataBindingInfo.path = oPayload.model;
     oDataBindingInfo.factory = function(s: any, oContext: any) {
-        return new sap.ui.core.Element();
+        return new Element();
     };
     this._getInnerChart(oChart).bindData(oDataBindingInfo);
     const aProductsModelData: any[] = [];
