@@ -1,16 +1,16 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
 
 # Exercise 7: How to Use the MDC Chart with Chart.js
-In this exercise we will learn how to create a ChartJSDelegate for an MDC Chart using the popular [Chart.js](https://www.chartjs.org/) library. This demonstrates how to integrate a third-party charting library with the MDC Chart control.
+In this exercise, we will learn how to create a ChartJSDelegate for an MDC Chart using the popular [Chart.js](https://www.chartjs.org/) library. It demonstrates how to integrate a third-party charting library with the MDC Chart control.
 
 ## Step 1: Set Up the Chart.js Libraries
 
 First, we need to include the Chart.js library and its plugins. Create a `control` directory in the `webapp` folder and add the following files:
 
 - `ChartJS.js` - The Chart.js library
-- `hammerjs.js` - Required for touch gestures
+- `hammerjs.js` - Required for touch-gesture support
 - `chartjs-plugin-zoom.js` - Zoom plugin for Chart.js
-- `ChartWrapper.js` - A UI5 control wrapper for Chart.js
+- `ChartWrapper.js` - A wrapper for Chart.js
 - `ChartWrapperRenderer.js` - The renderer for ChartWrapper
 
 ### Configure the UI5 Loader
@@ -262,7 +262,7 @@ ChartDelegate.getPropertyHelperClass = function() {
 
 ## Step 4: Create the ChartWrapper Control
 
-The `ChartWrapper` is a UI5 control that wraps the Chart.js canvas. It handles:
+The `ChartWrapper` wraps the Chart.js canvas. It handles:
 - Chart rendering
 - Chart type switching
 - Zoom functionality
