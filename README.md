@@ -1,7 +1,7 @@
 # UI5 MDC Tutorial
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-mdc-json-tutorial)](https://api.reuse.software/info/github.com/SAP-samples/ui5-mdc-json-tutorial)
 ## Description
-In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, table, Geomap, FilterBar, value help, TypeMap, and VariantManagement. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, we should be able to leverage the full potential of the MDC concepts in our own projects.
+In this tutorial, we will cover some key concepts involving metadata-driven controls (MDCs). This includes understanding control delegates, PropertyInfo, table, Geomap, FilterBar, value help, TypeMap, Chart and VariantManagement. The implementation will be based on a JSON model and is based on our official [Demokit Sample](https://sdk.openui5.org/entity/sap.ui.mdc/sample/sap.ui.mdc.demokit.sample.TableFilterBarJson). After completion, we should be able to leverage the full potential of the MDC concepts in our own projects.
 
 >ℹ️ This version of the tutorial uses TypeScript. You can still find the JavaScript version [here](https://github.com/SAP-samples/ui5-mdc-json-tutorial/tree/javascript), but that one will not receive any more updates or additions. We recommend using sap.ui.mdc with TypeScript.
 ### Metadata-Driven Controls
@@ -34,6 +34,11 @@ VariantManagement is a feature that allows users to save their personalization s
 > [!CAUTION]
 > [How to Use the MDC Geomap](u2/ex1) - This package is provided under the terms of the [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt).
 
+### Unit 3:
+1. [How to Use the MDC Chart with ChartJs](u3/ex1) (*[browse sources](u3/ex1/webapp)*)
+
+> [!CAUTION]
+> [How to Use the MDC Chart with ChartJs](u3/ex1) - This package uses ChartJs, hammerjs, chartjs-zoom-plugin under the terms of the [MIT](https://github.com/UI5/openui5/blob/master/LICENSES/MIT.txt).
 
 ## Requirements
 ### Technical Requirements
