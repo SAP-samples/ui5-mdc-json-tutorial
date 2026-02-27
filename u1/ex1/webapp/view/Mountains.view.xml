@@ -10,26 +10,22 @@
 	xmlns:vm="sap.ui.fl.variants">
 
 	<f:DynamicPage id="page">
-		<f:title>
-			<f:DynamicPageTitle>
-				<f:heading>
-					<Title text="Mountains"/>
-				</f:heading>
-			</f:DynamicPageTitle>
-		</f:title>
 		<f:header>
 			<f:DynamicPageHeader pinnable="true">
-				
+					<f:DynamicPageTitle>
+					<f:heading>
+						<Title text="Mountains"/>
+					</f:heading>
+				</f:DynamicPageTitle>
 			</f:DynamicPageHeader>
 		</f:header>
 		<f:content>
-			<mdc:Table
+				<mdc:Table
 				id="table"
 				header="Mountains"
 				p13nMode="Sort,Column"
 				type="ResponsiveTable"
 				threshold="100"
-				filter="filterbar"
 				showRowCount="false"
 				delegate="{
 					name: 'mdc/tutorial/delegate/JSONTableDelegate',
