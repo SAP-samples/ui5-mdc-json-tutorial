@@ -1,0 +1,162 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:mdct="sap.ui.mdc.table"
+    controllerName="sap.ui.stores.controller.Stores">
+
+    <Page id="storesPage" showHeader="false">
+        <content>
+            <VBox class="storesPageContent">
+                <VBox class="storesFilterSection">
+                    <Title text="Use filters below to narrow down store results" class="storesFilterHint" level="H5" />
+                    <mdc:FilterBar
+                        id="filterBar"
+                        delegate="{
+                            'name': 'sap/ui/stores/delegate/StoresFilterBarDelegate'
+                        }"
+                        search=".onSearch"
+                        showClearButton="true"
+                        p13nMode="Item"
+                    >
+                        <mdc:filterItems>
+                            <mdc:FilterField
+                                delegate="{ 'name': 'sap/ui/mdc/field/FieldBaseDelegate' }"
+                                label="Name"
+                                conditions="{$filters>/conditions/name}"
+                                dataType="sap.ui.model.type.String"
+                                maxConditions="1"
+                            />
+                            <mdc:FilterField
+                                delegate="{ 'name': 'sap/ui/mdc/field/FieldBaseDelegate' }"
+                                label="City"
+                                conditions="{$filters>/conditions/city}"
+                                dataType="sap.ui.model.type.String"
+                                maxConditions="1"
+                            />
+                            <mdc:FilterField
+                                delegate="{ 'name': 'sap/ui/mdc/field/FieldBaseDelegate' }"
+                                label="Country"
+                                conditions="{$filters>/conditions/country}"
+                                dataType="sap.ui.model.type.String"
+                                maxConditions="1"
+                            />
+                        </mdc:filterItems>
+                    </mdc:FilterBar>
+                </VBox>
+
+                <VBox class="storesMapSection">
+                    <Toolbar>
+                        <Title text="Stores locations" level="H5" />
+                        <ToolbarSpacer />
+                        <MenuButton
+                            id="addMenuBtn"
+                            text="Create"
+                            type="Transparent"
+                            buttonMode="Split"
+                            defaultAction=".onCreate"
+                        >
+                            <menu>
+                                <Menu>
+                                    <MenuItem text="Route" icon="sap-icon://map-2" press=".onShowRoute" />
+                                    <MenuItem text="Store" icon="sap-icon://add" press=".onCreate" visible="{= !${demo>/enabled}}" />
+                                </Menu>
+                            </menu>
+                        </MenuButton>
+                        <Button
+                            id="clearRoutesBtn"
+                            icon="sap-icon://clear-all"
+                            type="Transparent"
+                            press=".onClearRoutes"
+                            tooltip="Clear Routes"
+                            visible="{appView>/hasRoutes}"
+                        />
+                        <Button
+                            id="zoomInBtn"
+                            icon="sap-icon://zoom-in"
+                            type="Transparent"
+                            press=".onZoomIn"
+                            tooltip="Zoom In"
+                        />
+                        <Button
+                            id="zoomOutBtn"
+                            icon="sap-icon://zoom-out"
+                            type="Transparent"
+                            press=".onZoomOut"
+                            tooltip="Zoom Out"
+                        />
+                        <MenuButton
+                            id="mapTypeBtn"
+                            icon="sap-icon://choropleth-chart"
+                            type="Transparent"
+                            tooltip="Map Visualization"
+                        >
+                            <menu>
+                                <Menu>
+                                    <MenuItem text="Locations" icon="sap-icon://map" press=".onSwitchToSpots" />
+                                    <MenuItem text="Regions" icon="sap-icon://choropleth-chart" press=".onSwitchToChoropleth" />
+                                </Menu>
+                            </menu>
+                        </MenuButton>
+                    </Toolbar>
+                    <mdc:Geomap
+                        id="storesGeomap"
+                        delegate="{
+                            'name': 'sap/ui/stores/delegate/StoresGeomapDelegate',
+                            'payload': {
+                                'collectionName': 'Stores',
+                                'spotConfig': {
+                                    'width': '2.5rem',
+                                    'height': '2.5rem',
+                                    'color': '#CC0000'
+                                }
+                            }
+                        }"
+                        centerLat="48.0"
+                        centerLng="10.0"
+                        zoom="4"
+                        width="100%"
+                        height="700px"
+                        enableNavigationControl="true"
+                        enableSelectionControl="true"
+                        enableScaleControl="true"
+                        enableCopyrightControl="true"
+                    />
+                </VBox>
+
+                <VBox class="storesTableSection">
+                    <mdc:Table
+                        id="storesTable"
+                        type="ResponsiveTable"
+                        selectionMode="SingleMaster"
+                        header="Stores"
+                        threshold="10"
+                        selectionChange=".onTableSelectionChange"
+                        filter="filterBar"
+                        delegate="{
+                            'name': 'sap/ui/stores/delegate/StoresTableDelegate'
+                        }"
+                    >
+                        <mdc:columns>
+                            <mdct:Column propertyKey="name" header="Name">
+                                <Text text="{name}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="city" header="City">
+                                <Text text="{city}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="country" header="Country">
+                                <Text text="{country}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="address" header="Address">
+                                <Text text="{address}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="phone" header="Phone">
+                                <Text text="{phone}" />
+                            </mdct:Column>
+                        </mdc:columns>
+                    </mdc:Table>
+                </VBox>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

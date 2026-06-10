@@ -1,0 +1,94 @@
+{
+  "value": [
+    {
+      "ID": "c1000001-0001-0001-0001-000000000001",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000001",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000029",
+      "transferDate": "2025-11-15",
+      "distance": 2.5,
+      "co2Emissions": 0.45,
+      "status": "Completed"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000002",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000005",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000011",
+      "transferDate": "2025-12-20",
+      "distance": 545.0,
+      "co2Emissions": 98.10,
+      "status": "InTransit"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000003",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000003",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000033",
+      "transferDate": "2026-01-10",
+      "distance": 310.0,
+      "co2Emissions": 55.80,
+      "status": "Planned"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000004",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000010",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000023",
+      "transferDate": "2025-10-05",
+      "distance": 78.0,
+      "co2Emissions": 14.04,
+      "status": "Completed"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000005",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000002",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000030",
+      "transferDate": "2025-09-28",
+      "distance": 1.2,
+      "co2Emissions": 0.22,
+      "status": "Completed"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000006",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000007",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000047",
+      "transferDate": "2025-12-18",
+      "distance": 8.5,
+      "co2Emissions": 1.53,
+      "status": "InTransit"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000007",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000004",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000022",
+      "transferDate": "2026-02-01",
+      "distance": 620.0,
+      "co2Emissions": 111.60,
+      "status": "Planned"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000008",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000031",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000009",
+      "transferDate": "2025-12-22",
+      "distance": 575.0,
+      "co2Emissions": 103.50,
+      "status": "InTransit"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000009",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000009",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000005",
+      "transferDate": "2026-01-18",
+      "distance": 960.0,
+      "co2Emissions": 172.80,
+      "status": "InTransit"
+    },
+    {
+      "ID": "c1000001-0001-0001-0001-000000000010",
+      "sourceStore_ID": "a1b2c3d4-1111-1111-1111-000000000005",
+      "destStore_ID": "a1b2c3d4-1111-1111-1111-000000000003",
+      "transferDate": "2026-02-05",
+      "distance": 880.0,
+      "co2Emissions": 158.40,
+      "status": "Planned"
+    }
+  ]
+}

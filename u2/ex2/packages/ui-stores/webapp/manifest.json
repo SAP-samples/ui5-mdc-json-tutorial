@@ -1,0 +1,126 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "sap.ui.stores",
+        "type": "application",
+        "title": "Stores GeoMap",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "dataSources": {
+            "stores": {
+                "uri": "/odata/v4/stores/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "4.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "resources": {
+            "css": [
+                { "uri": "css/style.css" }
+            ]
+        },
+        "dependencies": {
+            "minUI5Version": "1.148.1",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {},
+                "sap.ui.layout": {},
+                "sap.ui.mdc": {},
+                "sap.ui.geomap": {},
+                "sap.ui.fl": {},
+                "sap.uxap": {}
+            }
+        },
+        "models": {
+            "": {
+                "dataSource": "stores",
+                "preload": true,
+                "settings": {
+                    "groupId": "$auto",
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "sap.ui.stores.view.App",
+            "type": "XML",
+            "id": "app",
+            "async": true
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "type": "View",
+                "viewType": "XML",
+                "path": "sap.ui.stores.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "stores",
+                    "target": "stores"
+                },
+                {
+                    "pattern": "Store/create",
+                    "name": "storeCreate",
+                    "target": "storeDetail"
+                },
+                {
+                    "pattern": "Store/{storeId}/transfer",
+                    "name": "transfer",
+                    "target": "transfer"
+                },
+                {
+                    "pattern": "TransferDetail/{transferId}",
+                    "name": "transferDetail",
+                    "target": "transferDetail"
+                },
+                {
+                    "pattern": "Store/{storeId}",
+                    "name": "storeDetail",
+                    "target": "storeDetail"
+                }
+            ],
+            "targets": {
+                "stores": {
+                    "viewName": "Stores",
+                    "viewId": "stores",
+                    "viewLevel": 1
+                },
+                "storeDetail": {
+                    "viewName": "StoreDetail",
+                    "viewId": "storeDetail",
+                    "viewLevel": 2
+                },
+                "transfer": {
+                    "viewName": "Transfer",
+                    "viewId": "transfer",
+                    "viewLevel": 2
+                },
+                "transferDetail": {
+                    "viewName": "TransferDetail",
+                    "viewId": "transferDetail",
+                    "viewLevel": 3
+                }
+            }
+        }
+    }
+}

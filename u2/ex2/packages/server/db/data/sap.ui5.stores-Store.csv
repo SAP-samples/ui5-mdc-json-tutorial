@@ -1,0 +1,61 @@
+ID;name;address;city;country;latitude;longitude;phone;openingHours
+a1b2c3d4-1111-1111-1111-000000000001;Fashion Store Flagship Store Oxford Street;481-483 Oxford St;London;United Kingdom;51.5152800;-0.1415300;+44 20 7493 4004;Mon-Sat 09:30-21:00 Sun 12:00-18:00
+a1b2c3d4-1111-1111-1111-000000000002;Fashion Store Times Square;1472 Broadway;New York;USA;40.7565800;-73.9869500;+1 855-466-7467;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000003;Fashion Store Champs-Elysees;88 Av. des Champs-Elysees;Paris;France;48.8718200;2.3044900;+33 1 55 35 89 00;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000004;Fashion Store Serrano;Calle de Serrano 32;Madrid;Spain;40.4266500;-3.6862100;+34 914 35 45 06;Mon-Sat 10:00-21:00 Sun 11:00-21:00
+a1b2c3d4-1111-1111-1111-000000000005;Fashion Store Kurfuerstendamm;Kurfuerstendamm 17;Berlin;Germany;50.5036300;13.3672400;+49 30 2091 6830;Mon-Sat 10:00-20:00
+a1b2c3d4-1111-1111-1111-000000000006;Fashion Store Drottninggatan;Drottninggatan 50;Stockholm;Sweden;59.3346700;18.0635500;+46 8 796 55 00;Mon-Fri 10:00-20:00 Sat 10:00-18:00 Sun 11:00-18:00
+a1b2c3d4-1111-1111-1111-000000000007;Fashion Store Shibuya;1-21-3 Jinnan Shibuya;Tokyo;Japan;35.6618400;139.6993100;+81 3-5728-3180;Mon-Sun 11:00-21:00
+a1b2c3d4-1111-1111-1111-000000000008;Fashion Store Pitt Street;188 Pitt St;Sydney;Australia;-33.8715800;151.2092700;+61 2 8279 4288;Mon-Sun 09:00-19:00
+a1b2c3d4-1111-1111-1111-000000000009;Fashion Store Via del Corso;Via del Corso 505;Rome;Italy;41.9089700;12.4766500;+39 06 6992 4820;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000010;Fashion Store Kalverstraat;Kalverstraat 6;Amsterdam;Netherlands;52.3729800;4.8912100;+31 20 520 89 00;Mon-Sat 10:00-20:00 Sun 11:00-19:00
+a1b2c3d4-1111-1111-1111-000000000011;Fashion Store Zeil;Zeil 85;Frankfurt;Germany;50.1143900;8.6803900;+49 69 9494 6220;Mon-Sat 10:00-20:00
+a1b2c3d4-1111-1111-1111-000000000012;Fashion Store Michigan Avenue;840 N Michigan Ave;Chicago;USA;41.8986600;-87.6232200;+1 855-466-7467;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000013;Fashion Store Queen Street;176 Queen St W;Toronto;Canada;43.6504500;-79.3882400;+1 855-466-7467;Mon-Sat 10:00-21:00 Sun 11:00-19:00
+a1b2c3d4-1111-1111-1111-000000000014;Fashion Store Calle Florida;Calle Florida 651;Buenos Aires;Argentina;-34.5998700;-58.3744200;+54 11 5031-1001;Mon-Sat 10:00-21:00 Sun 12:00-20:00
+a1b2c3d4-1111-1111-1111-000000000015;Fashion Store Myeongdong;14 Myeongdong-gil;Seoul;South Korea;37.5635000;126.9860000;+82 2-3789-4000;Mon-Sun 11:00-22:00
+a1b2c3d4-1111-1111-1111-000000000016;Fashion Store Nanjing Road;789 Nanjing East Rd;Shanghai;China;31.2350600;121.4725100;+86 21-6352-8800;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000017;Fashion Store Stroget;Vimmelskaftet 38;Copenhagen;Denmark;55.6770100;12.5762300;+45 33 32 62 00;Mon-Sat 10:00-20:00 Sun 11:00-18:00
+a1b2c3d4-1111-1111-1111-000000000018;Fashion Store Mariahilfer Strasse;Mariahilfer Str. 38;Vienna;Austria;48.1968400;16.3541800;+43 1 523 09 60;Mon-Sat 09:30-20:00
+a1b2c3d4-1111-1111-1111-000000000019;Fashion Store Bahnhofstrasse;Bahnhofstrasse 79;Zurich;Switzerland;47.3730600;8.5347000;+41 44 213 80 80;Mon-Sat 09:00-20:00
+a1b2c3d4-1111-1111-1111-000000000020;Fashion Store Aleksanterinkatu;Aleksanterinkatu 21;Helsinki;Finland;60.1693400;24.9432000;+358 9 612 62 00;Mon-Fri 10:00-20:00 Sat 10:00-18:00 Sun 12:00-18:00
+a1b2c3d4-1111-1111-1111-000000000021;Fashion Store Karl Johans Gate;Karl Johans gate 11;Oslo;Norway;59.9141300;10.7387300;+47 22 47 17 80;Mon-Fri 10:00-20:00 Sat 10:00-18:00
+a1b2c3d4-1111-1111-1111-000000000022;Fashion Store Passeig de Gracia;Passeig de Gracia 11;Barcelona;Spain;41.3884400;2.1685700;+34 933 42 40 60;Mon-Sat 10:00-21:00 Sun 12:00-20:00
+a1b2c3d4-1111-1111-1111-000000000023;Fashion Store Lijnbaan;Lijnbaan 50;Rotterdam;Netherlands;51.9221900;4.4753800;+31 10 404 53 00;Mon-Sat 10:00-18:00 Sun 12:00-17:00
+a1b2c3d4-1111-1111-1111-000000000024;Fashion Store Istiklal Caddesi;Istiklal Cad. 48;Istanbul;Turkey;41.0333300;28.9779600;+90 212 243 90 00;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000025;Fashion Store Mall of the Emirates;Mall of the Emirates;Dubai;UAE;25.1181200;55.2004800;+971 4 341 4155;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000026;Fashion Store Ermou;Ermou 54;Athens;Greece;37.9773300;23.7272500;+30 210 322 0010;Mon-Sat 10:00-21:00 Sun 11:00-19:00
+a1b2c3d4-1111-1111-1111-000000000027;Fashion Store Orchard Road;313 Somerset 313 Orchard Rd;Singapore;Singapore;1.3012100;103.8387300;+65 6733 5830;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000028;Fashion Store Gangnam;430 Gangnam-daero;Seoul;South Korea;37.5016300;127.0251100;+82 2-553-2600;Mon-Sun 11:00-22:00
+a1b2c3d4-1111-1111-1111-000000000029;Fashion Store Regent Street;261-271 Regent St;London;United Kingdom;51.5148800;-0.1404200;+44 20 7758 3550;Mon-Sat 10:00-21:00 Sun 12:00-18:00
+a1b2c3d4-1111-1111-1111-000000000030;Fashion Store Herald Square;1328 Broadway;New York;USA;40.7488100;-73.9881100;+1 855-466-7467;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000031;Fashion Store Piazza Duomo;Piazza del Duomo 6;Milan;Italy;45.4639300;9.1900700;+39 02 8909 1650;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000032;Fashion Store Neuhauser Strasse;Neuhauser Str. 30;Munich;Germany;48.1381300;11.5695100;+49 89 2420 8170;Mon-Sat 10:00-20:00
+a1b2c3d4-1111-1111-1111-000000000033;Fashion Store Rue Neuve;Rue Neuve 52;Brussels;Belgium;50.8515700;4.3550800;+32 2 217 89 80;Mon-Sat 10:00-19:30 Sun 12:00-18:00
+a1b2c3d4-1111-1111-1111-000000000034;Fashion Store Santa Monica;1415 Third Street Promenade;Los Angeles;USA;34.0157300;-118.4943200;+1 855-466-7467;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000035;Fashion Store Market Street;150 Powell St;San Francisco;USA;37.7864900;-122.4077200;+1 855-466-7467;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000036;Fashion Store Wenceslas Square;Vaclavske namesti 22;Prague;Czech Republic;50.0811200;14.4257200;+420 224 235 051;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000037;Fashion Store Vaci utca;Vaci utca 15;Budapest;Hungary;47.4946400;19.0517000;+36 1 266 1120;Mon-Sat 10:00-20:00 Sun 10:00-18:00
+a1b2c3d4-1111-1111-1111-000000000038;Fashion Store Nowy Swiat;Nowy Swiat 22;Warsaw;Poland;52.2303100;21.0220700;+48 22 375 00 00;Mon-Sat 10:00-21:00 Sun 10:00-20:00
+a1b2c3d4-1111-1111-1111-000000000039;Fashion Store Pavilion KL;Pavilion Kuala Lumpur 168 Jalan Bukit Bintang;Kuala Lumpur;Malaysia;3.1490600;101.7134400;+60 3-2110 3800;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000040;Fashion Store Saigon Centre;65 Le Loi Boulevard;Ho Chi Minh City;Vietnam;10.7725400;106.7001700;+84 28 3821 8200;Mon-Sun 09:30-22:00
+a1b2c3d4-1111-1111-1111-000000000041;Fashion Store Robson Street;1098 Robson St;Vancouver;Canada;49.2830800;-123.1246500;+1 855-466-7467;Mon-Sat 10:00-21:00 Sun 11:00-19:00
+a1b2c3d4-1111-1111-1111-000000000042;Fashion Store Bourke Street;261 Bourke St;Melbourne;Australia;-37.8132600;144.9649800;+61 3 9671 4288;Mon-Sun 09:00-19:00
+a1b2c3d4-1111-1111-1111-000000000043;Fashion Store South Africa Sandton;Sandton City Shopping Centre;Johannesburg;South Africa;-26.1074200;28.0527300;+27 11 784 0800;Mon-Sun 09:00-19:00
+a1b2c3d4-1111-1111-1111-000000000044;Fashion Store Lisbon;Rua Garrett 83;Lisbon;Portugal;38.7104700;-9.1424800;+351 21 347 0800;Mon-Sat 10:00-20:00 Sun 11:00-19:00
+a1b2c3d4-1111-1111-1111-000000000045;Fashion Store Dublin;47-48 Mary Street;Dublin;Ireland;53.3483300;-6.2659200;+353 1 873 0600;Mon-Sat 09:30-20:00 Sun 11:00-19:00
+a1b2c3d4-1111-1111-1111-000000000046;Fashion Store Mumbai;High Street Phoenix Senapati Bapat Marg;Mumbai;India;18.9848200;72.8309300;+91 22-4333-4000;Mon-Sun 11:00-21:30
+a1b2c3d4-1111-1111-1111-000000000047;Fashion Store Ginza;3-5-4 Ginza;Tokyo;Japan;35.6718200;139.7650800;+81 3-3562-1120;Mon-Sun 11:00-21:00
+a1b2c3d4-1111-1111-1111-000000000048;Fashion Store Mexico Reforma;Paseo de la Reforma 222;Mexico City;Mexico;19.4284200;-99.1653500;+52 55 5207 4900;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000049;Fashion Store Lima Jockey Plaza;Jockey Plaza Av. Javier Prado Este 4200;Lima;Peru;-12.0860200;-76.9770400;+51 1 437 3400;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000050;Fashion Store Santiago Costanera;Costanera Center Av. Andres Bello 2447;Santiago;Chile;-33.4175400;-70.6064800;+56 2 2916 9000;Mon-Sun 10:00-21:00
+a1b2c3d4-1111-1111-1111-000000000051;Fashion Store Siam Paragon;991 Rama I Rd;Bangkok;Thailand;13.7455300;100.5340100;+66 2-610-8000;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000052;Fashion Store Grand Indonesia;Jl. MH Thamrin No.1;Jakarta;Indonesia;-6.1944200;106.8229400;+62 21-2358-0000;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000053;Fashion Store Xinyi;No. 68 Songren Rd;Taipei;Taiwan;25.0418300;121.5654200;+886 2-8780-1000;Mon-Sun 11:00-21:30
+a1b2c3d4-1111-1111-1111-000000000054;Fashion Store Select Citywalk;A-3 District Centre Saket;New Delhi;India;28.5283700;77.2197400;+91 11-4060-5060;Mon-Sun 11:00-21:00
+a1b2c3d4-1111-1111-1111-000000000055;Fashion Store Shinsaibashi;1-4-3 Minamisenba;Osaka;Japan;34.6723400;135.5010300;+81 6-6245-3100;Mon-Sun 11:00-21:00
+a1b2c3d4-1111-1111-1111-000000000056;Fashion Store Causeway Bay;Lee Theatre Plaza 99 Percival St;Hong Kong;China;22.2783600;114.1847200;+852 2882-6600;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000057;Fashion Store SM Mall of Asia;SM Mall of Asia Bay Blvd;Manila;Philippines;14.5347100;120.9831500;+63 2-8556-0680;Mon-Sun 10:00-22:00
+a1b2c3d4-1111-1111-1111-000000000058;Fashion Store Trang Tien;39 Trang Tien St;Hanoi;Vietnam;21.0245300;105.8542100;+84 24-3825-3100;Mon-Sun 09:30-22:00
+a1b2c3d4-1111-1111-1111-000000000059;Fashion Store Phoenix Marketcity;Whitefield Main Rd Mahadevapura;Bangalore;India;12.9971600;77.6946800;+91 80-4600-5000;Mon-Sun 11:00-21:30
+a1b2c3d4-1111-1111-1111-000000000060;Fashion Store MixC;1881 Bao'an Nan Rd;Shenzhen;China;22.5431400;114.1057900;+86 755-8266-8800;Mon-Sun 10:00-22:00

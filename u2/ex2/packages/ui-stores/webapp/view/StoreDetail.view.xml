@@ -1,0 +1,175 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:uxap="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:mdct="sap.ui.mdc.table"
+    controllerName="sap.ui.stores.controller.StoreDetail">
+
+    <uxap:ObjectPageLayout id="objectPageLayout" showTitleInHeaderContent="true" showFooter="{ui>/editable}">
+        <uxap:headerTitle>
+            <uxap:ObjectPageDynamicHeaderTitle>
+                <uxap:heading>
+                    <Title id="headerTitle" text="{= ${ui>/createMode} ? 'New Store' : ${name}}" />
+                </uxap:heading>
+                <uxap:expandedContent>
+                    <Label text="{= ${ui>/createMode} ? '' : ${city} + ', ' + ${country}}" />
+                </uxap:expandedContent>
+                <uxap:actions>
+                    <Button
+                        id="editBtn"
+                        text="Edit"
+                        type="Emphasized"
+                        icon="sap-icon://edit"
+                        press=".onEdit"
+                        visible="{= !${ui>/editable} &amp;&amp; !${demo>/enabled}}"
+                    />
+                    <Button
+                        id="deleteBtn"
+                        text="Delete"
+                        type="Transparent"
+                        icon="sap-icon://delete"
+                        press=".onDelete"
+                        visible="{= !${ui>/editable} &amp;&amp; !${demo>/enabled}}"
+                    />
+                </uxap:actions>
+            </uxap:ObjectPageDynamicHeaderTitle>
+        </uxap:headerTitle>
+
+        <uxap:headerContent>
+            <layout:HorizontalLayout visible="{= !${ui>/editable}}">
+                <layout:VerticalLayout class="sapUiSmallMarginEnd">
+                    <ObjectAttribute title="Address" text="{address}" />
+                    <ObjectAttribute title="Phone" text="{phone}" />
+                    <ObjectAttribute title="Opening Hours" text="{openingHours}" />
+                </layout:VerticalLayout>
+            </layout:HorizontalLayout>
+        </uxap:headerContent>
+
+        <uxap:sections>
+            <uxap:ObjectPageSection title="General Information" id="generalSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Details" id="detailsSubSection">
+                        <form:SimpleForm
+                            editable="{ui>/editable}"
+                            layout="ResponsiveGridLayout"
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            emptySpanXL="4"
+                            emptySpanL="4"
+                            emptySpanM="0"
+                            columnsL="1"
+                            columnsM="1"
+                        >
+                            <form:content>
+                                <Label text="Name" required="{ui>/editable}" />
+                                <Input value="{name}" editable="{ui>/editable}" required="true" />
+                                <Label text="Address" />
+                                <Input value="{address}" editable="{ui>/editable}" />
+                                <Label text="City" required="{ui>/editable}" />
+                                <Input value="{city}" editable="{ui>/editable}" required="true" />
+                                <Label text="Country" required="{ui>/editable}" />
+                                <Input value="{country}" editable="{ui>/editable}" required="true" />
+                                <Label text="Phone" />
+                                <Input value="{phone}" editable="{ui>/editable}" />
+                                <Label text="Opening Hours" />
+                                <Input value="{openingHours}" editable="{ui>/editable}" />
+                                <Label text="Latitude" />
+                                <Input value="{latitude}" editable="{ui>/editable}" type="Number" change=".onCoordinateChange" />
+                                <Label text="Longitude" />
+                                <Input value="{longitude}" editable="{ui>/editable}" type="Number" change=".onCoordinateChange" />
+                            </form:content>
+                        </form:SimpleForm>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="Location" id="locationSection">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Map" id="locationSubSection">
+                        <VBox>
+                            <Title
+                                text="Click on the map to set the store location"
+                                level="H6"
+                                class="sapUiSmallMarginBottom"
+                                visible="{ui>/editable}"
+                            />
+                            <VBox class="storesMapSection">
+                                <mdc:Geomap
+                                    id="detailGeomap"
+                                    delegate="{
+                                        'name': 'sap/ui/stores/delegate/StoreDetailGeomapDelegate',
+                                        'payload': {
+                                            'spotConfig': {
+                                                'width': '3rem',
+                                                'height': '3rem',
+                                                'color': '#CC0000'
+                                            }
+                                        }
+                                    }"
+                                    centerLat="48.0"
+                                    centerLng="10.0"
+                                    zoom="4"
+                                    width="100%"
+                                    height="400px"
+                                    enableNavigationControl="true"
+                                    enableScaleControl="true"
+                                    enableCopyrightControl="true"
+                                />
+                            </VBox>
+                        </VBox>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+
+            <uxap:ObjectPageSection title="Inventory" id="inventorySection" visible="{= !${ui>/createMode}}">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Stock Items" id="inventorySubSection">
+                        <mdc:Table
+                            id="inventoryTable"
+                            type="ResponsiveTable"
+                            header="Inventory"
+                            delegate="{
+                                'name': 'sap/ui/stores/delegate/InventoryTableDelegate'
+                            }"
+                        >
+                            <mdc:columns>
+                                <mdct:Column propertyKey="name" header="Name">
+                                    <Text text="{name}" />
+                                </mdct:Column>
+                                <mdct:Column propertyKey="category" header="Category">
+                                    <Text text="{category}" />
+                                </mdct:Column>
+                                <mdct:Column propertyKey="type" header="Type">
+                                    <Text text="{type}" />
+                                </mdct:Column>
+                                <mdct:Column propertyKey="size" header="Size">
+                                    <Text text="{size}" />
+                                </mdct:Column>
+                                <mdct:Column propertyKey="color" header="Color">
+                                    <Text text="{color}" />
+                                </mdct:Column>
+                                <mdct:Column propertyKey="quantity" header="Quantity">
+                                    <ObjectNumber number="{quantity}" />
+                                </mdct:Column>
+                            </mdc:columns>
+                        </mdc:Table>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+
+        <uxap:footer>
+            <OverflowToolbar visible="{ui>/editable}">
+                <ToolbarSpacer />
+                <Button text="Save" type="Emphasized" press=".onSave" />
+                <Button text="Cancel" type="Transparent" press=".onCancel" />
+            </OverflowToolbar>
+        </uxap:footer>
+    </uxap:ObjectPageLayout>
+</mvc:View>
