@@ -1,0 +1,22 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    controllerName="sap.ui.stores.controller.App"
+    displayBlock="true">
+
+    <f:ShellBar
+        id="shellBar"
+        title="Store Explorer"
+        showNavButton="{appView>/showNavButton}"
+        navButtonPressed=".onNavBack"
+        homeIcon="{appView>/sapLogoSrc}"
+        showProductSwitcher="false"
+    >
+        <f:profile>
+            <Avatar initials="U" displaySize="XS" press=".onUserPress" />
+        </f:profile>
+    </f:ShellBar>
+
+    <App id="app" />
+</mvc:View>

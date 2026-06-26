@@ -1,6 +1,6 @@
 [![solution](https://flat.badgen.net/badge/solution/available/green?icon=github)](webapp)
 
-# Exercise 7: How to Use the MDC Chart with Chart.js
+# Exercise 8: How to Use the MDC Chart with Chart.js
 In this exercise, we will learn how to create a ChartJSDelegate for an MDC Chart using the popular [Chart.js](https://www.chartjs.org/) library. It demonstrates how to integrate a third-party charting library with the MDC Chart control.
 
 ## Step 1: Set Up the Chart.js Libraries

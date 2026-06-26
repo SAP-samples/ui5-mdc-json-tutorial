@@ -1,0 +1,32 @@
+{
+  "value": [
+    { "ID": "d1000001-0001-0001-0001-000000000001", "transfer_ID": "c1000001-0001-0001-0001-000000000001", "name": "Black Denim Jacket", "category": "Men's", "type": "Jackets", "size": "M", "color": "Black", "quantity": 5 },
+    { "ID": "d1000001-0001-0001-0001-000000000002", "transfer_ID": "c1000001-0001-0001-0001-000000000001", "name": "White Crew Neck T-Shirt", "category": "Men's", "type": "T-Shirts", "size": "L", "color": "White", "quantity": 20 },
+    { "ID": "d1000001-0001-0001-0001-000000000003", "transfer_ID": "c1000001-0001-0001-0001-000000000001", "name": "High Waist Skinny Jeans", "category": "Women's", "type": "Skinny Jeans", "size": "M", "color": "Black", "quantity": 10 },
+    { "ID": "d1000001-0001-0001-0001-000000000004", "transfer_ID": "c1000001-0001-0001-0001-000000000002", "name": "Slim Fit Chinos", "category": "Men's", "type": "Chinos", "size": "L", "color": "Navy", "quantity": 8 },
+    { "ID": "d1000001-0001-0001-0001-000000000005", "transfer_ID": "c1000001-0001-0001-0001-000000000002", "name": "Oversized Hoodie", "category": "Men's", "type": "Hoodies", "size": "XL", "color": "Grey", "quantity": 6 },
+    { "ID": "d1000001-0001-0001-0001-000000000006", "transfer_ID": "c1000001-0001-0001-0001-000000000002", "name": "Floral Print Dress", "category": "Women's", "type": "Dresses", "size": "S", "color": "Floral", "quantity": 4 },
+    { "ID": "d1000001-0001-0001-0001-000000000007", "transfer_ID": "c1000001-0001-0001-0001-000000000003", "name": "Satin Blouse", "category": "Women's", "type": "Blouses", "size": "M", "color": "Beige", "quantity": 12 },
+    { "ID": "d1000001-0001-0001-0001-000000000008", "transfer_ID": "c1000001-0001-0001-0001-000000000003", "name": "Kids Dinosaur T-Shirt", "category": "Kids'", "type": "T-Shirts", "size": "122", "color": "Green", "quantity": 15 },
+    { "ID": "d1000001-0001-0001-0001-000000000009", "transfer_ID": "c1000001-0001-0001-0001-000000000003", "name": "Wool Blend Coat", "category": "Women's", "type": "Coats", "size": "S", "color": "Black", "quantity": 3 },
+    { "ID": "d1000001-0001-0001-0001-000000000010", "transfer_ID": "c1000001-0001-0001-0001-000000000004", "name": "Regular Fit Jeans", "category": "Men's", "type": "Jeans", "size": "M", "color": "Blue", "quantity": 14 },
+    { "ID": "d1000001-0001-0001-0001-000000000011", "transfer_ID": "c1000001-0001-0001-0001-000000000004", "name": "Pleated Midi Skirt", "category": "Women's", "type": "Skirts", "size": "S", "color": "Red", "quantity": 7 },
+    { "ID": "d1000001-0001-0001-0001-000000000012", "transfer_ID": "c1000001-0001-0001-0001-000000000005", "name": "Black Denim Jacket", "category": "Men's", "type": "Jackets", "size": "L", "color": "Black", "quantity": 3 },
+    { "ID": "d1000001-0001-0001-0001-000000000013", "transfer_ID": "c1000001-0001-0001-0001-000000000005", "name": "Kids Puffer Jacket", "category": "Kids'", "type": "Jackets", "size": "134", "color": "Blue", "quantity": 9 },
+    { "ID": "d1000001-0001-0001-0001-000000000014", "transfer_ID": "c1000001-0001-0001-0001-000000000006", "name": "Striped Cotton T-Shirt", "category": "Men's", "type": "T-Shirts", "size": "M", "color": "White", "quantity": 18 },
+    { "ID": "d1000001-0001-0001-0001-000000000015", "transfer_ID": "c1000001-0001-0001-0001-000000000006", "name": "Wide Leg Jeans", "category": "Women's", "type": "Jeans", "size": "S", "color": "Blue", "quantity": 10 },
+    { "ID": "d1000001-0001-0001-0001-000000000016", "transfer_ID": "c1000001-0001-0001-0001-000000000006", "name": "Kids Rainbow Hoodie", "category": "Kids'", "type": "Hoodies", "size": "122", "color": "Multi", "quantity": 8 },
+    { "ID": "d1000001-0001-0001-0001-000000000017", "transfer_ID": "c1000001-0001-0001-0001-000000000007", "name": "Leather Biker Jacket", "category": "Men's", "type": "Jackets", "size": "L", "color": "Black", "quantity": 4 },
+    { "ID": "d1000001-0001-0001-0001-000000000018", "transfer_ID": "c1000001-0001-0001-0001-000000000007", "name": "Wrap Midi Dress", "category": "Women's", "type": "Dresses", "size": "M", "color": "Green", "quantity": 6 },
+    { "ID": "d1000001-0001-0001-0001-000000000019", "transfer_ID": "c1000001-0001-0001-0001-000000000007", "name": "Tailored Slim Chinos", "category": "Men's", "type": "Chinos", "size": "M", "color": "Beige", "quantity": 10 },
+    { "ID": "d1000001-0001-0001-0001-000000000020", "transfer_ID": "c1000001-0001-0001-0001-000000000008", "name": "Silk Cami Top", "category": "Women's", "type": "Blouses", "size": "XS", "color": "Pink", "quantity": 5 },
+    { "ID": "d1000001-0001-0001-0001-000000000021", "transfer_ID": "c1000001-0001-0001-0001-000000000008", "name": "Double Breasted Coat", "category": "Women's", "type": "Coats", "size": "M", "color": "Grey", "quantity": 3 },
+    { "ID": "d1000001-0001-0001-0001-000000000022", "transfer_ID": "c1000001-0001-0001-0001-000000000008", "name": "Relaxed Fit Joggers", "category": "Men's", "type": "Joggers", "size": "L", "color": "Grey", "quantity": 12 },
+    { "ID": "d1000001-0001-0001-0001-000000000023", "transfer_ID": "c1000001-0001-0001-0001-000000000008", "name": "Tiered Mini Skirt", "category": "Women's", "type": "Skirts", "size": "S", "color": "Black", "quantity": 7 },
+    { "ID": "d1000001-0001-0001-0001-000000000024", "transfer_ID": "c1000001-0001-0001-0001-000000000009", "name": "Linen Blazer", "category": "Men's", "type": "Jackets", "size": "M", "color": "Navy", "quantity": 6 },
+    { "ID": "d1000001-0001-0001-0001-000000000025", "transfer_ID": "c1000001-0001-0001-0001-000000000009", "name": "Ribbed Knit Dress", "category": "Women's", "type": "Dresses", "size": "S", "color": "Cream", "quantity": 8 },
+    { "ID": "d1000001-0001-0001-0001-000000000026", "transfer_ID": "c1000001-0001-0001-0001-000000000010", "name": "Puffer Vest", "category": "Men's", "type": "Jackets", "size": "L", "color": "Black", "quantity": 10 },
+    { "ID": "d1000001-0001-0001-0001-000000000027", "transfer_ID": "c1000001-0001-0001-0001-000000000010", "name": "A-Line Midi Skirt", "category": "Women's", "type": "Skirts", "size": "M", "color": "Burgundy", "quantity": 5 },
+    { "ID": "d1000001-0001-0001-0001-000000000028", "transfer_ID": "c1000001-0001-0001-0001-000000000010", "name": "Kids Corduroy Pants", "category": "Kids'", "type": "Pants", "size": "128", "color": "Brown", "quantity": 12 }
+  ]
+}
