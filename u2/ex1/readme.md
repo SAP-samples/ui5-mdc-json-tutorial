@@ -308,7 +308,7 @@ JSONGeomapDelegate.getProvider = function() {
 
 ## Step 2: Prepare a bridge for worker
 As MDC Geomap uses the `sap.ui.geomap` library — built on top of the SAP Geomap Web Component and requiring a Web Worker — and because strict CSP policies apply, we need to create a "bridge" to enable the Web Worker.
-Starting with MapLibre GL JS v6, the worker ships as an ES module, so the bridge must be an `.mjs` file that uses dynamic `import()` instead of `importScripts`. This is achievable by simply creating a "worker.mjs" in the webapp root with the following:
+Starting with MapLibre GL JS v6, the worker ships as an ES module, so the bridge must be a module script that uses dynamic `import()` instead of `importScripts`. This is achievable by simply creating a "worker.js" in the webapp root with the following:
 ```js
 await import(new URLSearchParams(self.location.search).get("worker"));
 ```
@@ -316,7 +316,7 @@ await import(new URLSearchParams(self.location.search).get("worker"));
 To elaborate a bit - since Geomap uses Web Workers internally, in environments with a strict Content Security Policy (CSP) the worker must be loaded by the application.
 We create a "bridge" between the library and the application so the SAP Geomap Web Component can automatically discover and use the worker URL.
 
-The library provides the path of the worker to be loaded and passes it to "worker.mjs" on app side which simply loads it using dynamic `import()`. The Worker is instantiated with `{ type: "module" }` so that ES module imports are available inside it.
+The library provides the path of the worker to be loaded and passes it to "worker.js" on app side which simply loads it using dynamic `import()`. The Worker is instantiated with `{ type: "module" }` so that ES module imports are available inside it — the browser treats the script as a module because of the constructor flag, not because of the file extension.
 
 ## Step 3: Use the MDC Geomap
 
