@@ -1,0 +1,44 @@
+{
+  "name": "mdc-geomap-cap-server",
+  "version": "1.0.0",
+  "description": "CAP Server for Stores GeoMap Application.",
+  "private": true,
+  "dependencies": {
+    "@cap-js/sqlite": "2.4.0",
+    "@sap/cds": "9.9.1",
+    "@sap/xssec": "^4",
+    "express": "4.21.2",
+    "hdb": "^0.19",
+    "passport": "^0.7"
+  },
+  "devDependencies": {
+    "@sap/cds-dk": "9.9.1",
+    "cds-plugin-ui5": "0.17.1",
+    "rimraf": "5.0.10",
+    "mdc-geomap-cap-stores": "*"
+  },
+  "scripts": {
+    "clean": "rimraf gen",
+    "build": "cds build",
+    "watch": "cds watch",
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": ":memory:"
+        }
+      },
+      "[production]": {
+        "db": {
+          "kind": "hana"
+        },
+        "auth": {
+          "kind": "xsuaa"
+        }
+      }
+    }
+  }
+}

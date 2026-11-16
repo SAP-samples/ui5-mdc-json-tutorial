@@ -1,0 +1,100 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mdc="sap.ui.mdc"
+    controllerName="sap.ui.stores.controller.TransferDetail">
+
+    <Page
+        id="transferDetailPage"
+        title="Transfer Details"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        <content>
+            <VBox class="storesPageContent">
+                <HBox alignItems="Stretch" class="sapUiSmallMarginBottom storesTransferRow">
+                    <Panel headerText="Transfer Route">
+                        <layoutData>
+                            <FlexItemData growFactor="7" />
+                        </layoutData>
+                        <VBox class="storesMapSection storesTransferMap">
+                            <mdc:Geomap
+                                id="transferDetailGeomap"
+                                delegate="{
+                                    'name': 'sap/ui/stores/delegate/TransferGeomapDelegate'
+                                }"
+                                centerLat="48.0"
+                                centerLng="10.0"
+                                zoom="4"
+                                width="100%"
+                                height="450px"
+                                enableNavigationControl="true"
+                                enableScaleControl="true"
+                                enableCopyrightControl="true"
+                            />
+                        </VBox>
+                    </Panel>
+                    <Panel headerText="Transfer Summary">
+                        <layoutData>
+                            <FlexItemData growFactor="3" />
+                        </layoutData>
+                        <form:SimpleForm
+                            editable="false"
+                            layout="ResponsiveGridLayout"
+                            labelSpanL="12" labelSpanM="12" labelSpanS="12"
+                            emptySpanL="0" emptySpanM="0" emptySpanS="0"
+                            columnsL="1" columnsM="1">
+                            <form:content>
+                                <Label text="Source Store" />
+                                <Text text="{sourceStore/name}" />
+                                <Label text="Destination Store" />
+                                <Text text="{destStore/name}" />
+                                <Label text="Transfer Date" />
+                                <Text text="{transferDate}" />
+                                <Label text="Status" />
+                                <ObjectStatus
+                                    text="{status}"
+                                    state="{= ${status} === 'Completed' ? 'Success' : ${status} === 'InTransit' ? 'Information' : 'Warning'}" />
+                                <Label text="Distance" />
+                                <ObjectNumber number="{distance}" unit="km" />
+                                <Label text="CO2 Emissions" />
+                                <ObjectNumber number="{co2Emissions}" unit="kg CO2" state="Warning" />
+                            </form:content>
+                        </form:SimpleForm>
+                    </Panel>
+                </HBox>
+
+                <Panel headerText="Items in Transfer" class="sapUiSmallMarginBottom">
+                    <Table
+                        id="transferItemsTable"
+                        noDataText="No items"
+                        items="{
+                            path: 'items',
+                            parameters: {
+                                $$ownRequest: true
+                            }
+                        }">
+                        <columns>
+                            <Column><Text text="Name" /></Column>
+                            <Column><Text text="Category" /></Column>
+                            <Column><Text text="Type" /></Column>
+                            <Column><Text text="Size" /></Column>
+                            <Column><Text text="Color" /></Column>
+                            <Column hAlign="End"><Text text="Quantity" /></Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <Text text="{name}" />
+                                <Text text="{category}" />
+                                <Text text="{type}" />
+                                <Text text="{size}" />
+                                <Text text="{color}" />
+                                <ObjectNumber number="{quantity}" />
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

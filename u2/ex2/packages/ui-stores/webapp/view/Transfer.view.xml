@@ -1,0 +1,100 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:mdct="sap.ui.mdc.table"
+    controllerName="sap.ui.stores.controller.Transfer">
+
+    <Page
+        id="transferPage"
+        title="Transfer Goods from {transfer>/sourceStoreName}"
+        showNavButton="true"
+        navButtonPress=".onNavBack">
+        <content>
+            <VBox class="storesPageContent">
+                <Panel headerText="Destination Store - Select Target" class="sapUiSmallMarginBottom">
+                    <mdc:Table
+                        id="destinationStoresTable"
+                        header="Stores"
+                        selectionMode="Single"
+                        selectionChange=".onDestinationSelectionChange"
+                        p13nMode="Filter,Sort"
+                        type="ResponsiveTable"
+                        threshold="5"
+                        delegate="{
+                            'name': 'sap/ui/stores/delegate/DestinationStoresTableDelegate'
+                        }">
+                        <mdc:columns>
+                            <mdct:Column propertyKey="name" header="Name">
+                                <Text text="{name}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="city" header="City">
+                                <Text text="{city}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="country" header="Country">
+                                <Text text="{country}" />
+                            </mdct:Column>
+                        </mdc:columns>
+                    </mdc:Table>
+                </Panel>
+
+                <Panel headerText="Source Inventory - Select Items to Transfer" class="sapUiSmallMarginBottom">
+                    <mdc:Table
+                        id="sourceInventoryTable"
+                        header="Inventory"
+                        selectionMode="Multi"
+                        selectionChange=".onInventorySelectionChange"
+                        p13nMode="Filter,Sort"
+                        type="ResponsiveTable"
+                        threshold="5"
+                        delegate="{
+                            'name': 'sap/ui/stores/delegate/InventoryTableDelegate'
+                        }">
+                        <mdc:columns>
+                            <mdct:Column propertyKey="name" header="Name">
+                                <Text text="{name}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="category" header="Category">
+                                <Text text="{category}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="type" header="Type">
+                                <Text text="{type}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="size" header="Size">
+                                <Text text="{size}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="color" header="Color">
+                                <Text text="{color}" />
+                            </mdct:Column>
+                            <mdct:Column propertyKey="quantity" header="Qty">
+                                <ObjectNumber number="{quantity}" />
+                            </mdct:Column>
+                        </mdc:columns>
+                    </mdc:Table>
+                </Panel>
+
+                <Panel
+                    headerText="Transfer Route"
+                    visible="{transfer>/showMap}"
+                    class="sapUiSmallMarginBottom">
+                    <VBox class="storesMapSection">
+                        <mdc:Geomap
+                            id="transferGeomap"
+                            delegate="{
+                                'name': 'sap/ui/stores/delegate/TransferGeomapDelegate'
+                            }"
+                            centerLat="48.0"
+                            centerLng="10.0"
+                            zoom="4"
+                            width="100%"
+                            height="400px"
+                            enableNavigationControl="true"
+                            enableScaleControl="true"
+                            enableCopyrightControl="true"
+                        />
+                    </VBox>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

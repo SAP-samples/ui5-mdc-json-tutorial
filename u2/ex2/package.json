@@ -1,0 +1,17 @@
+{
+  "name": "mdc-geomap-cap-tutorial",
+  "version": "1.0.0",
+  "description": "Exercise 2: Full-Featured MDC Geomap with CAP — Store locator, choropleth, routing, transfers",
+  "private": true,
+  "scripts": {
+    "start": "npm run start:server",
+    "start:server": "npm run start -w=mdc-geomap-cap-server",
+    "start:stores": "npm run start -w=mdc-geomap-cap-stores"
+  },
+  "dependencies": {
+    "@ui5/cli": "5.0.0-alpha.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

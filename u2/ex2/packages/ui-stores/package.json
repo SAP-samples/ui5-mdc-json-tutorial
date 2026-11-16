@@ -1,0 +1,18 @@
+{
+  "name": "mdc-geomap-cap-stores",
+  "version": "1.0.0",
+  "description": "Freestyle UI5 Stores GeoMap Application",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "ui5 build --clean-dest",
+    "start": "ui5 serve --port 8082"
+  },
+  "devDependencies": {
+    "@ui5/cli": "5.0.0-alpha.4",
+    "rimraf": "5.0.10",
+    "mdc-geomap-cap-server": "*",
+    "ui5-middleware-cap": "3.3.4",
+    "ui5-middleware-livereload": "3.3.0"
+  }
+}

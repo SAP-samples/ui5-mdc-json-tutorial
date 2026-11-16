@@ -1,0 +1,80 @@
+.storesPageContent {
+    padding: 1rem 1.5rem;
+}
+
+.storesFilterSection {
+    border: 1px solid var(--sapGroup_ContentBorderColor, #d9d9d9);
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    background: var(--sapGroup_ContentBackground, #fff);
+    margin-bottom: 0.75rem;
+}
+
+.storesMapSection {
+    border: 1px solid var(--sapGroup_ContentBorderColor, #d9d9d9);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: var(--sapGroup_ContentBackground, #fff);
+}
+
+.storesTableSection {
+    border: 1px solid var(--sapGroup_ContentBorderColor, #d9d9d9);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: var(--sapGroup_ContentBackground, #fff);
+    margin-top: 0.75rem;
+}
+
+.storesFilterHint {
+    margin-bottom: 0.5rem;
+}
+
+.storesTransferRow {
+    gap: 1rem;
+}
+
+.storesTransferRow > .sapMFlexItem {
+    display: flex;
+}
+
+.storesTransferRow > .sapMFlexItem > .sapMPanel {
+    width: 100%;
+}
+
+/* Choropleth legend */
+.choropleth-legend {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 0.75rem;
+    background: var(--sapGroup_ContentBackground, rgba(255, 255, 255, 0.95));
+    border: 1px solid var(--sapGroup_ContentBorderColor, #d9d9d9);
+    border-radius: 0.5rem;
+    padding: 0.625rem 0.75rem;
+    font-family: var(--sapFontFamily, "72", Arial, sans-serif);
+    font-size: var(--sapFontSmallSize, 0.75rem);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.choropleth-legend-title {
+    font-weight: bold;
+    margin-bottom: 0.375rem;
+    font-size: var(--sapFontSize, 0.875rem);
+    color: var(--sapTextColor, #32363a);
+}
+
+.choropleth-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.125rem 0;
+    color: var(--sapTextColor, #32363a);
+}
+
+.choropleth-legend-color {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 0.188rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}

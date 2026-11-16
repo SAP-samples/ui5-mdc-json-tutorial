@@ -1,0 +1,29 @@
+{
+    "requires": {
+        "auth": {
+            "kind": "mocked",
+            "users": {
+                "employee@test.com": {
+                    "password": "123",
+                    "roles": ["Employee"]
+                },
+                "employee2@test.com": {
+                    "password": "123",
+                    "roles": ["Employee"]
+                },
+                "firstname1.lastname1@sap.com": {
+                    "password": "123",
+                    "roles": ["Employee"]
+                },
+                "firstname2.lastname2@sap.com": {
+                    "password": "123",
+                    "roles": ["Employee"]
+                },
+                "admin@test.com": {
+                    "password": "123",
+                    "roles": ["Admin"]
+                }
+            }
+        }
+    }
+}

@@ -30,9 +30,10 @@ VariantManagement is a feature that allows users to save their personalization s
 
 ### Unit 2:
 1. [How to Use the MDC Geomap](u2/ex1) (*[browse sources](u2/ex1/webapp)*)
+1. [MDC Geomap with CAP](u2/ex2) (*[browse sources](u2/ex2/)*)
 
 > [!CAUTION]
-> [How to Use the MDC Geomap](u2/ex1) - This package is provided under the terms of the [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt).
+> Packages in this unit are provided under the terms of the [SAP Developer License Agreement](https://tools.hana.ondemand.com/developer-license.txt).
 
 ### Unit 3:
 1. [How to Use the MDC Chart with ChartJs](u3/ex1) (*[browse sources](u3/ex1/webapp)*)
